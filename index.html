@@ -5692,8 +5692,12 @@ function saveProgress(){
 }
 function loadProgress(){
   try { const o = JSON.parse(localStorage.getItem(PROG_KEY) || "null"); if (!o) return;
-    PROG_FIELDS.forEach(k => { if (!(k in o)) return; const v = o[k]; state[k] = v && v.__set ? new Set(v.__set) : v; });
+    PROG_FIELDS.forEach(k => { if (!(k in o)) return; const v = o[k], was = state[k]; state[k] = v && v.__set ? new Set(v.__set) : v; if (was instanceof Set && !(state[k] instanceof Set)) state[k] = new Set(); });
     if (!stepOrder().includes(state.step)) state.step = 1;
+    ["picks","page","pos","ph"].forEach(k => { if (!state[k] || typeof state[k] !== "object" || Array.isArray(state[k])) state[k] = {}; });
+    Object.keys(state.picks).forEach(c => { if (!Array.isArray(state.picks[c])) delete state.picks[c]; else state.picks[c] = state.picks[c].filter(d => d && typeof d === "object" && d.name); });
+    if (!state.dk || typeof state.dk !== "object") state.dk = {temp:"", alc:false, caf:false};
+    ["soupT","vegM","mainM"].forEach(k => { const ok = new Set((k === "soupT" ? SOUP_OPTS : k === "vegM" ? VEG_OPTS : MAIN_OPTS).map(o => o[0])); state[k] = new Set([...state[k]].filter(v => ok.has(v) && v !== "any")); });
   } catch(e){}
 }
 function startOver(){
@@ -5885,8 +5889,10 @@ $("addForm").addEventListener("submit", e => {
   toast("已存进菜品库，以后符合条件就会出现");
 });
 
-loadProgress();
-render();
+const PROG_DEFAULT = (() => { const o = {}; PROG_FIELDS.forEach(k => { const v = state[k]; o[k] = v instanceof Set ? new Set(v) : (v && typeof v === "object") ? JSON.parse(JSON.stringify(v)) : v; }); return o; })();
+function resetProgressState(){ PROG_FIELDS.forEach(k => { const v = PROG_DEFAULT[k]; state[k] = v instanceof Set ? new Set(v) : (v && typeof v === "object") ? JSON.parse(JSON.stringify(v)) : v; }); }
+try { if (/[?&]reset\b/.test(location.search)) { try { localStorage.removeItem(PROG_KEY); } catch(_){} } loadProgress(); if (typeof refreshPicks === "function") refreshPicks(); render(); }
+catch(e){ console.error("restore failed", e); try { localStorage.removeItem(PROG_KEY); } catch(_){} resetProgressState(); render(); }
 
 /* ---------- magic: stars, burst, cover ---------- */
 const STAR_COLORS = ["#fff3c4","#ffe27a","#ffffff","#f6b3b8","#b8e0a0"];
