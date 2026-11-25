@@ -29,7 +29,7 @@ button{cursor:pointer;border:0;border-radius:0}
 
 /* backdrop */
 #aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.cloud{position:absolute;left:-200px;top:var(--t);opacity:.95;animation:cloud var(--d) steps(120) var(--l) infinite}
+.cloud{position:absolute;left:-200px;top:var(--t);opacity:.95;animation:cloud var(--d) steps(240) var(--l) infinite}
 .cloud svg{display:block}
 @keyframes cloud{from{transform:translateX(0)}to{transform:translateX(calc(100vw + 400px))}}
 .star{position:absolute;width:var(--s);height:var(--s);background:var(--c);clip-path:polygon(33% 0,66% 0,66% 33%,100% 33%,100% 66%,66% 66%,66% 100%,33% 100%,33% 66%,0 66%,0 33%,33% 33%);opacity:0;animation:twinkle var(--d) steps(1) var(--l) infinite}
@@ -1512,6 +1512,294 @@ body:has(#cover:not(.gone):not(.leaving)) #mtab{display:none}
 .ep-lk a:last-child{background:#d32323;color:#fff}
 .ep-foot{margin-top:14px;font-size:12px;color:var(--soft);text-align:center}
 .ep-key{background:none;border:0;font:inherit;font-weight:800;color:var(--ink);text-decoration:underline;cursor:pointer}
+/* v124 出去吃 storefront redesign */
+.ep-map{position:relative;margin:0 0 22px;background:#cfe8b8;box-shadow:var(--pxb),var(--bev);overflow:hidden}
+.ep-map svg{display:block;width:100%;height:100%}
+.mp-st{fill:#f4ecd6}
+.mp-ring{fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:4 4;opacity:.35}
+.mp-rt{font:800 9px var(--en);fill:var(--soft)}
+.mp-me rect:first-child{fill:#3d8bd8;stroke:#fff;stroke-width:3}
+.mp-me rect:last-child{fill:#fff}
+.mp-me{animation:mpMe 1s steps(2) infinite}
+@keyframes mpMe{50%{opacity:.55}}
+.mp-pin{cursor:pointer}
+.mp-pin rect{fill:#fffaf0;stroke:var(--ink);stroke-width:3}
+.mp-pin rect+rect{fill:var(--ink);stroke:none}
+.mp-pin text{font:900 11px var(--en);text-anchor:middle;dominant-baseline:middle;fill:var(--ink)}
+.mp-pin.t0 rect:first-child{fill:#ffd35c}.mp-pin.t1 rect:first-child{fill:#d9dde6}.mp-pin.t2 rect:first-child{fill:#e0a46a}
+.mp-pin:hover rect:first-child{fill:#d8573f}.mp-pin:hover text{fill:#fff}
+.ep-you{position:absolute;left:8px;bottom:6px;font-size:11px;font-weight:900;color:#fff;background:#3d8bd8;padding:1px 6px;box-shadow:var(--pxs)}
+.ep-list{gap:22px 18px}
+.ep-r{display:block;padding:0;background:#fffaf0;box-shadow:var(--pxb),var(--drop)}
+.ep-r.t0{box-shadow:var(--pxb),var(--drop)}
+.ep-awn{height:16px;background:repeating-linear-gradient(90deg,#d8573f 0 16px,#fff6dc 16px 32px);box-shadow:0 4px 0 var(--ink)}
+.ep-r.t0 .ep-awn{background:repeating-linear-gradient(90deg,#f2b632 0 16px,#fff6dc 16px 32px)}
+.ep-r.t1 .ep-awn{background:repeating-linear-gradient(90deg,#8fa3c4 0 16px,#fff6dc 16px 32px)}
+.ep-r.t2 .ep-awn{background:repeating-linear-gradient(90deg,#c97b3c 0 16px,#fff6dc 16px 32px)}
+.ep-r:not(.top) .ep-awn{background:repeating-linear-gradient(90deg,#8cc152 0 16px,#fff6dc 16px 32px)}
+.ep-sign{display:flex;align-items:center;gap:10px;padding:14px 14px 6px}
+.ep-rank{width:30px;height:30px;font-size:15px;font-family:var(--en);box-shadow:var(--pxs)}
+.ep-r.t0 .ep-rank::after{content:"";position:absolute}
+.ep-n{font-size:18px;line-height:1.25;flex:1;min-width:0}
+.ep-body{padding:0 14px 14px 54px}
+.ep-meta{align-items:center;margin:0 0 8px}
+.ep-cu{box-shadow:var(--pxs);background:#e6f0fa}
+.ep-km{display:inline-flex;align-items:center;gap:3px}
+.ep-km svg{width:12px;height:12px}
+.ep-rate{display:inline-flex;font-size:12px}
+.ep-match{display:flex;align-items:center;gap:8px;margin:2px 0 6px}
+.ep-meter{display:flex;gap:3px}
+.ep-meter i{width:12px;height:12px;background:#e9e2d4;box-shadow:var(--pxs)}
+.ep-meter i.on{background:#8cc152}
+.ep-match b{font-family:var(--en);font-size:14px}
+.ep-hit{display:flex;flex-wrap:wrap;gap:6px;margin:0;font-size:12px}
+.ep-hit span{padding:1px 7px;background:#fff6dc;border-radius:999px;box-shadow:0 0 0 2px var(--ink);font-weight:700}
+.ep-lk{gap:12px;margin-top:12px}
+.ep-lk a.g{background:#fff;color:var(--ink)}
+.ep-lk a.y{background:#d32323;color:#fff}
+.ep-r.flash{animation:epFlash .9s steps(3)}
+@keyframes epFlash{33%{transform:translateY(-6px)}66%{transform:translateY(0)}}
+.ep-empty{text-align:center;padding:10px 0 4px;color:var(--soft);font-weight:800}
+.ep-street{display:flex;justify-content:center;gap:14px;margin:6px 0 12px}
+.ep-street i{width:56px;height:46px;background:#fffaf0;box-shadow:var(--pxb);position:relative}
+.ep-street i::before{content:"";position:absolute;left:0;right:0;top:0;height:12px;background:repeating-linear-gradient(90deg,#d8573f 0 8px,#fff6dc 8px 16px);box-shadow:0 3px 0 var(--ink)}
+.ep-street i:nth-child(2)::before{background:repeating-linear-gradient(90deg,#8cc152 0 8px,#fff6dc 8px 16px)}
+.ep-street i:nth-child(3)::before{background:repeating-linear-gradient(90deg,#f2b632 0 8px,#fff6dc 8px 16px)}
+.ep-street i::after{content:"";position:absolute;left:50%;bottom:0;width:14px;height:18px;margin-left:-7px;background:var(--ink)}
+@media (max-width:520px){.ep-body{padding-left:14px}}
+.ep-bar{gap:14px;align-items:stretch;padding:4px}
+.ep-bar>*{box-sizing:border-box;height:44px;margin:0 !important}
+.ep-bar .ep-loc{width:auto;padding:0 12px;font-size:15px}
+.ep-geo,.ep-go{white-space:nowrap}
+@media (max-width:520px){.ep-geo{order:1}.ep-go{order:2;margin-left:auto !important}.ep-loc{order:0;flex:1 1 100%}}
+.tapfx::before,.tapfx::after{content:none!important}
+.ph-lib{display:none}
+@media (max-width:699px){
+  .mt-side{display:none !important}
+  #mtab.nopick{display:none !important}
+  .phead{position:relative}
+  .phead .pick-search{margin-right:100px !important}
+  .ph-lib{display:flex;position:absolute;right:4px;bottom:0;height:var(--psh,46px);width:86px;box-shadow:var(--pxb);background:#fffaf0}
+  .ph-lib button{flex:1;display:flex;align-items:center;justify-content:center;gap:3px;font:900 12px var(--en);color:var(--ink);border:0;padding:0}
+  .ph-lib .phl-h{background:#ffd0dc}
+  .ph-lib .phl-b{background:#e9e2d4;border-left:3px solid var(--ink)}
+  .ph-lib svg{width:15px;height:14px;flex:none}
+  .ph-lib button:active{transform:translateY(2px)}
+}
+/* v126 sticky header */
+#hdBack{position:fixed;left:0;right:0;top:0;height:0;z-index:27;background:#7dc7ee;box-shadow:0 4px 0 rgba(59,35,20,.18);pointer-events:none;opacity:0}
+body.hd-stuck #hdBack{opacity:1}
+.mast{position:sticky;top:var(--hdT1,6px);z-index:31}
+.ticks{position:sticky;top:var(--hdT2,60px);z-index:30}
+.pick-search{position:sticky !important;top:var(--hdT3,110px) !important;z-index:29 !important}
+@media (max-width:1099px){.phead{display:contents}}
+@media (min-width:1100px){.phead{position:sticky;top:var(--hdT3,110px);z-index:29}.phead .pick-search{position:static !important}}
+@media (max-width:699px){
+  .phead .pick-search{margin-right:100px !important}
+  .ph-lib{position:absolute;right:-100px;top:-2px;bottom:-2px;height:auto}
+}
+/* v127 weather */
+#weather{position:absolute;inset:0;pointer-events:none;z-index:1}
+#weather i{position:absolute;top:-40px;display:block}
+.wx-rain{width:2px;height:var(--h);background:rgba(255,255,255,.75);box-shadow:0 2px 0 rgba(90,150,200,.35);animation:wxRain var(--d) linear var(--l) infinite}
+@keyframes wxRain{to{transform:translate(-60px,110vh)}}
+.wx-leaf{width:var(--s);height:calc(var(--s) * 1.25);animation:wxFall var(--d) linear var(--l) infinite}
+.wx-leaf svg{width:100%;height:100%;display:block;animation:wxSpin calc(var(--d) / 3) steps(4) var(--l) infinite}
+.wx-snow{width:var(--s);height:var(--s);background:#fff;box-shadow:0 0 0 1px rgba(150,190,220,.35);animation:wxFall var(--d) linear var(--l) infinite}
+@keyframes wxFall{0%{transform:translate(0,0)}25%{transform:translate(var(--sw),27vh)}50%{transform:translate(0,55vh)}75%{transform:translate(calc(var(--sw) * -1),82vh)}100%{transform:translate(0,112vh)}}
+@keyframes wxSpin{0%{transform:rotate(0)}25%{transform:rotate(90deg) scaleX(.7)}50%{transform:rotate(180deg)}75%{transform:rotate(270deg) scaleX(.7)}100%{transform:rotate(360deg)}}
+/* v127 seasonal weather */
+#wx,#cvWx{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+#cvWx{z-index:1}
+#wxSky{position:absolute;inset:0;pointer-events:none;transition:opacity 1s}
+.wp{position:absolute;top:0;left:var(--x);will-change:transform;animation:wxFall var(--d) linear var(--l) infinite}
+.wi{animation:wxSway var(--s) ease-in-out var(--l) infinite alternate}
+.wi svg{display:block}
+@keyframes wxFall{from{transform:translate(0,-40px)}to{transform:translate(var(--dx),calc(100vh + 40px))}}
+@keyframes wxSway{from{transform:translateX(calc(var(--w) * -1)) rotate(calc(var(--r) * -1))}to{transform:translateX(var(--w)) rotate(var(--r))}}
+.wp.drop{animation-timing-function:linear}
+.wp.drop .wi{width:2px;height:var(--h);background:linear-gradient(rgba(70,120,190,0),rgba(70,120,190,.55) 40%,rgba(255,255,255,.9));transform:rotate(12deg);animation:none}
+.wsp{position:absolute;bottom:var(--navH,90px);left:var(--x);width:10px;height:3px;opacity:0;animation:wxSplash var(--d) steps(1) var(--l) infinite}
+.wsp::before,.wsp::after{content:"";position:absolute;bottom:0;width:3px;height:3px;background:rgba(255,255,255,.85)}
+.wsp::before{left:0}.wsp::after{right:0}
+@keyframes wxSplash{0%{opacity:0}80%{opacity:1;transform:translateY(0)}90%{opacity:1;transform:translateY(-4px) scaleX(1.6)}100%{opacity:0}}
+.wx-rainbow{position:absolute;right:-18vmin;top:4vmin;width:62vmin;height:62vmin;border-radius:50%;opacity:.32;background:radial-gradient(circle,transparent 0 52%,#e25a4a 52% 56%,#f0a05a 56% 60%,#f2c94c 60% 64%,#8cc152 64% 68%,#4aa3df 68% 72%,#9b7ad8 72% 76%,transparent 76%);-webkit-mask:linear-gradient(#000 0 50%,transparent 50%);mask:linear-gradient(#000 0 50%,transparent 50%);animation:rbFade 14s ease-in-out infinite alternate}
+@keyframes rbFade{from{opacity:.16}to{opacity:.38}}
+body.wx-summer #wxSky{background:linear-gradient(rgba(120,140,170,.16),transparent 60%)}
+body.wx-winter #wxSky{background:linear-gradient(rgba(220,235,250,.28),transparent 70%)}
+body.wx-fall #wxSky{background:linear-gradient(rgba(255,190,120,.16),transparent 70%)}
+body.wx-fall{--grass:#93ad45;--grass2:#73892f}
+body.wx-winter{--grass:#e8f2f7;--grass2:#ffffff}
+@media (prefers-reduced-motion:reduce){#wx,#cvWx{display:none}}
+/* v128 storefront cards */
+.sf-list{gap:34px 22px !important;padding-top:10px !important}
+.sf{position:relative;list-style:none;background:#f6e6c8 linear-gradient(rgba(59,35,20,.07) 2px,transparent 2px) 0 0/100% 14px;box-shadow:var(--pxb),0 10px 0 rgba(59,35,20,.22);padding:0;display:flex;flex-direction:column}
+.sf-roof{height:10px;background:#5a3420;box-shadow:0 -4px 0 var(--ink)}
+.sf-awn{position:relative;height:22px;background:repeating-linear-gradient(90deg,var(--aw) 0 18px,#fff6dc 18px 36px);box-shadow:0 4px 0 rgba(59,35,20,.25)}
+.sf-awn::after{content:"";position:absolute;left:0;right:0;top:100%;height:9px;background:radial-gradient(circle at 9px 0,var(--aw) 0 8px,transparent 8.5px) 0 0/36px 9px repeat-x,radial-gradient(circle at 27px 0,#fff6dc 0 8px,transparent 8.5px) 0 0/36px 9px repeat-x;filter:drop-shadow(0 3px 0 rgba(59,35,20,.25))}
+.sf-sign{display:flex;justify-content:center;margin:18px 14px 0;position:relative;z-index:1}
+.sf-sign span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:6px 16px 7px;background:#a9692b;color:#fff6dc;font:900 17px var(--disp);letter-spacing:.5px;text-shadow:0 2px 0 #5a3420;box-shadow:var(--pxb),inset 0 3px 0 rgba(255,255,255,.22),inset 0 -4px 0 rgba(59,35,20,.3)}
+.sf-face{display:flex;gap:12px;align-items:flex-end;padding:14px 16px 0}
+.sf-win{flex:1;position:relative;height:84px;background:linear-gradient(135deg,transparent 0 30%,rgba(255,255,255,.55) 30% 36%,transparent 36% 44%,rgba(255,255,255,.4) 44% 47%,transparent 47%),#bfe3f2;box-shadow:var(--pxb);display:flex;align-items:flex-end;justify-content:center}
+.sf-win::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:4px;margin-left:-2px;background:var(--ink);opacity:.85}
+.sf-win::after{content:"";position:absolute;left:-8px;right:-8px;bottom:-12px;height:8px;background:#a9692b;box-shadow:var(--pxs)}
+.sf-plates{position:relative;z-index:1;display:flex;align-items:flex-end;gap:4px;margin-bottom:-6px}
+.sf-pl .art{display:block;width:auto;height:auto;background:none;box-shadow:none;margin:0}
+.sf-pl{display:block;filter:drop-shadow(0 3px 0 rgba(59,35,20,.25))}
+.sf-pl svg{display:block}
+.sf-more{font:900 12px var(--en);color:var(--ink);background:#fff6dc;padding:0 4px;box-shadow:var(--pxs);margin:0 0 6px 4px}
+.sf-door{flex:none;position:relative;width:54px;height:96px;background:linear-gradient(#bfe3f2 0 0) 8px 8px/38px 30px no-repeat,#8a4a1c;box-shadow:var(--pxb),inset 0 -6px 0 rgba(0,0,0,.18)}
+.sf-no{position:absolute;left:50%;top:44px;transform:translateX(-50%);white-space:nowrap;font:900 11px var(--en);color:var(--ink);background:#ffd35c;padding:1px 4px;box-shadow:var(--pxs)}
+.sf-knob{position:absolute;right:7px;top:64px;width:6px;height:6px;background:#ffd35c;box-shadow:0 0 0 2px var(--ink)}
+.sf-info{padding:20px 16px 4px}
+.sf-cus{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px;font-weight:800}
+.sf-cus span{padding:0 7px;background:#fffaf0;box-shadow:var(--pxs);text-transform:capitalize}
+.sf-cus .sf-star{background:#fff0c2;color:#c8202a}
+.sf-cus small{color:var(--soft);font-weight:700}
+.sf-match{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:10px;font-size:13px}
+.sf-meter{display:flex;gap:3px}
+.sf-meter i{width:12px;height:12px;background:#e9e2d4;box-shadow:var(--pxs)}
+.sf-meter i.on{background:#8cc152}
+.sf-match b{font-weight:900}
+.sf-names{color:var(--soft);font-weight:700;flex-basis:100%}
+.sf-walk{margin-top:auto;display:flex;gap:12px;padding:12px 16px 14px;background:repeating-linear-gradient(90deg,#d6cdbd 0 46px,#c9bfac 46px 50px);box-shadow:0 -4px 0 var(--ink)}
+.sf-walk a{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;font-size:13px;font-weight:900;text-decoration:none;box-shadow:var(--pxb)}
+.sf-walk a svg{width:13px;height:13px}
+.sf-walk a.g{background:#fffaf0;color:var(--ink)}
+.sf-walk a.y{background:#d32323;color:#fff}
+.sf-walk a:active{transform:translateY(3px)}
+.sf-medal{position:absolute;left:12px;top:-14px;z-index:3;width:38px;height:38px;display:grid;place-items:center;background:#ffd35c;box-shadow:var(--pxb),inset 0 -5px 0 rgba(59,35,20,.2),inset 0 4px 0 rgba(255,255,255,.5)}
+.sf-medal b{font:900 18px var(--en);color:var(--ink)}
+.sf-medal::before,.sf-medal::after{content:"";position:absolute;top:100%;width:10px;height:20px;margin-top:4px;background:var(--aw);box-shadow:var(--pxs)}
+.sf-medal::before{left:5px;transform:skewX(12deg)}.sf-medal::after{right:5px;transform:skewX(-12deg)}
+.sf-medal.m1{background:#dfe4ec}.sf-medal.m2{background:#e0a46a}
+.sf-tag{position:absolute;left:14px;top:-10px;z-index:3;width:28px;height:28px;display:grid;place-items:center;background:#fffaf0;box-shadow:var(--pxb)}
+.sf-tag b{font:900 14px var(--en)}
+.sf.flash{animation:epFlash .9s steps(3)}
+/* v129 compact storefront */
+.sf-list{grid-template-columns:1fr 1fr !important;gap:26px 14px !important}
+@media (min-width:1100px){.sf-list{grid-template-columns:repeat(3,1fr) !important}}
+@media (max-width:359px){.sf-list{grid-template-columns:1fr !important}}
+.sf-roof{height:6px}
+.sf-awn{height:12px;background:repeating-linear-gradient(90deg,var(--aw) 0 12px,#fff6dc 12px 24px)}
+.sf-awn::after{height:6px;background:radial-gradient(circle at 6px 0,var(--aw) 0 5.5px,transparent 6px) 0 0/24px 6px repeat-x,radial-gradient(circle at 18px 0,#fff6dc 0 5.5px,transparent 6px) 0 0/24px 6px repeat-x}
+.sf-sign{margin:12px 8px 0}
+.sf-sign span{display:inline-flex;align-items:center;gap:5px;padding:3px 8px 4px;font-size:13px;letter-spacing:0;box-shadow:var(--pxs),inset 0 2px 0 rgba(255,255,255,.22),inset 0 -3px 0 rgba(59,35,20,.3)}
+.sf-logo{width:16px;height:16px;flex:none;background:#fff;box-shadow:0 0 0 2px #fff;image-rendering:auto;object-fit:contain}
+.sf-face{gap:7px;padding:10px 8px 0}
+.sf-win{height:48px;box-shadow:var(--pxs)}
+.sf-win::before{width:3px;margin-left:-1.5px}
+.sf-win::after{left:-5px;right:-5px;bottom:-8px;height:5px}
+.sf-plates{gap:1px;margin-bottom:-4px}
+.sf-more{font-size:10px;margin:0 0 4px 2px;padding:0 2px}
+.sf-door{width:30px;height:56px;background:linear-gradient(#bfe3f2 0 0) 5px 5px/20px 14px no-repeat,#8a4a1c;box-shadow:var(--pxs),inset 0 -4px 0 rgba(0,0,0,.18)}
+.sf-no{top:24px;font-size:9px;padding:0 2px}
+.sf-knob{right:4px;top:42px;width:4px;height:4px}
+.sf-info{display:flex;align-items:center;flex-wrap:wrap;gap:5px;padding:14px 8px 6px;font-size:11px}
+.sf-info b{font:900 12px var(--en)}
+.sf-meter i{width:8px;height:8px}
+.sf-meter{gap:2px}
+.sf-cu1{padding:0 4px;background:#fffaf0;box-shadow:var(--pxs);font-weight:800;text-transform:capitalize;max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sf-star{color:#c8202a;font-weight:900}
+.sf-walk{gap:6px;padding:7px 8px 8px;box-shadow:0 -3px 0 var(--ink)}
+.sf-walk a{flex:1;justify-content:center;padding:3px 4px;font-size:11px;box-shadow:var(--pxs)}
+.sf-walk a svg{width:10px;height:10px}
+.sf-medal{left:6px;top:-12px;width:26px;height:26px;box-shadow:var(--pxs),inset 0 -3px 0 rgba(59,35,20,.2),inset 0 3px 0 rgba(255,255,255,.5)}
+.sf-medal b{font-size:13px}
+.sf-medal::before,.sf-medal::after{width:7px;height:12px;margin-top:2px}
+.sf-medal::before{left:3px}.sf-medal::after{right:3px}
+.sf-tag{left:6px;top:-9px;width:20px;height:20px;box-shadow:var(--pxs)}
+.sf-tag b{font-size:11px}
+.sf{box-shadow:var(--pxs),0 6px 0 rgba(59,35,20,.2)}
+@media (min-width:700px){.sf-sign span{font-size:14px}.sf-win{height:56px}}
+/* v130 culture storefronts */
+.sf{--wall:#f6e6c8;--wallp:linear-gradient(rgba(59,35,20,.07) 2px,transparent 2px) 0 0/100% 14px;--sg:#a9692b;--sgt:#fff6dc;--door:#8a4a1c;--glass:#bfe3f2;--frame:var(--ink);--sill:#a9692b;background:var(--wallp),var(--wall) !important;overflow:visible}
+.sf-roof,.sf-awn{display:none}
+.sf-top{position:relative;height:20px}
+.sf-top i{position:absolute;inset:0}
+.sf-sign span{background:var(--sg);color:var(--sgt)}
+.sf-door{background:linear-gradient(var(--glass) 0 0) 5px 5px/20px 14px no-repeat,var(--door)}
+.sf-win{background:linear-gradient(135deg,transparent 0 30%,rgba(255,255,255,.55) 30% 36%,transparent 36% 44%,rgba(255,255,255,.4) 44% 47%,transparent 47%),var(--glass);box-shadow:0 0 0 3px var(--frame)}
+.sf-win::before{background:var(--frame)}
+.sf-win::after{background:var(--sill)}
+.sf-plates{flex-wrap:nowrap;gap:1px;margin-bottom:-3px}
+.sf-pl.no{opacity:.9}
+.sf-pl svg{display:block}
+.sf-deco{position:absolute;inset:0;pointer-events:none;z-index:2}
+.sf-deco i{position:absolute;display:none}
+.sf-info:empty{padding:6px 0 0}
+/* default: striped awning */
+.s-df .sf-top,.s-cafe .sf-top{background:#5a3420;height:6px}
+.s-df .sf-top i,.s-cafe .sf-top i{top:6px;bottom:auto;height:12px;background:repeating-linear-gradient(90deg,var(--aw,#8cc152) 0 12px,#fff6dc 12px 24px)}
+.s-df .sf-top i::after,.s-cafe .sf-top i::after{content:"";position:absolute;left:0;right:0;top:100%;height:6px;background:radial-gradient(circle at 6px 0,var(--aw,#8cc152) 0 5.5px,transparent 6px) 0 0/24px 6px repeat-x,radial-gradient(circle at 18px 0,#fff6dc 0 5.5px,transparent 6px) 0 0/24px 6px repeat-x}
+.s-cafe{--aw:#f28aa8;--wall:#fde4ec;--wallp:radial-gradient(#f8c8d8 1.5px,transparent 2px) 0 0/12px 12px;--sg:#fff;--sgt:#c8456a;--door:#d86a8a}
+/* 中式: 红柱、绿琉璃瓦、飞檐、红灯笼 */
+.s-cn{--wall:#c8352a;--wallp:linear-gradient(90deg,#8a1f18 0 6px,transparent 6px calc(100% - 6px),#8a1f18 calc(100% - 6px)) ;--sg:#1f2a5a;--sgt:#ffd35c;--door:#7a1a12;--frame:#f2c94c;--sill:#f2c94c}
+.s-cn .sf-top{height:24px}
+.s-cn .sf-top i{left:-10px;right:-10px;background:linear-gradient(#2f7a5a 0 0) 10px 4px/calc(100% - 20px) 4px no-repeat,linear-gradient(#1f5a40 0 0) 4px 8px/calc(100% - 8px) 10px no-repeat,linear-gradient(#f2c94c 0 0) 10px 18px/calc(100% - 20px) 6px no-repeat;clip-path:polygon(0 0,8px 8px,calc(100% - 8px) 8px,100% 0,100% 18px,0 18px,0 0,0 100%,100% 100%,100% 0);-webkit-clip-path:none}
+.s-cn .sf-top i::before,.s-cn .sf-top i::after{content:"";position:absolute;top:0;width:10px;height:10px;background:#1f5a40;box-shadow:0 0 0 2px var(--ink)}
+.s-cn .sf-top i::before{left:0;clip-path:polygon(0 0,100% 60%,100% 100%,30% 100%)}
+.s-cn .sf-top i::after{right:0;clip-path:polygon(100% 0,0 60%,0 100%,70% 100%)}
+.s-cn .sf-deco .d1,.s-cn .sf-deco .d2{display:block;top:22px;width:12px;height:16px;background:#e0302a;box-shadow:0 0 0 2px var(--ink),inset 0 3px 0 #f2c94c,inset 0 -3px 0 #f2c94c}
+.s-cn .sf-deco .d1{left:6px}.s-cn .sf-deco .d2{right:6px}
+.s-cn .sf-deco .d1::after,.s-cn .sf-deco .d2::after{content:"";position:absolute;left:5px;top:16px;width:2px;height:5px;background:#f2c94c}
+.s-cn .sf-info span{background:#ffd35c}
+/* 日式: 深灰瓦、木格子、暖帘、红提灯 */
+.s-jp{--wall:#d8b07a;--wallp:repeating-linear-gradient(90deg,rgba(59,35,20,.18) 0 2px,transparent 2px 10px);--sg:#fffaf0;--sgt:#1a1a1a;--door:#3a2a1a;--frame:#3a2a1a;--glass:#f6efe0;--sill:#5a3a1a}
+.s-jp .sf-top i{left:-6px;right:-6px;background:repeating-linear-gradient(90deg,#3a3a44 0 8px,#4c4c58 8px 10px);box-shadow:0 3px 0 var(--ink),0 -3px 0 var(--ink);clip-path:polygon(4% 0,96% 0,100% 100%,0 100%)}
+.s-jp .sf-win{background:linear-gradient(#3a2a1a 0 0) 50% 0/2px 100% no-repeat,linear-gradient(90deg,#3a2a1a 0 0) 0 50%/100% 2px no-repeat,var(--glass)}
+.s-jp .sf-door::before{content:"";position:absolute;left:-2px;right:-2px;top:0;height:22px;background:linear-gradient(90deg,#2a3a6a 0 48%,transparent 48% 52%,#2a3a6a 52%);box-shadow:0 0 0 2px var(--ink)}
+.s-jp .sf-door::after{content:"";position:absolute;left:11px;top:6px;width:8px;height:8px;border-radius:50%;box-shadow:0 0 0 2px #fff}
+.s-jp .sf-deco .d1{display:block;right:44px;top:62px;width:10px;height:14px;background:#e0302a;border-radius:3px;box-shadow:0 0 0 2px var(--ink),inset 0 2px 0 #1a1a1a,inset 0 -2px 0 #1a1a1a}
+/* 韩屋: 灰瓦曲檐、丹青梁 */
+.s-kr{--wall:#f4efe2;--wallp:linear-gradient(90deg,#7a4a2a 0 5px,transparent 5px calc(100% - 5px),#7a4a2a calc(100% - 5px));--sg:#2f7a5a;--sgt:#fff;--door:#7a4a2a;--frame:#7a4a2a;--glass:#fbf6ea;--sill:#7a4a2a}
+.s-kr .sf-top{height:24px}
+.s-kr .sf-top i{left:-10px;right:-10px;background:linear-gradient(#4a4e58 0 0) 0 4px/100% 10px no-repeat,repeating-linear-gradient(90deg,#3d8a5a 0 8px,#d8452e 8px 12px,#3d6bb5 12px 16px,#f2c94c 16px 18px) 10px 16px/calc(100% - 20px) 8px no-repeat;clip-path:polygon(0 0,10% 4px,90% 4px,100% 0,100% 14px,calc(100% - 10px) 14px,calc(100% - 10px) 100%,10px 100%,10px 14px,0 14px)}
+.s-kr .sf-win{background:repeating-linear-gradient(90deg,transparent 0 9px,#7a4a2a 9px 11px),repeating-linear-gradient(transparent 0 9px,#7a4a2a 9px 11px),var(--glass)}
+/* 意式 trattoria: 陶土瓦、赭色灰泥墙、绿百叶、花箱 */
+.s-it{--wall:#efc98e;--wallp:radial-gradient(rgba(160,90,30,.18) 1px,transparent 1.5px) 0 0/9px 9px;--sg:#2f6a3a;--sgt:#fff6dc;--door:#5a3a1a;--frame:#2f6a3a;--sill:#c8452e}
+.s-it .sf-top i{background:repeating-linear-gradient(90deg,#c8562e 0 6px,#a8401e 6px 8px);box-shadow:0 3px 0 var(--ink);height:14px;top:2px}
+.s-it .sf-win{border-radius:24px 24px 0 0}
+.s-it .sf-win::after{height:7px;background:repeating-linear-gradient(90deg,#3f9a4a 0 4px,#e0302a 4px 7px,#3f9a4a 7px 10px,#f6efe0 10px 12px);box-shadow:0 0 0 2px var(--ink)}
+/* 墨西哥: 鲜艳墙、彩旗 papel picado、拱门 */
+.s-mx{--wall:#ef6aa8;--wallp:linear-gradient(transparent calc(100% - 10px),#2ab0a8 calc(100% - 10px));--sg:#2ab0a8;--sgt:#fff;--door:#f2a020;--frame:#2ab0a8;--sill:#f2c94c}
+.s-mx .sf-top i{background:linear-gradient(#f2c94c 0 0) 0 0/100% 3px no-repeat;}
+.s-mx .sf-top i::after{content:"";position:absolute;left:0;right:0;top:3px;height:12px;background:conic-gradient(from 150deg at 50% 100%,transparent 0 60deg,#0000 60deg) ;background:linear-gradient(135deg,#f2c94c 50%,transparent 50%) 0 0/12px 12px,linear-gradient(225deg,#2ab0a8 50%,transparent 50%) 0 0/12px 12px;mask:linear-gradient(#000,#000);-webkit-mask:none}
+.s-mx .sf-door{border-radius:15px 15px 0 0}
+/* 泰式: 层叠尖顶、金色 chofa */
+.s-th{--wall:#f6e6b8;--wallp:linear-gradient(90deg,#c8452e 0 4px,transparent 4px calc(100% - 4px),#c8452e calc(100% - 4px));--sg:#8a2a6a;--sgt:#ffd35c;--door:#8a2a1a;--frame:#d8a514;--sill:#d8a514}
+.s-th .sf-top{height:28px}
+.s-th .sf-top i{left:6%;right:6%;background:#c8352a;clip-path:polygon(50% 0,100% 100%,0 100%);box-shadow:none}
+.s-th .sf-top i::before{content:"";position:absolute;left:18%;right:18%;top:7px;bottom:0;background:#2f7a5a;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.s-th .sf-top i::after{content:"";position:absolute;left:36%;right:36%;top:14px;bottom:0;background:#f2c94c;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.s-th .sf-top::before{content:"";position:absolute;left:0;right:0;bottom:-3px;height:4px;background:var(--ink)}
+.s-th .sf-top::after{content:"";position:absolute;left:50%;top:-8px;width:4px;height:10px;margin-left:-2px;background:#f2c94c;box-shadow:0 0 0 2px var(--ink)}
+/* 印度: 藏红花墙、jharokha 拱窗、扇形拱 */
+.s-in{--wall:#f0a04a;--wallp:linear-gradient(#c8452e 0 4px,transparent 4px);--sg:#7a1a4a;--sgt:#ffd35c;--door:#7a1a4a;--frame:#fff6dc;--sill:#fff6dc}
+.s-in .sf-top i{background:radial-gradient(circle at 10px 100%,#f2c94c 0 9px,transparent 9.5px) 0 0/20px 12px repeat-x;top:6px;height:12px}
+.s-in .sf-top{background:linear-gradient(#7a1a4a 0 6px,transparent 6px)}
+.s-in .sf-win{border-radius:50% 50% 0 0/40% 40% 0 0}
+.s-in .sf-door{border-radius:15px 15px 0 0}
+/* 越南: 会安黄墙、陶瓦、绿百叶、丝绸灯笼 */
+.s-vn{--wall:#f2c94c;--wallp:linear-gradient(rgba(160,110,20,.12) 2px,transparent 2px) 0 0/100% 12px;--sg:#2f6a3a;--sgt:#fff6dc;--door:#2f6a3a;--frame:#2f6a3a;--sill:#2f6a3a}
+.s-vn .sf-top i{background:repeating-linear-gradient(90deg,#b8562e 0 5px,#98401e 5px 7px);box-shadow:0 3px 0 var(--ink);height:14px;top:2px}
+.s-vn .sf-deco .d1,.s-vn .sf-deco .d2{display:block;top:20px;width:12px;height:12px;border-radius:50%;background:#e0302a;box-shadow:0 0 0 2px var(--ink),18px 4px 0 -0px #f2a020,18px 4px 0 2px var(--ink)}
+.s-vn .sf-deco .d1{left:10px}.s-vn .sf-deco .d2{right:28px;background:#9b4ad8}
+/* 法式 bistro: 深蓝木门面、金字、酒红条纹篷 */
+.s-fr{--wall:#2f3f6a;--wallp:linear-gradient(90deg,rgba(255,255,255,.08) 2px,transparent 2px) 0 0/16px 100%;--sg:#2f3f6a;--sgt:#f2c94c;--door:#1f2a4a;--frame:#f2c94c;--sill:#6a1a2a}
+.s-fr .sf-top{background:#1f2a4a;height:6px}
+.s-fr .sf-top i{top:6px;bottom:auto;height:12px;background:repeating-linear-gradient(90deg,#7a1a2a 0 10px,#f6efe0 10px 20px)}
+.s-fr .sf-top i::after{content:"";position:absolute;left:0;right:0;top:100%;height:5px;background:linear-gradient(135deg,#7a1a2a 50%,transparent 50%) 0 0/10px 5px,linear-gradient(225deg,#7a1a2a 50%,transparent 50%) 0 0/10px 5px}
+.s-fr .sf-sign span{box-shadow:0 0 0 2px #f2c94c,0 0 0 4px var(--ink)}
+.s-fr .sf-info span{background:#f6efe0}
+/* 地中海/中东: 白墙、蓝门窗、拱、瓷砖带 */
+.s-me{--wall:#fbfaf4;--wallp:linear-gradient(transparent calc(100% - 8px),#2a6ab0 calc(100% - 8px)) ;--sg:#2a6ab0;--sgt:#fff;--door:#2a6ab0;--frame:#2a6ab0;--sill:#2a6ab0}
+.s-me .sf-top i{background:repeating-linear-gradient(90deg,#2a6ab0 0 6px,#fbfaf4 6px 8px,#f2c94c 8px 10px,#fbfaf4 10px 12px);height:8px;top:8px;box-shadow:0 0 0 2px var(--ink)}
+.s-me .sf-win,.s-me .sf-door{border-radius:16px 16px 0 0}
+/* 美式 diner: 铬银、红条、霓虹招牌 */
+.s-us{--wall:#dfe4ea;--wallp:linear-gradient(transparent 40%,#d8202a 40% 46%,transparent 46%),repeating-linear-gradient(90deg,rgba(255,255,255,.6) 0 2px,transparent 2px 8px);--sg:#1a1a2a;--sgt:#ff6ab0;--door:#9aa4b0;--frame:#9aa4b0;--glass:#bfe8f8;--sill:#d8202a}
+.s-us .sf-top i{background:linear-gradient(#d8202a 0 0) 0 4px/100% 10px no-repeat;box-shadow:inset 0 3px 0 #fff}
+.s-us .sf-sign span{text-shadow:0 0 4px #ff6ab0,0 0 1px #fff;box-shadow:0 0 0 2px #ff6ab0,0 0 0 4px var(--ink)}
 .fr-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .fr-h span{font-size:13px;font-weight:700;color:var(--soft);font-family:inherit}
 .fridge{position:relative;max-width:420px;margin:6px auto 22px;background:#f4f1ea;padding:8px 8px 10px;box-shadow:0 0 0 4px var(--ink),6px 6px 0 4px rgba(59,35,20,.25)}
@@ -1539,9 +1827,9 @@ body:has(#cover:not(.gone):not(.leaving)) #mtab{display:none}
 </style>
 </head>
 <body>
-<div id="aurora" aria-hidden="true"><div id="clouds"></div><div id="stars"></div></div>
+<div id="aurora" aria-hidden="true"><div id="wxSky"></div><div id="clouds"></div><div id="wx"></div><div id="stars"></div></div>
 <div id="mtab"><div class="mt-row"><div class="mt-side"><button id="mtHeart" class="mt-s heart-s" aria-label="喜欢的菜"></button><button id="mtBan" class="mt-s ban-s" aria-label="拉黑的菜"></button></div><button id="mtabTuck" aria-label="收起菜单">&gt;</button><button id="mtabBtn" aria-expanded="false">菜单<b id="mtabN"></b></button></div><div id="mtabP" role="dialog" aria-label="已选的菜"></div></div>
-<div id="cover" class="play" role="button" tabindex="0" aria-label="轻点开始"><div id="cvClouds" aria-hidden="true"></div><div class="cv-snd"><button class="rs setb" aria-label="设置"></button></div><div class="cv-fly" id="cvFly" aria-hidden="true"></div><div id="cvStars" aria-hidden="true"></div><div class="cv-grass" id="cvGrass" aria-hidden="true"></div><div class="cv-center"><div class="cv-sign"><i class="cv-nail l"></i><i class="cv-nail r"></i><h1 class="cv-title" id="cvTitle" aria-label="今天吃什么？"></h1></div><div class="cv-char" id="cvChar" aria-hidden="true"></div><p class="cv-tap">轻点开始</p></div><div class="cv-btns"><button class="cv-saved">以前的菜单</button><button class="cv-saved cv-quick">帮我配一桌</button></div></div>
+<div id="cover" class="play" role="button" tabindex="0" aria-label="轻点开始"><div id="cvClouds" aria-hidden="true"></div><div id="cvWx" class="wxl" aria-hidden="true"></div><div class="cv-snd"><button class="rs setb" aria-label="设置"></button></div><div class="cv-fly" id="cvFly" aria-hidden="true"></div><div id="cvStars" aria-hidden="true"></div><div class="cv-grass" id="cvGrass" aria-hidden="true"></div><div class="cv-center"><div class="cv-sign"><i class="cv-nail l"></i><i class="cv-nail r"></i><h1 class="cv-title" id="cvTitle" aria-label="今天吃什么？"></h1></div><div class="cv-char" id="cvChar" aria-hidden="true"></div><p class="cv-tap">轻点开始</p></div><div class="cv-btns"><button class="cv-saved">以前的菜单</button><button class="cv-saved cv-quick">帮我配一桌</button></div></div>
 <div class="wrap">
   <header class="mast">
     <button class="home-b" id="homeBtn" aria-label="回到封面" data-tip="回到封面（进度会保留）"><div id="mascot" aria-hidden="true"></div><div class="brand">今天<span class="chi-t">吃</span>什么？</div></button>
@@ -4047,7 +4335,7 @@ function pagePick(only, title, lead){
       '<h2>'+c.title+'</h2></div>')+kept+banner+cards+more+'</section>';
   }).join("");
   return '<div class="phead"><h1 class="h1">'+(title || '再配点菜')+'</h1>'+(lead ? '<div class="ph-lead">'+lead+'</div>' : '')+
-    '<div class="search pick-search">'+sprite(SPR.magnifier,2)+'<input id="pq" value="'+esc(state.pq)+'" placeholder="'+(innerWidth >= 1100 ? '搜菜名或食材' : '搜菜名或食材，比如：'+(({soup:"排骨、番茄", veg:"西兰花、豆腐", main:"红烧肉、鸡腿", dessert:"布丁、芒果", drink:"奶茶、柠檬"})[only && only.length === 1 ? only[0] : ""] || "番茄、鸡蛋"))+'" autocomplete="off" autocapitalize="off" enterkeyhint="search"><button class="pq-go" id="pqGo">搜索</button></div></div>'+((state.sq || "").trim() ? '<div class="sq-chip"><span>按「'+esc(state.sq.trim())+'」排序中</span><button class="mode" id="sqClear">清除</button></div>' : '')+sections;
+    '<div class="search pick-search">'+sprite(SPR.magnifier,2)+'<input id="pq" value="'+esc(state.pq)+'" placeholder="'+(innerWidth >= 1100 ? '搜菜名或食材' : '搜菜名或食材，比如：'+(({soup:"排骨、番茄", veg:"西兰花、豆腐", main:"红烧肉、鸡腿", dessert:"布丁、芒果", drink:"奶茶、柠檬"})[only && only.length === 1 ? only[0] : ""] || "番茄、鸡蛋"))+'" autocomplete="off" autocapitalize="off" enterkeyhint="search"><button class="pq-go" id="pqGo">搜索</button><div class="ph-lib"><button class="phl-h" data-plib="heart" aria-label="喜欢的菜">'+HEART_ON+(HEARTS.size ? '<b>'+HEARTS.size+'</b>' : '')+'</button><button class="phl-b" data-plib="black" aria-label="拉黑的菜">'+BAN_ICON+(BLACK.size ? '<b>'+BLACK.size+'</b>' : '')+'</button></div></div></div>'+((state.sq || "").trim() ? '<div class="sq-chip"><span>按「'+esc(state.sq.trim())+'」排序中</span><button class="mode" id="sqClear">清除</button></div>' : '')+sections;
 }
 
 const PGJ_ICON = (() => { const P = ["KKKKKK.", "KWWWWK.", "KWKKWK.", "KWWWWKK", "KWKKWKK", "KWWWWK.", "KKKKKK."], C = {K:"#3b2314", W:"#fff6dc"}; let g = "";
@@ -4387,22 +4675,22 @@ const RS = {list:null, status:"", msg:"", at:null};
 function rsDistance(a, b, c, d){ const R = 6371, t = x => x * Math.PI / 180, dl = t(c - a), dn = t(d - b); const h = Math.sin(dl/2)**2 + Math.cos(t(a)) * Math.cos(t(c)) * Math.sin(dn/2)**2; return 2 * R * Math.asin(Math.sqrt(h)); }
 function rsScore(p, picks){
   const tags = p.tags || {}, cu = (tags.cuisine || "").toLowerCase().split(/[;,]/).map(x => x.trim()).filter(Boolean), name = (tags.name || "").toLowerCase(), am = tags.amenity || "";
-  const hit = []; let sc = 0;
+  const hit = [], hd = []; let sc = 0;
   picks.forEach(([c, d]) => { const cid = c.id || c; let s0 = 0; const dn = (d.name + " " + (d.zh || "")).toLowerCase();
     RS_KW.forEach(k => { if (dn.includes(k) && (cu.some(x => x.includes(k.replace(" ", "_")) || x.includes(k)) || name.includes(k))) s0 = Math.max(s0, 3); });
     if ((RS_CUI[d.cuisine] || []).some(k => cu.includes(k))) s0 = Math.max(s0, (RS_CUI[d.cuisine] || [])[0] && cu.includes(RS_CUI[d.cuisine][0]) ? 2 : 1);
     if (cid === "dessert" && (am === "ice_cream" || cu.some(x => /dessert|ice_cream|bakery|cake|frozen_yogurt|gelato|crepe/.test(x)))) s0 = Math.max(s0, 2);
     if (cid === "drink" && (am === "cafe" || cu.some(x => /bubble_tea|tea|coffee|juice/.test(x)))) s0 = Math.max(s0, 2);
-    if (s0) { sc += s0; hit.push(titleOf(d)); } });
-  return {sc, hit};
+    if (s0) { sc += s0; hit.push(titleOf(d)); hd.push(d); } });
+  return {sc, hit, hd};
 }
 function rsRank(){
   const picks = pickedList(); if (!RS.raw) return;
   const out = RS.raw.map(p => { const lat = p.lat || (p.center && p.center.lat), lon = p.lon || (p.center && p.center.lon); if (!lat || !(p.tags && p.tags.name)) return null;
-    const {sc, hit} = rsScore(p, picks); if (!hit.length) return null;
+    const {sc, hit, hd} = rsScore(p, picks); if (!hit.length) return null;
     const g = RS.g[p.id] || null, km = rsDistance(RS.at[0], RS.at[1], lat, lon);
     const rank = hit.length * 10 + sc + (g && g.rating ? (g.rating - 3.5) * 4 + Math.log10((g.count || 0) + 1) : 0) - km * .4;
-    return {id:p.id, name:p.tags.name, cu:(p.tags.cuisine || p.tags.amenity || "").split(";").slice(0, 3).map(x => x.replace(/_/g, " ")), addr:[p.tags["addr:housenumber"], p.tags["addr:street"]].filter(Boolean).join(" "), lat, lon, km, hit, total:picks.length, g, rank}; }).filter(Boolean);
+    return {id:p.id, name:p.tags.name, cu:(p.tags.cuisine || p.tags.amenity || "").split(";").slice(0, 3).map(x => x.replace(/_/g, " ")), addr:[p.tags["addr:housenumber"], p.tags["addr:street"]].filter(Boolean).join(" "), lat, lon, km, hit, hd, am:p.tags.amenity || '', web:p.tags.website || p.tags['contact:website'] || p.tags['brand:website'] || '', total:picks.length, g, rank}; }).filter(Boolean);
   out.sort((a, b) => b.rank - a.rank); RS.list = out.slice(0, 15);
 }
 function rsGet(url, ms){ return new Promise((ok, no) => { const ctl = typeof AbortController !== "undefined" ? new AbortController() : null; const t = setTimeout(() => { if (ctl) ctl.abort(); no(new Error("timeout")); }, ms || 12000);
@@ -4449,23 +4737,45 @@ function eatPanel(){
   if (RS.status === "loading") body = '<div class="ep-load"><span class="ep-pin">'+PIN_SVG+'</span>正在附近找能吃到这桌菜的餐厅…</div>';
   else if (RS.status === "err") body = '<div class="ep-msg">'+esc(RS.msg)+'</div>';
   else if (RS.status === "empty") body = '<div class="ep-msg">附近 4 公里内没找到对得上的餐厅，换个地方试试？</div>';
-  else if (RS.status === "ok") body = '<ol class="ep-list">'+RS.list.map((r, i) => {
+  else if (RS.status === "ok") {
+    const W = window.innerWidth >= 1100 ? 900 : window.innerWidth >= 700 ? 640 : 340, H = 160, L = RS.list, c0 = Math.cos(RS.at[0] * Math.PI / 180);
+    const pts = L.map(r => [(r.lon - RS.at[1]) * c0 * 111, (r.lat - RS.at[0]) * 111]);
+    const span = Math.max(.6, ...pts.map(p => Math.max(Math.abs(p[0]) / (W / H), Math.abs(p[1])))) * 1.12;
+    const sx = x => W / 2 + x / span * (H / 2 - 28), sy = y => H / 2 + 8 - y / span * (H / 2 - 28);
+    let grid = ''; for (let x = 0; x <= W; x += 34) grid += '<rect x="'+(x - 3)+'" y="0" width="6" height="'+H+'" class="mp-st"/>'; for (let y = 10; y <= H; y += 38) grid += '<rect x="0" y="'+(y - 3)+'" width="'+W+'" height="6" class="mp-st"/>';
+    const ring = [1, 2, 3].filter(k => k <= span * 1.1).map(k => '<circle cx="'+W/2+'" cy="'+H/2+'" r="'+(k / span * (H / 2 - 28)).toFixed(1)+'" class="mp-ring"/><text x="'+(W/2 + 4)+'" y="'+(H/2 - k / span * (H / 2 - 28) - 3).toFixed(1)+'" class="mp-rt">'+k+'km</text>').join("");
+    const pins = pts.map((p, i) => ({i, x:sx(p[0]), y:sy(p[1])})).reverse().map(p => '<g class="mp-pin'+(p.i < 3 ? ' t'+p.i : '')+'" data-epj="'+p.i+'" transform="translate('+p.x.toFixed(1)+' '+p.y.toFixed(1)+')"><rect x="-9" y="-24" width="18" height="18"/><rect x="-3" y="-6" width="6" height="6"/><text x="0" y="-11">'+(p.i + 1)+'</text></g>').join("");
+    const map = '<div class="ep-map" style="aspect-ratio:'+W+'/'+H+'"><svg viewBox="0 0 '+W+' '+H+'">'+grid+ring+'<g class="mp-me" transform="translate('+W/2+' '+H/2+')"><rect x="-7" y="-7" width="14" height="14"/><rect x="-3" y="-3" width="6" height="6"/></g>'+pins+'</svg><span class="ep-you">你在这</span></div>';
+    const STY = [["chinese|cantonese|sichuan|szechuan|dim_sum|hot_pot|dumpling|taiwanese|hunan|shanghai|noodle","cn"],["japanese|sushi|ramen|udon|izakaya|soba|tempura","jp"],["korean","kr"],["italian|pizza|pasta","it"],["mexican|taco|burrito|tex|latin","mx"],["thai","th"],["indian|pakistani|nepal","in"],["vietnamese|pho|banh","vn"],["french|bistro|crepe","fr"],["mediterranean|greek|lebanese|turkish|middle_eastern|falafel|kebab|persian","me"],["american|burger|bbq|barbecue|diner|steak|chicken|wings|sandwich","us"],["dessert|ice_cream|bakery|cake|gelato|frozen_yogurt|coffee|cafe|tea|bubble_tea|juice","cafe"]];
+    const sty = r => { const k = (r.cu.join(" ") + " " + r.am).toLowerCase(); const f = STY.find(([re]) => new RegExp(re).test(k)); return f ? f[1] : "df"; };
+    const picks = pickedList().map(x => x[1]);
+    const EMPTY = '<svg viewBox="0 0 48 48" width="PX" height="PX" shape-rendering="crispEdges"><circle cx="24" cy="24" r="21" fill="#3b2314"/><circle cx="24" cy="24" r="19" fill="#f6f8fc"/><circle cx="24" cy="24" r="15" fill="none" stroke="#9cc6e8" stroke-width="2"/><circle cx="24" cy="24" r="11" fill="#eef2f8"/></svg>';
+    body = map + '<ol class="ep-list sf-list">'+L.map((r, i) => {
       const g = r.g || {}, q = encodeURIComponent(r.name + (r.addr ? " " + r.addr : "")), ll = r.lat.toFixed(5) + "," + r.lon.toFixed(5);
       const gUrl = g.url || ("https://www.google.com/maps/search/?api=1&query=" + q + "%20" + ll);
       const yUrl = "https://www.yelp.com/search?find_desc=" + encodeURIComponent(r.name) + "&find_loc=" + encodeURIComponent(state.loc || ll);
-      const rate = g.rating ? '<span class="ep-star">★ '+g.rating.toFixed(1)+'</span><span class="ep-cnt">'+(g.count || 0).toLocaleString()+' 条评价 · Google</span>' : '<span class="ep-cnt">评分点下面的 Google 或 Yelp 查看</span>';
-      return '<li class="ep-r'+(i < 3 ? ' top t'+i : '')+'"><span class="ep-rank">'+(i + 1)+'</span><div class="ep-main"><div class="ep-n">'+esc(r.name)+'</div>'+
-        '<div class="ep-meta">'+r.cu.map(x => '<span class="ep-cu">'+esc(x)+'</span>').join("")+'<span class="ep-km">'+(r.km < 1 ? Math.round(r.km * 1000) + ' 米' : r.km.toFixed(1) + ' 公里')+'</span></div>'+
-        '<div class="ep-rate">'+rate+'</div>'+
-        '<div class="ep-hit"><b>能吃到 '+r.hit.length+'/'+r.total+' 道</b>'+esc(r.hit.join("、"))+'</div>'+
-        '<div class="ep-lk"><a href="'+gUrl+'" target="_blank" rel="noopener">Google 地图</a><a href="'+yUrl+'" target="_blank" rel="noopener">Yelp</a></div></div></li>'; }).join("")+'</ol>';
-  else body = '<div class="ep-msg soft">点「用我的位置」或者输入城市，我们按「能吃到几道你选的菜」给附近餐厅排名。</div>';
-  const foot = '<div class="ep-foot">餐厅资料来自 OpenStreetMap。'+(hasKey ? '已开启 Google 评分。<button class="ep-key" id="rsKey">更换 Google Key</button>' : '想直接在这里显示 Google 评分？<button class="ep-key" id="rsKey">填一个 Google Maps Key</button>')+'</div>';
+      const km = r.km < 1 ? Math.round(r.km * 1000) + 'm' : r.km.toFixed(1) + 'km';
+      let host = ''; try { host = r.web ? new URL(/^https?:/.test(r.web) ? r.web : 'https://' + r.web).hostname.replace(/^www\./, '') : ''; } catch(_){}
+      const hk = new Set((r.hd || []).map(d => d.name)), n = picks.length, sc = n <= 3 ? .8 : n <= 4 ? .66 : n <= 5 ? .56 : .48;
+      const plates = picks.map(d => hk.has(d.name) ? '<span class="sf-pl" title="'+esc(titleOf(d))+'">'+dishArt(d, sc)+'</span>' : '<span class="sf-pl no" title="没有'+esc(titleOf(d))+'">'+EMPTY.replace(/PX/g, (48 * sc * .6667).toFixed(1))+'</span>').join("");
+      const rib = i < 3 ? '<div class="sf-medal m'+i+'"><b>'+(i + 1)+'</b></div>' : '<div class="sf-tag"><b>'+(i + 1)+'</b></div>';
+      const st = sty(r);
+      return '<li class="sf s-'+st+(i < 3 ? ' top' : '')+'" id="epr'+i+'">'+rib+
+        '<div class="sf-top"><i></i></div>'+
+        '<div class="sf-sign"><span>'+(host ? '<img class="sf-logo" src="https://icons.duckduckgo.com/ip3/'+host+'.ico" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' : '')+esc(r.name)+'</span></div>'+
+        '<div class="sf-face"><div class="sf-win"><div class="sf-plates">'+plates+'</div></div><div class="sf-door"><span class="sf-no">'+km+'</span><i class="sf-knob"></i></div></div>'+
+        '<div class="sf-deco"><i class="d1"></i><i class="d2"></i></div>'+
+        ((r.cu[0] || g.rating) ? '<div class="sf-info">'+(r.cu[0] ? '<span class="sf-cu1">'+esc(r.cu[0])+'</span>' : '')+(g.rating ? '<span class="sf-star">★'+g.rating.toFixed(1)+'</span>' : '')+'</div>' : '<div class="sf-info"></div>')+
+        '<div class="sf-walk"><a class="g" href="'+gUrl+'" target="_blank" rel="noopener">'+PIN_SVG+'地图</a><a class="y" href="'+yUrl+'" target="_blank" rel="noopener">Yelp</a></div></li>'; }).join("")+'</ol>';
+  }
+  else body = '<div class="ep-empty"><div class="ep-street"><i></i><i></i><i></i></div><p>附近哪家能吃到最多你选的菜？</p></div>';
+  const foot = '<div class="ep-foot">餐厅资料来自 OpenStreetMap · <button class="ep-key" id="rsKey">'+(hasKey ? 'Google 评分已开启' : '显示 Google 评分')+'</button></div>';
   return '<div class="eatp">'+head+body+(RS.status === "ok" || RS.status === "" ? foot : '')+'</div>';
 }
 document.addEventListener("keydown", e => { if (e.key === "Enter" && e.target && e.target.id === "loc2") { e.preventDefault(); saveLoc(e.target.value.trim()); rsFetch(false); } });
 document.addEventListener("pointerdown", e => { if (e.target.closest && e.target.closest("#rsGo")) { const l = $("loc2"); if (l) { saveLoc(l.value.trim()); l.dataset.skip = "1"; } } }, true);
 document.addEventListener("click", e => {
+  const pj = e.target.closest && e.target.closest("[data-epj]"); if (pj) { const el = document.getElementById("epr" + pj.dataset.epj); if (el) { el.scrollIntoView({behavior:"smooth", block:"center"}); el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash"); } return; }
   const t = e.target.closest && e.target.closest("#rsGeo, #rsGo, #rsKey, [data-htab], [data-rcpi]"); if (!t) return;
   if (t.id === "rsGeo") { SND.fx.on(); rsFetch(true); }
   else if (t.id === "rsGo") { const l = $("loc2"); if (l) saveLoc(l.value); SND.fx.on(); rsFetch(false); }
@@ -5876,10 +6186,11 @@ function renderMtab(){
   P.innerHTML = n ? '<ul>'+pickedList().map(([c, d]) => '<li><span class="mt-c">'+esc(c.label)+'</span><span class="mt-n">'+esc(d.zh || d.name)+'</span><button class="mt-x" data-mtx="'+esc(c.id)+'|'+esc(keyOf(d))+'" aria-label="去掉'+esc(d.zh || d.name)+'">×</button></li>').join("")+'</ul>' : '<p class="mt-e">还没选菜</p>';
 }
 document.addEventListener("click", e => {
+  const pl = e.target.closest && e.target.closest("[data-plib]"); if (pl) { SND.unlock(); SND.fx.open && SND.fx.open(); openLib(pl.dataset.plib); return; }
   const t = e.target.closest && e.target.closest("#mtabBtn, .mt-x, #mtabTuck, #mtHeart, #mtBan"); const tab = $("mtab");
   if (!t) { if (tab && tab.classList.contains("open") && !e.target.closest("#mtab, #toast")) { tab.classList.remove("open"); $("mtabBtn").setAttribute("aria-expanded", "false"); } return; }
   e.stopPropagation();
-  if (t.id === "mtHeart" || t.id === "mtBan") { tab.classList.remove("open"); SND.unlock(); SND.fx.open && SND.fx.open(); openLib(t.id === "mtHeart" ? "heart" : "ban"); return; }
+  if (t.id === "mtHeart" || t.id === "mtBan") { tab.classList.remove("open"); SND.unlock(); SND.fx.open && SND.fx.open(); openLib(t.id === "mtHeart" ? "heart" : "black"); return; }
   if (t.id === "mtabTuck") { const k = tab.classList.toggle("tuck"); tab.classList.remove("open"); t.innerHTML = k ? "&lt;" : "&gt;"; t.setAttribute("aria-label", k ? "展开菜单" : "收起菜单"); try { localStorage.setItem("mealTabTuck", k ? "1" : ""); } catch(x){} SND.unlock(); SND.fx.swish && SND.fx.swish(); return; }
   if (t.id === "mtabBtn") { if (tab.classList.contains("tuck")) { tab.classList.remove("tuck"); const h = $("mtabTuck"); h.innerHTML = "&gt;"; try { localStorage.setItem("mealTabTuck", ""); } catch(x){} } const o = tab.classList.toggle("open"); t.setAttribute("aria-expanded", o); SND.unlock(); (o ? SND.fx.open : SND.fx.close)(); renderMtab(); return; }
   const mx = t.dataset.mtx, cid = mx.slice(0, mx.indexOf("|")), k = mx.slice(mx.indexOf("|") + 1), d = picksOf(cid).find(x => keyOf(x) === k); if (!d) return;
@@ -6107,8 +6418,21 @@ function makeStars(box, n){
 makeStars($("stars"), 16);
 makeStars($("cvStars"), 18);
 function cloudsHtml(items){ return items.map(([t,d,l,sc]) => '<div class="cloud" style="--t:'+t+';--d:'+d+'s;--l:'+l+'s">'+sprite(SPR.cloud, sc)+'</div>').join(""); }
-$("clouds").innerHTML = cloudsHtml([["6%",160,-20,6],["38%",220,-110,5],["72%",190,-60,7]]);
-$("cvClouds").innerHTML = cloudsHtml([["8%",120,-10,7],["30%",170,-80,5],["52%",140,-40,6]]);
+$("clouds").innerHTML = cloudsHtml([["6%",22,-4,6],["24%",32,-18,4],["38%",28,-12,5],["58%",36,-25,4],["72%",25,-9,7]]);
+(function(){
+  const m = new Date().getMonth(), qs = (location.search.match(/[?&]season=(\w+)/) || [])[1];
+  const season = qs || ([5,6,7].includes(m) ? "summer" : [8,9,10].includes(m) ? "fall" : [11,0,1].includes(m) ? "winter" : "spring");
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const box = document.createElement("div"); box.id = "weather"; box.className = "wx-" + season; $("aurora").appendChild(box);
+  const R = (a, b) => a + Math.random() * (b - a); let html = "";
+  const LEAF = ["..o.", ".ooo", "oooo", ".oo.", "..x."];
+  const leaf = c => { let g = ""; LEAF.forEach((r, y) => { for (let x = 0; x < 4; x++) if (r[x] !== ".") g += '<rect x="'+x+'" y="'+y+'" width="1" height="1" fill="'+(r[x] === "x" ? "#7a4a22" : c)+'"/>'; }); return '<svg viewBox="0 0 4 5" shape-rendering="crispEdges">'+g+'</svg>'; };
+  if (season === "summer") for (let i = 0; i < 34; i++) html += '<i class="wx-rain" style="left:'+R(-10,105).toFixed(1)+'%;--d:'+R(.9,1.5).toFixed(2)+'s;--l:-'+R(0,2).toFixed(2)+'s;--h:'+Math.round(R(14,24))+'px"></i>';
+  else if (season === "fall") { const cs = ["#e0702c","#c8452e","#f2b632","#b8642a","#e89a3c"]; for (let i = 0; i < 14; i++) html += '<i class="wx-leaf" style="left:'+R(0,100).toFixed(1)+'%;--d:'+R(9,16).toFixed(1)+'s;--l:-'+R(0,16).toFixed(1)+'s;--s:'+Math.round(R(14,22))+'px;--sw:'+Math.round(R(30,80))+'px">'+leaf(cs[i % cs.length])+'</i>'; }
+  else if (season === "winter") for (let i = 0; i < 44; i++) { const s = [4,4,6,8][i % 4]; html += '<i class="wx-snow" style="left:'+R(0,100).toFixed(1)+'%;--d:'+R(8,15).toFixed(1)+'s;--l:-'+R(0,15).toFixed(1)+'s;--s:'+s+'px;--sw:'+Math.round(R(10,40))+'px;opacity:'+R(.6,1).toFixed(2)+'"></i>'; }
+  box.innerHTML = html;
+})();
+$("cvClouds").innerHTML = cloudsHtml([["8%",40,-4,7],["30%",58,-28,5],["52%",48,-14,6]]);
 /* ramen-bowl mascot, side view */
 function mascotRows(){
   const W = 34, H = 28, g = Array.from({length:H}, () => Array(W).fill("."));
@@ -6177,12 +6501,12 @@ const SEASON_FLOWERS = {
 function seasonFlower(t, sc){ const f = SEASON_FLOWERS[t] || SEASON_FLOWERS.spring, rows = f[0], C = f[1], w = Math.max(...rows.map(r => r.length)); let g = "";
   rows.forEach((r, y) => { for (let x = 0; x < r.length; x++) if (C[r[x]]) g += '<rect x="'+x+'" y="'+y+'" width="1" height="1" fill="'+C[r[x]]+'"/>'; });
   return '<svg viewBox="0 0 '+w+' '+rows.length+'" width="'+(w * sc)+'" height="'+(rows.length * sc)+'" shape-rendering="crispEdges" style="display:block">'+g+'</svg>'; }
-function drawCoverFlowers(t){ if (!SEASON_FLOWERS[t]) { try { t = localStorage.getItem("mealTrack"); } catch(e){} } if (!SEASON_FLOWERS[t]) t = "spring";
+function drawCoverFlowers(t){ if (!SEASON_FLOWERS[t]) { try { t = localStorage.getItem("mealTrack"); } catch(e){} } if (!SEASON_FLOWERS[t]) { const m = new Date().getMonth(); t = m < 2 || m === 11 ? "winter" : m < 5 ? "spring" : m < 8 ? "summer" : "fall"; } { const q = (location.search.match(/[?&]season=(\w+)/) || [])[1]; if (SEASON_FLOWERS[q]) t = q; }
   const g = $("cvGrass"); if (!g) return; const again = !!g.dataset.season; g.dataset.season = t;
   g.innerHTML = (innerWidth < 700 ? [["11%","58%",3],["31%","66%",2.5],["69%","66%",2.5],["89%","58%",3]] : [["6%","56%",4],["22%","66%",3.5],["50%","70%",3],["78%","66%",3.5],["94%","56%",4]]).map(([l,b,sc],i) => (sc = Math.round(sc * (innerWidth >= 1000 ? 1.7 : innerWidth >= 700 ? 1.3 : 1) * 2) / 2, 0) || '<div class="cv-flower'+(again ? ' swap' : '')+'" style="left:'+l+';bottom:'+b+';--i:'+i+'"><div class="cvf-in">'+seasonFlower(t, sc)+'</div></div>').join(""); }
 drawCoverFlowers();
 window.addEventListener("resize", () => { const g = $("cvGrass"); if (g && g.dataset.season) drawCoverFlowers(g.dataset.season); });
-function drawNavFlowers(t){ if (!SEASON_FLOWERS[t]) { try { t = localStorage.getItem("mealTrack"); } catch(e){} } if (!SEASON_FLOWERS[t]) t = "spring";
+function drawNavFlowers(t){ if (!SEASON_FLOWERS[t]) { try { t = localStorage.getItem("mealTrack"); } catch(e){} } if (!SEASON_FLOWERS[t]) { const m = new Date().getMonth(); t = m < 2 || m === 11 ? "winter" : m < 5 ? "spring" : m < 8 ? "summer" : "fall"; } { const q = (location.search.match(/[?&]season=(\w+)/) || [])[1]; if (SEASON_FLOWERS[q]) t = q; }
   const g = $("navFl"); if (!g) return; const again = !!g.dataset.season; g.dataset.season = t;
   const wide = innerWidth >= 700, pos = wide ? [["2%",3],["7%",2.5],["13%",3],["84%",3],["90%",2.5],["96%",3]] : [["0%",2.5],["8%",2]];
   g.innerHTML = pos.map(([l, sc], i) => '<div class="nfl'+(again ? ' swap' : '')+'" style="left:'+l+';--i:'+i+'">'+seasonFlower(t, sc)+'</div>').join(""); }
@@ -6306,6 +6630,7 @@ function loadTable(i){
 document.addEventListener("click", e => {
   const t = e.target.closest && e.target.closest("button"); if (!t) return;
   if (t.id === "redoPg") { e.stopPropagation(); redoPage(); return; }
+  if (t.id === "saveTable" && savedIndex() >= 0) { const i = savedIndex(), old = TABLES[i]; TABLES.splice(i, 1); saveTables(); SND.fx.off && SND.fx.off(); keepScroll(()=>{}); toast("已取消收藏", () => { TABLES.splice(i, 0, old); saveTables(); keepScroll(()=>{}); }); return; }
   if (t.id === "saveTable") { flyToBook(t); setTimeout(() => { saveCurrentTable(); keepScroll(()=>{}); const b = $("saveTable"); if (b) { b.classList.add("bounce"); const r = b.getBoundingClientRect(); burst(r.left + r.width / 2, r.top + 4, 12); } }, 620); }
   else if (t.classList.contains("cv-quick")) { e.stopPropagation(); SND.unlock(); SND.fx.magic(); quickTable(); }
   else if (t.classList.contains("cv-saved")) { e.stopPropagation(); SND.unlock(); SND.fx.on(); openTables(); }
@@ -6444,6 +6769,62 @@ document.addEventListener("visibilitychange", () => {
   else if (hiddenAt && Date.now() - hiddenAt > 30*60*1000) startOver();
 });
 document.body.style.overflow = "hidden";
+
+(function(){
+  const back = document.createElement("div"); back.id = "hdBack"; const wr = document.querySelector(".wrap"); wr.insertBefore(back, wr.firstChild);
+  let raf = 0;
+  function sync(){ raf = 0;
+    const m = document.querySelector(".wrap > .mast"), t = document.getElementById("steps"); if (!m || !t) return;
+    const root = document.documentElement.style, mh = m.getBoundingClientRect().height, th = t.offsetParent ? t.getBoundingClientRect().height : 0;
+    const t1 = 6, t2 = t1 + mh + 8, t3 = t2 + (th ? th + 6 : 0);
+    root.setProperty("--hdT1", t1 + "px"); root.setProperty("--hdT2", t2 + "px"); root.setProperty("--hdT3", t3 + "px");
+    const covered = !document.querySelector("#cover:not(.gone)") || document.querySelector("#cover.leaving");
+    const stuck = covered && scrollY > 4; document.body.classList.toggle("hd-stuck", stuck);
+    let bottom = t3 - 2;
+    const s = innerWidth >= 1100 ? document.querySelector(".phead") : document.querySelector(".pick-search");
+    if (s) { const r = s.getBoundingClientRect(); if (r.top <= t3 + 30 && r.bottom > 0) bottom = r.bottom + (innerWidth >= 1100 ? 6 : 10); }
+    back.style.height = Math.max(0, bottom) + "px";
+  }
+  const q = () => { if (!raf) raf = requestAnimationFrame(sync); };
+  addEventListener("scroll", q, {passive:true}); addEventListener("resize", q);
+  new MutationObserver(q).observe(document.getElementById("app"), {childList:true});
+  q(); setTimeout(q, 300);
+})();
+
+(function(){
+  const px = (rows, C, sc) => { const w = Math.max(...rows.map(r => r.length)); let g = ""; rows.forEach((r, y) => { for (let x = 0; x < r.length; x++) if (C[r[x]]) g += '<rect x="'+x+'" y="'+y+'" width="1" height="1" fill="'+C[r[x]]+'"/>'; }); return '<svg viewBox="0 0 '+w+' '+rows.length+'" width="'+(w*sc)+'" height="'+(rows.length*sc)+'" shape-rendering="crispEdges">'+g+'</svg>'; };
+  const R = (a, b) => a + Math.random() * (b - a), pick = a => a[Math.floor(Math.random() * a.length)];
+  const PETAL = [[".PP","PpP","PP."],["PP.","PpP",".PP"],[".P.","PpP",".P."]];
+  const LEAF = [["..K..",".KoK.","KoooK",".KoK.","..s.."],["...KK","..KoK",".KooK","KooK.","s.K.."],[".K.K.","KoKoK","KoooK",".KoK.","..s.."]];
+  const FLAKE = [[".W.","WWW",".W."],["W.W",".W.","W.W"],["..W..",".W.W.","W.W.W",".W.W.","..W.."]];
+  function build(el, t, scale){
+    if (!el) return; let s = "", n;
+    const sm = innerWidth < 700;
+    if (t === "spring") { n = sm ? 12 : 22;
+      for (let i = 0; i < n; i++) { const c = pick([{P:"#ffc4d6",p:"#ff9fbd"},{P:"#ffd9e4",p:"#f7a8c4"},{P:"#fff0f5",p:"#ffc4d6"}]), d = R(9, 16);
+        s += '<div class="wp" style="--x:'+R(-10,100)+'%;--d:'+d+'s;--l:-'+R(0,d)+'s;--dx:'+R(60,200)+'px"><div class="wi" style="--s:'+R(1.6,3)+'s;--w:'+R(14,30)+'px;--r:'+R(60,200)+'deg">'+px(pick(PETAL), c, R(2.5,3.5)*scale)+'</div></div>'; } }
+    else if (t === "summer") { n = sm ? 46 : 90;
+      s += '<div class="wx-rainbow"></div>';
+      for (let i = 0; i < n; i++) { const d = R(.8, 1.4); s += '<div class="wp drop" style="--x:'+R(-5,105)+'%;--d:'+d+'s;--l:-'+R(0,d)+'s;--dx:-'+R(30,60)+'px"><div class="wi" style="--h:'+Math.round(R(14,24))+'px"></div></div>'; }
+      for (let i = 0; i < (sm ? 6 : 12); i++) { const d = R(1.2, 2.4); s += '<div class="wsp" style="--x:'+R(2,96)+'%;--d:'+d+'s;--l:-'+R(0,d)+'s"></div>'; } }
+    else if (t === "fall") { n = sm ? 10 : 18;
+      for (let i = 0; i < n; i++) { const c = pick([{K:"#8a3a14",o:"#f0862e",s:"#6a3a1a"},{K:"#7a2a14",o:"#d8452e",s:"#5a2a14"},{K:"#9a6a14",o:"#f2c94c",s:"#6a4a1a"},{K:"#6a3a14",o:"#c97b3c",s:"#4a2a10"}]), d = R(10, 18);
+        s += '<div class="wp" style="--x:'+R(-10,100)+'%;--d:'+d+'s;--l:-'+R(0,d)+'s;--dx:'+R(-80,140)+'px"><div class="wi" style="--s:'+R(1.8,3.2)+'s;--w:'+R(24,50)+'px;--r:'+R(30,80)+'deg">'+px(pick(LEAF), c, R(3,4.5)*scale)+'</div></div>'; } }
+    else { n = sm ? 40 : 80;
+      for (let i = 0; i < n; i++) { const big = Math.random() < .18, d = big ? R(12, 20) : R(8, 15), sz = big ? R(2.5,3.5) : R(1.6,2.6);
+        s += '<div class="wp" style="--x:'+R(-5,102)+'%;--d:'+d+'s;--l:-'+R(0,d)+'s;--dx:'+R(-40,60)+'px;opacity:'+R(.7,1).toFixed(2)+'"><div class="wi" style="--s:'+R(2,4)+'s;--w:'+R(6,22)+'px;--r:'+(big ? R(20,90) : 0)+'deg">'+(big ? px(pick(FLAKE), {W:"#ffffff"}, sz*scale) : '<svg width="'+Math.round(sz*2)+'" height="'+Math.round(sz*2)+'"><rect width="100%" height="100%" fill="#fff"/></svg>')+'</div></div>'; } }
+    el.innerHTML = s;
+  }
+  function getSeason(t){ const ok = ["spring","summer","fall","winter"]; const q = (location.search.match(/[?&]season=(\w+)/) || [])[1]; if (ok.includes(q)) return q; if (ok.includes(t)) return t; try { t = localStorage.getItem("mealTrack"); } catch(e){} if (ok.includes(t)) return t; const m = new Date().getMonth(); return m < 2 || m === 11 ? "winter" : m < 5 ? "spring" : m < 8 ? "summer" : "fall"; }
+  let cur = "";
+  function apply(t){ t = getSeason(t); if (t === cur) return; cur = t;
+    document.body.classList.remove("wx-spring","wx-summer","wx-fall","wx-winter"); document.body.classList.add("wx-" + t);
+    build(document.getElementById("wx"), t, 1); build(document.getElementById("cvWx"), t, innerWidth >= 1000 ? 1.4 : 1);
+    const nav = document.querySelector(".nav"); if (nav) document.documentElement.style.setProperty("--navH", (nav.getBoundingClientRect().height - 8) + "px"); }
+  apply();
+  window.addEventListener("seasonchange", e => apply(e.detail));
+  let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { const t = cur; cur = ""; apply(t); }, 300); });
+})();
 </script>
 </body>
 </html>
