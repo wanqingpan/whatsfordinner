@@ -1800,6 +1800,34 @@ body.wx-winter{--grass:#e8f2f7;--grass2:#ffffff}
 .s-us{--wall:#dfe4ea;--wallp:linear-gradient(transparent 40%,#d8202a 40% 46%,transparent 46%),repeating-linear-gradient(90deg,rgba(255,255,255,.6) 0 2px,transparent 2px 8px);--sg:#1a1a2a;--sgt:#ff6ab0;--door:#9aa4b0;--frame:#9aa4b0;--glass:#bfe8f8;--sill:#d8202a}
 .s-us .sf-top i{background:linear-gradient(#d8202a 0 0) 0 4px/100% 10px no-repeat;box-shadow:inset 0 3px 0 #fff}
 .s-us .sf-sign span{text-shadow:0 0 4px #ff6ab0,0 0 1px #fff;box-shadow:0 0 0 2px #ff6ab0,0 0 0 4px var(--ink)}
+.sf-list{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+@media (min-width:1100px){.sf-list{grid-template-columns:repeat(3,minmax(0,1fr)) !important}}
+@media (max-width:359px){.sf-list{grid-template-columns:minmax(0,1fr) !important}}
+.sf,.sf-face,.sf-win,.sf-info{min-width:0}
+.sf-sign{min-width:0;max-width:calc(100% - 16px);margin-left:auto !important;margin-right:auto !important}
+.sf-sign span{display:flex;max-width:100%;min-width:0}
+.sf-sign span{overflow:hidden}
+.sf-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.sf-plates{max-width:100%;overflow:hidden;justify-content:center}
+.ep-map{max-width:100%}
+.eatp{min-width:0;max-width:100%;overflow-x:clip}
+/* v132 出去吃: per-dish Google Maps */
+.ef-bar{display:flex;align-items:center;gap:8px;padding:0 12px;margin:0 4px 16px;height:44px;background:#fffaf0;box-shadow:var(--pxb)}
+.ef-bar svg{width:16px;height:16px;flex:none}
+.ef-bar .ef-loc{flex:1;min-width:0;margin:0 !important;padding:0;height:100%;box-shadow:none !important;background:transparent;font-size:15px}
+.ef-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 14px;padding:4px}
+@media (min-width:900px){.ef-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.ef{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 10px 12px;text-decoration:none;color:var(--ink);background:#fffaf0 radial-gradient(rgba(59,35,20,.06) 1.5px,transparent 2px) 0 0/10px 10px;box-shadow:var(--pxb),0 6px 0 rgba(59,35,20,.2);min-width:0}
+.ef::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;background:repeating-linear-gradient(90deg,#d8573f 0 10px,#fff6dc 10px 20px);box-shadow:0 3px 0 var(--ink)}
+.ef-pl{margin-top:8px}
+.ef-pl .art{background:none;box-shadow:none;width:auto;height:auto;margin:0}
+.ef-t{display:flex;flex-direction:column;align-items:center;min-width:0;max-width:100%;text-align:center}
+.ef-t b{font:900 15px var(--disp);line-height:1.3}
+.ef-t small{font:12px var(--en);color:var(--soft);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ef-go{display:inline-flex;align-items:center;gap:4px;margin-top:4px;padding:5px 12px;font-weight:900;font-size:13px;color:#fff;background:#3d8bd8;box-shadow:var(--pxs)}
+.ef-go svg{width:12px;height:12px}
+.ef:active{transform:translateY(3px)}
+@media (hover:hover){.ef:hover .ef-go{background:#2a6ab0}}
 .fr-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .fr-h span{font-size:13px;font-weight:700;color:var(--soft);font-family:inherit}
 .fridge{position:relative;max-width:420px;margin:6px auto 22px;background:#f4f1ea;padding:8px 8px 10px;box-shadow:0 0 0 4px var(--ink),6px 6px 0 4px rgba(59,35,20,.25)}
@@ -4671,6 +4699,16 @@ function homePanel(){
 /* ---------- 出去吃: nearby restaurants ranked by how many of the picked dishes they serve ---------- */
 const RS_CUI = {Chinese:["chinese","cantonese","sichuan","szechuan","dim_sum","hot_pot","dumpling","dumplings","noodle","noodles","taiwanese","shanghai","hunan","asian"], Korean:["korean","asian"], Japanese:["japanese","sushi","ramen","udon","izakaya","asian"], Italian:["italian","pizza","pasta"], Mediterranean:["mediterranean","greek","lebanese","turkish","middle_eastern","falafel"], Mexican:["mexican","tacos","taco","burrito","tex-mex","latin_american"], American:["american","burger","bbq","barbecue","diner","sandwich","steak_house","chicken","wings","southern"], Thai:["thai","asian"], Indian:["indian","pakistani","nepalese"], Vietnamese:["vietnamese","pho","asian"], French:["french","bistro","crepe"], Spanish:["spanish","tapas"], MiddleEastern:["middle_eastern","lebanese","persian","turkish","falafel","kebab"]};
 const RS_KW = ["ramen","sushi","pho","dumpling","pizza","taco","curry","bbq","burger","noodle","boba","bubble","tea","coffee","ice cream","gelato","crepe","kebab","falafel","bibimbap","hot pot","dim sum","pasta","steak","salad","sandwich","bao","udon","soba","tempura","katsu","banh mi","paella","tapas"];
+const RS_SWEET = [
+  [/ice cream|冰淇淋|gelato|sorbet|雪糕|soft serve|frozen yogurt|affogato/, /ice_cream|gelato|frozen_yogurt/, ["ice_cream"]],
+  [/sago|西米|杨枝|pomelo|豆花|douhua|双皮奶|龟苓膏|芋圆|汤圆|tangyuan|红豆汤|绿豆|糖水|烧仙草|冰粉|bingsu|빙수|patbingsu|halo|chè|che |sweet soup|姜汁|egg tart|蛋挞|mango pudding|芒果布丁|杏仁豆腐|almond tofu|桂花糕|osmanthus|麻团|sesame ball/, /hong_kong|cantonese|dessert|bubble_tea|taiwanese|tea|dim_sum|korean_dessert|vietnamese/, null],
+  [/boba|bubble|珍珠|奶茶|milk tea|thai tea|泰式奶茶|brown sugar|黑糖/, /bubble_tea|tea|taiwanese/, null],
+  [/coffee|咖啡|latte|拿铁|espresso|cà phê|cafe|cappuccino|mocha|matcha latte|抹茶拿铁/, /coffee|coffee_shop|cafe/, ["cafe"]],
+  [/tea|茶|chai/, /tea|bubble_tea|cafe|coffee/, ["cafe"]],
+  [/juice|果汁|smoothie|奶昔|shake|lemonade|柠檬水|agua fresca|horchata|lassi|拉西/, /juice|smoothie|bubble_tea|mexican|indian/, null],
+  [/cake|蛋糕|pie|派|cookie|饼干|brownie|tart|挞|scone|司康|bread|面包|cinnamon|croissant|macaron|马卡龙|castella|长崎|taiyaki|鲷鱼烧|dorayaki|铜锣烧|churro|吉事果|cannoli|baklava|tres leches|flan|cheesecake|芝士|tiramisu|提拉米苏|panna cotta|奶冻|crème|creme|éclair|donut|甜甜圈|mochi|麻薯|大福|daifuku|dango|团子|pastry|酥/, /bakery|cake|pastry|dessert|patisserie|donut|cafe|coffee/, ["cafe"]],
+  [/pudding|布丁|jelly|果冻|dessert|甜/, /dessert|cafe|bakery/, null]
+];
 const RS = {list:null, status:"", msg:"", at:null};
 function rsDistance(a, b, c, d){ const R = 6371, t = x => x * Math.PI / 180, dl = t(c - a), dn = t(d - b); const h = Math.sin(dl/2)**2 + Math.cos(t(a)) * Math.cos(t(c)) * Math.sin(dn/2)**2; return 2 * R * Math.asin(Math.sqrt(h)); }
 function rsScore(p, picks){
@@ -4678,9 +4716,11 @@ function rsScore(p, picks){
   const hit = [], hd = []; let sc = 0;
   picks.forEach(([c, d]) => { const cid = c.id || c; let s0 = 0; const dn = (d.name + " " + (d.zh || "")).toLowerCase();
     RS_KW.forEach(k => { if (dn.includes(k) && (cu.some(x => x.includes(k.replace(" ", "_")) || x.includes(k)) || name.includes(k))) s0 = Math.max(s0, 3); });
-    if ((RS_CUI[d.cuisine] || []).some(k => cu.includes(k))) s0 = Math.max(s0, (RS_CUI[d.cuisine] || [])[0] && cu.includes(RS_CUI[d.cuisine][0]) ? 2 : 1);
-    if (cid === "dessert" && (am === "ice_cream" || cu.some(x => /dessert|ice_cream|bakery|cake|frozen_yogurt|gelato|crepe/.test(x)))) s0 = Math.max(s0, 2);
-    if (cid === "drink" && (am === "cafe" || cu.some(x => /bubble_tea|tea|coffee|juice/.test(x)))) s0 = Math.max(s0, 2);
+    const sweet = cid === "dessert" || cid === "drink";
+    const kw = sweet ? RS_SWEET.find(([re]) => re.test(dn)) : null;
+    if (kw) { const [, tagRe, ams] = kw; const nm = tagRe.test(name.replace(/ /g, "_")); if (cu.some(x => tagRe.test(x)) || nm) s0 = Math.max(s0, nm ? 3 : 2); else if (ams && ams.includes(am) && !cu.length) s0 = Math.max(s0, 1); }
+    else if (!sweet || /cocktail|wine|beer|whisk|酒|mojito|highball|sake|soju|sangria|margarita|spritz|negroni|manhattan|old fashioned|michelada|horchata|agua|chai|lassi/i.test(dn)) {
+      if ((RS_CUI[d.cuisine] || []).some(k => k !== "asian" && cu.includes(k))) s0 = Math.max(s0, cu.includes((RS_CUI[d.cuisine] || [])[0]) ? 2 : 1); }
     if (s0) { sc += s0; hit.push(titleOf(d)); hd.push(d); } });
   return {sc, hit, hd};
 }
@@ -4730,49 +4770,14 @@ async function rsGoogle(){
   rsRank(); if (state.step === 4 && state.allMode === "eat") keepScroll(()=>{});
 }
 function eatPanel(){
-  const loc = esc(state.loc || "");
-  let hasKey = false; try { hasKey = !!localStorage.getItem("mealGKey"); } catch(e){}
-  const head = '<div class="ep-bar"><button class="ep-geo" id="rsGeo">'+PIN_SVG+'<span>用我的位置</span></button><input class="txt ep-loc" id="loc2" value="'+loc+'" placeholder="或者输入城市、邮编"><button class="ep-go" id="rsGo">找餐厅</button></div>';
-  let body = '';
-  if (RS.status === "loading") body = '<div class="ep-load"><span class="ep-pin">'+PIN_SVG+'</span>正在附近找能吃到这桌菜的餐厅…</div>';
-  else if (RS.status === "err") body = '<div class="ep-msg">'+esc(RS.msg)+'</div>';
-  else if (RS.status === "empty") body = '<div class="ep-msg">附近 4 公里内没找到对得上的餐厅，换个地方试试？</div>';
-  else if (RS.status === "ok") {
-    const W = window.innerWidth >= 1100 ? 900 : window.innerWidth >= 700 ? 640 : 340, H = 160, L = RS.list, c0 = Math.cos(RS.at[0] * Math.PI / 180);
-    const pts = L.map(r => [(r.lon - RS.at[1]) * c0 * 111, (r.lat - RS.at[0]) * 111]);
-    const span = Math.max(.6, ...pts.map(p => Math.max(Math.abs(p[0]) / (W / H), Math.abs(p[1])))) * 1.12;
-    const sx = x => W / 2 + x / span * (H / 2 - 28), sy = y => H / 2 + 8 - y / span * (H / 2 - 28);
-    let grid = ''; for (let x = 0; x <= W; x += 34) grid += '<rect x="'+(x - 3)+'" y="0" width="6" height="'+H+'" class="mp-st"/>'; for (let y = 10; y <= H; y += 38) grid += '<rect x="0" y="'+(y - 3)+'" width="'+W+'" height="6" class="mp-st"/>';
-    const ring = [1, 2, 3].filter(k => k <= span * 1.1).map(k => '<circle cx="'+W/2+'" cy="'+H/2+'" r="'+(k / span * (H / 2 - 28)).toFixed(1)+'" class="mp-ring"/><text x="'+(W/2 + 4)+'" y="'+(H/2 - k / span * (H / 2 - 28) - 3).toFixed(1)+'" class="mp-rt">'+k+'km</text>').join("");
-    const pins = pts.map((p, i) => ({i, x:sx(p[0]), y:sy(p[1])})).reverse().map(p => '<g class="mp-pin'+(p.i < 3 ? ' t'+p.i : '')+'" data-epj="'+p.i+'" transform="translate('+p.x.toFixed(1)+' '+p.y.toFixed(1)+')"><rect x="-9" y="-24" width="18" height="18"/><rect x="-3" y="-6" width="6" height="6"/><text x="0" y="-11">'+(p.i + 1)+'</text></g>').join("");
-    const map = '<div class="ep-map" style="aspect-ratio:'+W+'/'+H+'"><svg viewBox="0 0 '+W+' '+H+'">'+grid+ring+'<g class="mp-me" transform="translate('+W/2+' '+H/2+')"><rect x="-7" y="-7" width="14" height="14"/><rect x="-3" y="-3" width="6" height="6"/></g>'+pins+'</svg><span class="ep-you">你在这</span></div>';
-    const STY = [["chinese|cantonese|sichuan|szechuan|dim_sum|hot_pot|dumpling|taiwanese|hunan|shanghai|noodle","cn"],["japanese|sushi|ramen|udon|izakaya|soba|tempura","jp"],["korean","kr"],["italian|pizza|pasta","it"],["mexican|taco|burrito|tex|latin","mx"],["thai","th"],["indian|pakistani|nepal","in"],["vietnamese|pho|banh","vn"],["french|bistro|crepe","fr"],["mediterranean|greek|lebanese|turkish|middle_eastern|falafel|kebab|persian","me"],["american|burger|bbq|barbecue|diner|steak|chicken|wings|sandwich","us"],["dessert|ice_cream|bakery|cake|gelato|frozen_yogurt|coffee|cafe|tea|bubble_tea|juice","cafe"]];
-    const sty = r => { const k = (r.cu.join(" ") + " " + r.am).toLowerCase(); const f = STY.find(([re]) => new RegExp(re).test(k)); return f ? f[1] : "df"; };
-    const picks = pickedList().map(x => x[1]);
-    const EMPTY = '<svg viewBox="0 0 48 48" width="PX" height="PX" shape-rendering="crispEdges"><circle cx="24" cy="24" r="21" fill="#3b2314"/><circle cx="24" cy="24" r="19" fill="#f6f8fc"/><circle cx="24" cy="24" r="15" fill="none" stroke="#9cc6e8" stroke-width="2"/><circle cx="24" cy="24" r="11" fill="#eef2f8"/></svg>';
-    body = map + '<ol class="ep-list sf-list">'+L.map((r, i) => {
-      const g = r.g || {}, q = encodeURIComponent(r.name + (r.addr ? " " + r.addr : "")), ll = r.lat.toFixed(5) + "," + r.lon.toFixed(5);
-      const gUrl = g.url || ("https://www.google.com/maps/search/?api=1&query=" + q + "%20" + ll);
-      const yUrl = "https://www.yelp.com/search?find_desc=" + encodeURIComponent(r.name) + "&find_loc=" + encodeURIComponent(state.loc || ll);
-      const km = r.km < 1 ? Math.round(r.km * 1000) + 'm' : r.km.toFixed(1) + 'km';
-      let host = ''; try { host = r.web ? new URL(/^https?:/.test(r.web) ? r.web : 'https://' + r.web).hostname.replace(/^www\./, '') : ''; } catch(_){}
-      const hk = new Set((r.hd || []).map(d => d.name)), n = picks.length, sc = n <= 3 ? .8 : n <= 4 ? .66 : n <= 5 ? .56 : .48;
-      const plates = picks.map(d => hk.has(d.name) ? '<span class="sf-pl" title="'+esc(titleOf(d))+'">'+dishArt(d, sc)+'</span>' : '<span class="sf-pl no" title="没有'+esc(titleOf(d))+'">'+EMPTY.replace(/PX/g, (48 * sc * .6667).toFixed(1))+'</span>').join("");
-      const rib = i < 3 ? '<div class="sf-medal m'+i+'"><b>'+(i + 1)+'</b></div>' : '<div class="sf-tag"><b>'+(i + 1)+'</b></div>';
-      const st = sty(r);
-      return '<li class="sf s-'+st+(i < 3 ? ' top' : '')+'" id="epr'+i+'">'+rib+
-        '<div class="sf-top"><i></i></div>'+
-        '<div class="sf-sign"><span>'+(host ? '<img class="sf-logo" src="https://icons.duckduckgo.com/ip3/'+host+'.ico" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' : '')+esc(r.name)+'</span></div>'+
-        '<div class="sf-face"><div class="sf-win"><div class="sf-plates">'+plates+'</div></div><div class="sf-door"><span class="sf-no">'+km+'</span><i class="sf-knob"></i></div></div>'+
-        '<div class="sf-deco"><i class="d1"></i><i class="d2"></i></div>'+
-        ((r.cu[0] || g.rating) ? '<div class="sf-info">'+(r.cu[0] ? '<span class="sf-cu1">'+esc(r.cu[0])+'</span>' : '')+(g.rating ? '<span class="sf-star">★'+g.rating.toFixed(1)+'</span>' : '')+'</div>' : '<div class="sf-info"></div>')+
-        '<div class="sf-walk"><a class="g" href="'+gUrl+'" target="_blank" rel="noopener">'+PIN_SVG+'地图</a><a class="y" href="'+yUrl+'" target="_blank" rel="noopener">Yelp</a></div></li>'; }).join("")+'</ol>';
-  }
-  else body = '<div class="ep-empty"><div class="ep-street"><i></i><i></i><i></i></div><p>附近哪家能吃到最多你选的菜？</p></div>';
-  const foot = '<div class="ep-foot">餐厅资料来自 OpenStreetMap · <button class="ep-key" id="rsKey">'+(hasKey ? 'Google 评分已开启' : '显示 Google 评分')+'</button></div>';
-  return '<div class="eatp">'+head+body+(RS.status === "ok" || RS.status === "" ? foot : '')+'</div>';
+  const loc = esc(state.loc || ""), picks = pickedList().map(x => x[1]);
+  const en = d => d.zh ? d.name : (EN_NAME[d.name] || d.name);
+  const cards = picks.map(d => { const q = en(d), url = eatUrl("gmaps", q);
+    return '<a class="ef" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer"><span class="ef-pl">'+dishArt(d, 1.3)+'</span><span class="ef-t"><b>'+esc(titleOf(d))+'</b><small>'+esc(q)+'</small></span><span class="ef-go">'+PIN_SVG+'地图上找</span></a>'; }).join("");
+  return '<div class="eatp"><div class="ef-bar">'+PIN_SVG+'<input class="txt ef-loc" id="loc2" value="'+loc+'" placeholder="在哪附近？不填就用你现在的位置" autocomplete="off"></div><div class="ef-list">'+cards+'</div></div>';
 }
-document.addEventListener("keydown", e => { if (e.key === "Enter" && e.target && e.target.id === "loc2") { e.preventDefault(); saveLoc(e.target.value.trim()); rsFetch(false); } });
+document.addEventListener("keydown", e => { if (e.key === "Enter" && e.target && e.target.id === "loc2") { e.preventDefault(); saveLoc(e.target.value.trim()); e.target.blur(); keepScroll(()=>{}); } });
+document.addEventListener("change", e => { if (e.target && e.target.id === "loc2") { saveLoc(e.target.value.trim()); keepScroll(()=>{}); } });
 document.addEventListener("pointerdown", e => { if (e.target.closest && e.target.closest("#rsGo")) { const l = $("loc2"); if (l) { saveLoc(l.value.trim()); l.dataset.skip = "1"; } } }, true);
 document.addEventListener("click", e => {
   const pj = e.target.closest && e.target.closest("[data-epj]"); if (pj) { const el = document.getElementById("epr" + pj.dataset.epj); if (el) { el.scrollIntoView({behavior:"smooth", block:"center"}); el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash"); } return; }
@@ -6282,7 +6287,7 @@ document.addEventListener("click", e => {
       '<div class="sheet-row"><button class="btn plain" id="sheetClose">取消</button></div></div>';
     $("sheet").hidden = false; }
   else if (ds.app) { openSheet(ds.app, ds.key); }
-  else if (ds.all) { keepScroll(() => { state.allMode = state.allMode === ds.all ? "" : ds.all; state.panel = {}; }); if (state.allMode === "eat" && (state.loc || "").trim() && !RS.status) rsFetch(false); }
+  else if (ds.all) { keepScroll(() => { state.allMode = state.allMode === ds.all ? "" : ds.all; state.panel = {}; }); }
   else if (ds.have !== undefined) { keepScroll(() => { state.have.has(ds.have) ? state.have.delete(ds.have) : state.have.add(ds.have); }); }
   else if (ds.dbopen) { DBAR.open(); }
   else if (ds.dptoggle) { const k = ds.dptoggle, t2 = state.dsel; t2[k] = !t2[k]; keepScroll(()=>{}); const el = document.querySelector('[data-dptoggle="' + k + '"]'); if (el && t2[k]) { el.classList.add("pop2"); const r = el.getBoundingClientRect(); burst(r.left + r.width / 2, r.top + r.height / 3, 8); } }
