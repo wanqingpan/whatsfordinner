@@ -1033,7 +1033,7 @@ html.pxcur input,html.pxcur textarea{cursor:text}
 .mt-side{display:none}
 @media (max-width:699px){
  .mt-side{display:flex;flex-direction:column;gap:8px;position:absolute;right:0;bottom:calc(100% + 10px)}
- .mt-s{display:flex;align-items:center;gap:5px;height:34px;padding:0 9px 0 7px;font-weight:900;font-size:13px;color:var(--ink);box-shadow:var(--pxb),inset 0 -3px 0 rgba(59,35,20,.15)}
+ .mt-s{display:flex;align-items:center;justify-content:center;gap:4px;height:30px;min-width:30px;padding:0 6px;font-weight:900;font-size:13px;color:var(--ink);box-shadow:var(--pxb),inset 0 -3px 0 rgba(59,35,20,.15)}
  .mt-s svg{width:16px;height:14px;flex:none}
  .mt-s.heart-s{background:#ffd0dc}
  .mt-s.ban-s{background:#d9d2c6}
@@ -1080,6 +1080,331 @@ body:has(#cover:not(.gone):not(.leaving)) #mtab{display:none}
 #navFl{position:absolute;left:0;right:0;bottom:calc(100% - 10px);height:0;pointer-events:none}
 .nfl{position:absolute;bottom:0;transform-origin:50% 100%}
 .nfl.swap{animation:flSwap .35s steps(4) both;animation-delay:calc(var(--i) * .06s)}
+.balance{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;margin:-4px 0 14px;font-size:13px;font-weight:800}
+.balance span{padding:4px 10px;background:#fff8e6;box-shadow:var(--pxb)}
+.balance .bal-w{background:#ffe2c8;color:#8a3a14}
+.balance .bal-ok{background:#e2f2c8;color:#2f6a2a}
+.balance .bal-s{color:var(--ink)}
+#mtab.nopick #mtabBtn,#mtab.nopick #mtabTuck{display:none}
+#mtab.nopick .mt-side{bottom:0}
+#mtab.nopick .mt-row{min-height:66px;min-width:30px}
+.course.solo{padding-top:14px}
+@media (max-width:699px){#libOpen{display:none}}
+.hid-ctl{display:none !important}
+.rs.setb{min-width:38px;padding:5px 7px;margin-left:auto;display:inline-grid;place-items:center}
+.rs.setb svg{display:block}
+.mast .rs.mus{margin-left:6px}
+.set-o{display:flex;align-items:center;gap:12px;width:calc(100% - 8px);margin:4px 4px 12px;padding:10px 12px;background:#fff6dc;border:0;font:inherit;color:var(--ink);text-align:left;cursor:pointer;box-shadow:var(--pxb),inset 0 -4px 0 rgba(59,35,20,.12)}
+.set-o:active{transform:translateY(3px)}
+.set-i{width:34px;height:34px;display:grid;place-items:center;flex:none}
+.set-i svg{max-width:30px;max-height:30px}
+.set-t{display:flex;flex-direction:column;gap:2px}
+.set-t b{font-size:16px}
+.set-t span{font-size:13px;color:var(--soft)}
+.set-soon{margin:2px 8px 14px;font-size:13px;color:var(--soft);opacity:.7}
+.ptiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:4px 2px 4px}
+.ptile{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 2px 8px;background:#fff6dc;border:0;font:inherit;color:var(--ink);cursor:pointer;box-shadow:var(--pxb),inset 0 -4px 0 rgba(59,35,20,.12)}
+.ptile .pt-i{height:40px;display:grid;place-items:center}
+.ptile .pt-n{font-weight:800;font-size:13px}
+.ptile.on{background:var(--c);transform:translateY(2px);box-shadow:var(--pxb),inset 0 4px 0 rgba(0,0,0,.15)}
+.ptile:active{transform:translateY(3px)}
+@media (min-width:700px){.ptiles{grid-template-columns:repeat(7,1fr)}}
+.fz{position:relative;display:flex;justify-content:center;align-items:flex-start;margin:10px auto 30px;max-width:400px;padding-bottom:6px}
+.fz-body{position:relative;width:252px;flex:none;background:#f7f4ee;border:4px solid var(--ink);border-radius:14px 14px 6px 6px;box-shadow:inset -8px 0 0 #e7e1d5;z-index:2}
+.fz-top{position:relative;height:74px;border-bottom:4px solid var(--ink);background:linear-gradient(#ffffff,#efeadf);border-radius:10px 10px 0 0;box-shadow:inset -8px 0 0 #e7e1d5}
+.fz-h.v{position:absolute;left:12px;top:20px;width:8px;height:40px;background:#c9c2b4;border:3px solid var(--ink)}
+.fz-mag{position:absolute;right:46px;top:16px;width:16px;height:14px;background:#e25a4a;clip-path:polygon(0 25%,25% 0,50% 20%,75% 0,100% 25%,100% 50%,50% 100%,0 50%)}
+.fz-note{position:absolute;right:16px;top:34px;padding:3px 6px;background:#ffe98a;font-size:11px;font-weight:900;transform:rotate(-6deg);box-shadow:2px 2px 0 rgba(59,35,20,.25)}
+.fz-main{padding:8px;background:#f7f4ee}
+.fz-in{position:relative;background:linear-gradient(90deg,#c4e3f1,#e8f6fc 40%,#e8f6fc 60%,#c4e3f1);border:4px solid #9cc7da;padding:16px 4px 6px;box-shadow:inset 0 12px 18px rgba(255,255,240,.8)}
+.fz-lamp{position:absolute;left:50%;top:0;width:44px;height:6px;margin-left:-22px;background:#fffbe0;box-shadow:0 0 18px 8px rgba(255,250,210,.9);z-index:0}
+.fz-sh{position:relative;display:flex;justify-content:space-around;align-items:flex-end;padding:2px 0 0;margin:0 -4px 14px;border-bottom:6px solid rgba(160,215,235,.95);box-shadow:0 4px 0 rgba(90,150,180,.35)}
+.fz-sh::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#fff}
+.fz-cr{display:flex;justify-content:center;margin:0 -4px;padding:8px 0 4px;background:linear-gradient(rgba(170,220,150,.35),rgba(120,190,110,.45));border:3px solid #8fc48a;border-bottom-width:8px}
+.fz-kick{height:16px;background:repeating-linear-gradient(90deg,#4a3a30 0 6px,#2d2019 6px 10px);border-top:4px solid var(--ink);border-radius:0 0 3px 3px}
+.fz-door{position:relative;width:76px;flex:none;margin-top:82px;margin-left:-4px;height:auto;padding:16px 8px 12px 6px;display:flex;flex-direction:column;gap:10px;z-index:1;background:#f7f4ee;border:4px solid var(--ink);border-left:0;clip-path:polygon(0 0,100% 18px,100% calc(100% - 18px),0 100%);box-shadow:inset 6px 0 0 #d8d1c3,inset -4px 0 0 #e7e1d5}
+.fz-door::before{content:"";position:absolute;inset:6px 6px 6px 2px;border:3px solid #c9c2b4;pointer-events:none}
+.fz-bin{position:relative;min-height:34px;display:flex;justify-content:center;align-items:flex-end;border-bottom:8px solid rgba(160,215,235,.9);box-shadow:0 3px 0 rgba(90,150,180,.35)}
+.fz-bin.low{min-height:46px}
+.fz-bottle{display:inline-block;width:12px;height:28px;margin:0 3px;background:#fff;border:3px solid var(--ink);border-top-width:8px;box-shadow:inset 0 -10px 0 #ffd35c}
+.fz-bottle.b2{width:14px;height:38px;box-shadow:inset 0 -24px 0 #c3e7a0}
+.fz-jar{display:inline-block;width:16px;height:18px;margin:0 3px;background:#e25a4a;border:3px solid var(--ink);border-top:6px solid #8a6e5a}
+.fz-door .fi{padding:0}
+.fz-door .fi-n{font-size:12px;white-space:nowrap}
+.fz-floor{position:absolute;left:12%;right:12%;bottom:-8px;height:10px;background:rgba(59,35,20,.18);z-index:0}
+.ck{display:flex;align-items:center;justify-content:center;gap:16px;margin:6px auto 26px;flex-wrap:wrap}
+.ck-face{touch-action:none;cursor:grab;line-height:0;-webkit-tap-highlight-color:transparent;outline-offset:4px}
+.ck-face:active{cursor:grabbing}
+.ck-side{display:flex;flex-direction:column;gap:6px;min-width:130px;align-items:center;text-align:center}
+@media (min-width:700px){.ck-side{align-items:flex-start;text-align:left}}
+.ck-v{font-family:var(--disp);font-weight:900;font-size:26px;color:var(--ink)}
+.ck-v small{font-size:14px;margin-left:4px;color:var(--soft)}
+.ck-hint{font-size:13px;color:var(--soft);min-height:0}
+.ck-hint:empty{display:none}
+.ck-q{display:flex;flex-wrap:wrap;gap:6px 10px;margin-top:4px}
+.ck-b{background:none;border:0;font:inherit;font-size:13px;font-weight:800;color:var(--soft);padding:2px 0;border-bottom:3px solid rgba(59,35,20,.2);cursor:pointer}
+.ck-b.on{color:var(--ink);border-bottom-color:#e25a4a}
+.ck-b.off{color:#c0392b}
+.fz{margin:4px auto 18px}
+.fz-body{width:236px;border-radius:10px 10px 4px 4px}
+.fz-top{height:30px;border-radius:6px 6px 0 0}
+.fz-h.v{left:10px;top:9px;width:28px;height:6px;border-width:2px}
+.fz-mag{right:70px;top:8px;width:12px;height:11px}
+.fz-note{right:12px;top:5px;font-size:10px;padding:1px 5px}
+.fz-main{padding:5px}
+.fz-in{padding:8px 2px 4px}
+.fz-sh{margin:0 -2px 8px}
+.fz-sh .fi{padding:0 0 2px}
+.fz-sh .fi-i{height:50px}
+.fz-cr{height:10px;padding:0;border-bottom-width:5px}
+.fz-kick{height:8px}
+.fz-door{width:72px;margin-top:36px;padding:8px 6px 8px 4px;gap:6px}
+.fz-bin{min-height:0}
+.fz-door .fi-i{height:48px}
+.fz-bin.low{min-height:34px}
+.ck{flex-wrap:nowrap;justify-content:flex-start;gap:14px;margin:2px 0 18px;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.ck-face{flex:none;touch-action:none}
+.ck-face svg,.ck-face:active svg{transform:none !important}
+.ck-side{align-items:flex-start !important;text-align:left !important;min-width:0;flex:1}
+.ck-v{font-size:20px}
+.ck-q{gap:8px}
+.ck-q .pill-btn{margin:0}
+.fz{display:flex;justify-content:center;padding-right:76px}
+.fz-body{background:#ddd6c8}
+.fz-top{margin:4px 4px 0;height:30px;border:3px solid var(--ink);border-radius:6px;box-shadow:inset 0 -5px 0 #e7e1d5,0 3px 0 rgba(59,35,20,.25)}
+.fz-h.v{left:10px;top:auto;bottom:4px;width:44px;height:7px;background:#c9c2b4;border:2px solid var(--ink)}
+.fz-main{background:#ddd6c8;padding:6px 5px 5px}
+.fz-door{position:absolute;left:100%;top:40px;bottom:12px;margin:0;width:76px;height:auto;padding:10px 6px 8px;clip-path:none;border:4px solid var(--ink);border-left-width:3px;border-radius:0 8px 8px 0;background:#f7f4ee;box-shadow:inset 5px 0 0 #cfc7b8,4px 4px 0 rgba(59,35,20,.18);display:flex;flex-direction:column;justify-content:space-around;gap:4px}
+.fz-door::before{inset:4px 4px 4px 6px;border:3px solid #c9c2b4;border-radius:0 4px 4px 0}
+.fz-hinge{position:absolute;width:8px;height:12px;background:#8a8070;border:2px solid var(--ink);z-index:3}
+.fz-hinge.t{left:-8px;top:8px}.fz-hinge.b{left:-8px;bottom:8px}
+.fz-hinge.ft{right:-7px;top:8px;left:auto}
+.cupq{display:flex;align-items:center;gap:14px;margin:4px 0 18px}
+.cupb{background:none;border:0;padding:0;cursor:pointer;line-height:0;-webkit-tap-highlight-color:transparent}
+.cupb .liq{transform-origin:50% 85%;transform:scaleY(0);transition:none}
+.cupb .straw{opacity:0}
+.cupb.on .liq{transform:scaleY(1)}
+.cupb.on .straw{opacity:1}
+.cupb.pour .liq{animation:cupFill .6s steps(6)}
+.cupb.drain .liq{animation:cupFill .4s steps(4) reverse}
+.cupb.pour .straw{animation:strawIn .3s .5s steps(2) both}
+@keyframes cupFill{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes strawIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.cupb:active{transform:translateY(2px)}
+.cupt{display:flex;flex-direction:column;gap:2px}
+.cupt b{font-size:17px}
+.cupt span{font-size:13px;color:var(--soft)}
+.thq{margin:0 0 14px;padding:0 4px}
+.th{position:relative;height:40px;max-width:300px;touch-action:none;cursor:pointer;user-select:none;-webkit-user-select:none}
+.th-bulb{position:absolute;left:0;top:6px;width:28px;height:28px;border-radius:50%;background:var(--merc,#7fc4e8);border:4px solid var(--ink);z-index:2}
+.th-tube{position:absolute;left:22px;right:0;top:12px;height:16px;background:#fffaf0;border:4px solid var(--ink);border-left:0;border-radius:0 10px 10px 0;overflow:hidden}
+.th-merc{position:absolute;left:0;top:0;bottom:0;width:var(--w,10%);background:var(--merc,#7fc4e8);transition:width .25s steps(4),background .25s steps(2)}
+.th-knob{position:absolute;top:2px;width:14px;height:36px;margin-left:-7px;background:#fff6dc;border:4px solid var(--ink);left:var(--k,30px);transition:left .25s steps(4);z-index:3}
+.th[data-pos="0"]{--w:6%;--merc:#7fc4e8;--k:34px}
+.th[data-pos="1"]{--w:50%;--merc:#ffd35c;--k:calc(50% + 11px)}
+.th[data-pos="2"]{--w:100%;--merc:#e25a4a;--k:calc(100% - 12px)}
+.th-l{display:flex;justify-content:space-between;max-width:300px;margin-top:4px}
+.th-s{display:flex;align-items:center;gap:4px;background:none;border:0;font:inherit;font-size:13px;font-weight:800;color:var(--soft);cursor:pointer;padding:2px 0;border-bottom:3px solid transparent}
+.th-s.on{color:var(--ink);border-bottom-color:var(--ink)}
+.ck{display:flex;align-items:center;gap:12px;flex-wrap:nowrap;justify-content:flex-start}
+.ck-q{display:flex;flex-direction:column;gap:8px;flex:1;max-width:130px}
+.ck-q .pill-btn{margin:0;width:100%;justify-content:center;text-align:center}
+.ck-any{align-self:stretch;flex:1;max-width:120px;margin:0 !important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.ck-any span{font-size:17px}
+.cupq{gap:18px;margin:2px 0 18px 18px}
+.cupt b{font-size:18px}
+.ck-any{flex:none !important;max-width:none !important;align-self:center !important;background:none !important;border:0 !important;box-shadow:none !important;padding:4px 6px !important;cursor:pointer;font:inherit;color:var(--soft);transform:none}
+.ck-any span{font-size:14px !important;font-weight:800;padding:1px 6px}
+.ck-any.on{color:var(--ink)}
+.ck-any.on span{background:var(--ink);color:#fff6dc}
+.ck-any:active svg{transform:rotate(90deg)}
+.th{height:44px !important;max-width:300px}
+.th-merc{fill:var(--merc,#7fc4e8);transform-box:fill-box;transform-origin:0 50%;transform:scaleX(var(--sx,.15));transition:transform .3s steps(5),fill .3s steps(2)}
+.th-ball{fill:var(--merc,#7fc4e8);transition:fill .3s steps(2)}
+.th[data-pos="0"]{--sx:.12;--merc:#5aa9d6}
+.th[data-pos="1"]{--sx:.5;--merc:#f2a541}
+.th[data-pos="2"]{--sx:1;--merc:#e2402f}
+.th-bulb,.th-tube,.th-knob{display:none}
+.th{width:260px;max-width:100%;height:52px !important}
+.th-hg{fill:var(--merc,#7fc4e8);transition:fill .3s steps(2)}
+.th-l{width:260px;max-width:100%}
+.ck-any svg{transform:rotate(-8deg)}
+@media (min-width:700px){.tdrow{display:flex;gap:40px;align-items:flex-start}.td-t{flex:0 1 auto}.td-d{flex:1}}
+.thq{display:flex;flex-direction:column;align-items:center;margin:4px auto 18px}
+.th{width:100% !important;max-width:400px !important;height:auto !important}
+.th svg{display:block;width:100%;height:auto}
+.th-l{width:100% !important;max-width:400px !important;margin-top:8px}
+.th-s{font-size:16px !important;gap:6px;padding:4px 2px}
+.th-s .ico svg,.th-s svg{width:26px;height:26px}
+.nt.any{background:linear-gradient(110deg,#ffb3ba,#ffdfba,#ffffba,#baffc9,#bae1ff,#d7baff,#ffb3ba) 0 0/300% 100% !important;animation:rbShift 4s linear infinite}
+.nt.any .rb-ico{display:inline-block;animation:rbHue 3s linear infinite}
+.nt.any.on{box-shadow:var(--pxb),0 0 0 4px #fff,0 0 18px 6px rgba(255,200,240,.9)}
+
+.nt-grid .nt.any{grid-column:auto;flex-direction:column !important;justify-content:center !important;gap:6px !important;padding:14px 8px 12px !important}
+.nt-grid.n9 .nt.any{grid-column:1/-1}
+@keyframes rbShift{to{background-position:300% 0}}
+@keyframes rbHue{to{filter:hue-rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.nt.any,.nt.any .rb-ico{animation:none}}
+.nt.any{background:#0f2c66 !important;animation:none !important;position:relative;overflow:hidden;color:#fff}
+.nt.any b{color:#fff;text-shadow:2px 2px 0 #000;position:relative;z-index:2}
+.nt.any .rb{position:absolute;inset:0;display:block}
+.nt.any .rb-trail{position:absolute;right:50%;margin-right:16px;top:calc(50% - 26px);display:flex;height:24px}
+.rb-seg{display:flex;flex-direction:column;width:10px;animation:rbWave .36s steps(1) infinite}
+.rb-seg.o{animation-delay:-.18s}
+.rb-seg i{display:block;height:4px}
+.nt.any .rb-ico{position:absolute;left:50%;top:calc(50% - 30px);transform:translateX(-50%);animation:rbBob .36s steps(1) infinite;filter:none;z-index:1}
+.rb .rb-star{position:absolute;display:block;width:2px;height:2px;padding:0;background:#fff;box-shadow:2px 0 #fff,-2px 0 #fff,0 2px #fff,0 -2px #fff;animation:rbTw .72s steps(1) infinite;opacity:.9}
+.nt.any.on{box-shadow:var(--pxb),0 0 0 4px #ffe600 !important}
+.nt.any.on .rb-seg{animation-duration:.2s}
+@keyframes rbWave{0%{transform:translateY(0)}50%{transform:translateY(3px)}}
+@keyframes rbBob{0%{transform:translate(-50%,0)}50%{transform:translate(-50%,-3px)}}
+@keyframes rbTw{0%{transform:scale(1);opacity:.9}50%{transform:scale(.4);opacity:.4}}
+@media (prefers-reduced-motion:reduce){.rb-seg,.nt.any .rb-ico,.rb-star{animation:none}}
+.nt.any > b{margin-top:auto}
+.nt-grid .nt.any{min-height:96px;justify-content:flex-end !important}
+.cstrip{display:flex;gap:8px;margin:0 0 14px;overflow-x:auto;padding:4px 2px 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cstrip::-webkit-scrollbar{display:none}
+.cstrip:not(.many){justify-content:space-between}
+.cstrip.many{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+@media (min-width:700px){.cstrip.many{-webkit-mask-image:none;mask-image:none}}
+.cs-b{flex:1 0 64px;max-width:96px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 4px 5px;background:none;border:0;font:inherit;color:var(--soft);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.cs-i{height:36px;display:grid;place-items:center;transition:transform .12s steps(2)}
+.cs-b b{font-size:13px;font-weight:800;padding:1px 6px;white-space:nowrap}
+.cs-b.on{color:var(--ink)}
+.cs-b.on b{background:var(--ink);color:#fff6dc}
+.cs-b.on .cs-i{transform:translateY(-3px)}
+.cs-b:active .cs-i{transform:scale(.9)}
+.cs-any .cs-i{position:relative;width:62px;background:#0f2c66;box-shadow:0 0 0 3px var(--ink)}
+.cs-rb{position:absolute;left:2px;top:9px;display:flex;height:12px}
+.cs-rb .rb-seg{width:6px}
+.cs-rb .rb-seg i{height:2px}
+.cs-any .cs-i > svg,.cs-any .cs-i > .ico{position:relative;left:12px;animation:csBob .36s steps(1) infinite}
+@keyframes csBob{0%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@media (prefers-reduced-motion:reduce){.cs-any .cs-i > svg{animation:none}}
+@media (min-width:1100px){
+  .wrap:has(.p2grid){max-width:1040px}
+  .p2grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:start}
+  .p2r .tdrow{display:flex;flex-direction:column;gap:6px}
+  .p2r .ck{margin-bottom:22px}
+}
+@media (min-width:1100px){
+  .wrap:has(.course .dish){max-width:1040px}
+  .wrap:has(.course .dish) .search.pick-search,.wrap:has(.course .dish) .cstrip,.wrap:has(.course .dish) .thq{max-width:760px;margin-left:auto;margin-right:auto}
+  .course:has(.dish){display:grid;grid-template-columns:1fr 1fr;column-gap:14px;align-items:start}
+  .course:has(.dish) > :not(.dish),.course .dish:has(.body){grid-column:1/-1}
+  #app:has(> .nv){display:grid;grid-template-columns:1fr 1fr;column-gap:28px;align-items:center}
+  #app:has(> .nv) > :not(.nv):not(.nt-grid){grid-column:1/-1}
+  #app:has(> .nv) > .nv{margin:0}
+}
+.cs-b{flex:1 0 74px;max-width:110px}
+.cs-i{height:46px}
+.cs-b b{font-size:15px}
+.cs-any .cs-i{width:76px}
+.cs-rb{top:13px;height:18px}
+.cs-rb .rb-seg{width:7px}
+.cs-rb .rb-seg i{height:3px}
+.cs-any .cs-i > svg,.cs-any .cs-i > .ico{left:16px}
+.nt-grid .nt.any{grid-column:auto !important}
+.nt-grid.n5 .nt.any{grid-column:1/-1 !important}
+.dish{margin:8px 8px;padding:9px 10px}
+.dish .tags{margin-top:6px;gap:6px}
+.dish-top{column-gap:10px;row-gap:6px}
+.dish-top .dbtns{grid-column:2 !important;width:auto !important;justify-content:flex-end}
+.set-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:6px 4px 14px}
+@media (min-width:600px){.set-grid{grid-template-columns:repeat(3,1fr)}}
+.set-grid .set-o{flex-direction:column;justify-content:center;gap:6px;width:auto;margin:0;padding:14px 6px 12px;text-align:center}
+.set-grid .set-o b{font-size:15px}
+.set-grid .set-i{width:44px;height:40px}
+.set-grid .set-i svg{width:36px !important;height:36px !important;max-width:none;max-height:none}
+.set-grid .set-o.off .set-i{opacity:.55}
+.fz-door .fz-bin{min-height:0;padding-bottom:2px}
+.fz-door{justify-content:space-evenly}
+.gpager{display:flex;align-items:flex-start;justify-content:center;gap:4px;margin:22px auto 4px;max-width:100%}
+.gp-dots{display:flex;gap:2px}
+.gp-d{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:0;padding:2px 3px;cursor:pointer;font:inherit;color:var(--ink);min-width:26px}
+.gp-d i{display:block;width:14px;height:14px;background:#fff6dc;box-shadow:0 0 0 3px var(--ink);clip-path:polygon(25% 0,75% 0,100% 25%,100% 75%,75% 100%,25% 100%,0 75%,0 25%);border-radius:50%}
+.gp-d i{box-shadow:none;border:3px solid var(--ink)}
+.gp-d span{font-size:12px;font-weight:800;opacity:.65}
+.gp-d:hover i{background:#ffe28a}
+.gp-d.on i{background:#e25a4a;transform:scale(1.25)}
+.gp-d.on span{opacity:1;font-weight:900;color:#c0392b}
+.gp-d:active i{transform:translateY(2px)}
+.pg-arr{display:flex;align-items:center;gap:4px;background:none;border:0;font:inherit;font-weight:900;font-size:20px;color:var(--ink);padding:0 6px;height:24px;cursor:pointer}
+.pg-arr span{font-size:13px}
+.pg-arr:disabled{opacity:.25;cursor:default}
+@media (max-width:420px){.pg-arr span{display:none}.gp-d{min-width:22px;padding:2px 2px}}
+.gp-foot{display:flex;justify-content:center;align-items:center;gap:12px;margin:8px 0 0}
+.gp-foot .pg-count{margin:0;text-align:center}
+.gp-jump{display:flex;align-items:center;gap:5px;background:none;border:0;font:inherit;font-size:13px;font-weight:800;color:var(--ink);border-bottom:3px solid rgba(59,35,20,.25);padding:2px 0;cursor:pointer}
+.fi-dk .liq{transform-box:fill-box;transform-origin:50% 100%}
+.fi.fi-dk.cupb{line-height:normal}
+.fi-dk.on .fi-i{transform:none}
+@media (min-width:700px){
+  .p2grid{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start}
+  .p2r .tdrow{display:flex;flex-direction:column;gap:6px}
+  .p2r .ck{margin-bottom:22px}
+}
+@media (max-width:699px){
+  .p2r .fr-h{justify-content:center}
+  .p2r .ck{justify-content:center}
+  .p2r .ck-q{flex:0 1 130px}
+}
+@media (min-width:700px){
+  .p2grid{display:grid;grid-template-columns:auto auto;grid-template-areas:"fh tm" "fz tm" "in in";justify-content:center;column-gap:64px;row-gap:4px;align-items:center}
+  .p2l{display:contents}
+  .p2l > .fr-h{grid-area:fh;justify-content:center;margin-bottom:0}
+  .p2l > .fz{grid-area:fz;margin-bottom:10px}
+  .p2l > #want{grid-area:in;width:100%;max-width:560px;justify-self:center;margin-top:18px}
+  .p2r{grid-area:tm;align-self:stretch;display:flex;flex-direction:column}
+  .p2r .tdrow,.p2r .td-t{flex:1;display:flex;flex-direction:column}
+  .p2r .td-t > .fr-h{margin-top:0}
+  .p2r .td-t > .ck{margin:auto 0 !important}
+  .p2r .fr-h{justify-content:center}
+  .p2r .ck{flex-direction:column;align-items:center;gap:14px;margin:0}
+  .p2r .ck-q{flex-direction:row;max-width:none;gap:8px}
+  .p2r .ck-q .pill-btn{width:auto;padding-left:12px;padding-right:12px}
+  .p2r .ck{display:grid;grid-template-columns:auto auto;justify-content:center;align-items:center;column-gap:10px;row-gap:16px}
+  .p2r .ck-face{grid-column:1/-1;justify-self:center}
+  .p2r .ck-face svg{width:140px;height:149px}
+  .p2r .ck-any{padding:0 2px !important}
+  .p2r .ck-any svg{width:32px;height:32px}
+}
+.fz-floor{left:4% !important;right:calc(76px + 4%) !important}
+@media (max-width:699px){
+  .p2r .ck{display:grid !important;grid-template-columns:auto auto;justify-content:center;align-items:center;column-gap:8px;row-gap:12px}
+  .p2r .ck-face{grid-column:1/-1;justify-self:center}
+  .p2r .ck-q{flex-direction:row !important;max-width:none !important;gap:6px}
+  .p2r .ck-q .pill-btn{width:auto !important;padding-left:9px;padding-right:9px}
+  .p2r .ck-any{padding:0 2px !important}
+  .p2r .ck-any svg{width:30px;height:30px}
+}
+.fi-dk.on::after{display:none}
+.ck-any b,.ck-any span{white-space:nowrap}
+.cs-dpi svg{width:40px !important;height:40px !important}
+.cstrip:not(.many) .cs-b{flex:1 1 0;min-width:0}
+.cstrip:not(.many) .cs-any .cs-i{width:min(76px,100%)}
+.fr-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.fr-h span{font-size:13px;font-weight:700;color:var(--soft);font-family:inherit}
+.fridge{position:relative;max-width:420px;margin:6px auto 22px;background:#f4f1ea;padding:8px 8px 10px;box-shadow:0 0 0 4px var(--ink),6px 6px 0 4px rgba(59,35,20,.25)}
+.fr-frz{height:26px;background:#e6e1d6;margin-bottom:8px;position:relative;box-shadow:inset 0 -4px 0 rgba(59,35,20,.12)}
+.fr-hd{position:absolute;left:14px;top:9px;width:44px;height:6px;background:#b9b2a4;box-shadow:0 2px 0 var(--ink)}
+.fr-in{position:relative;background:linear-gradient(#e9f7ff,#cfeaf7);padding:14px 8px 8px;box-shadow:inset 0 0 0 4px #b8dcec}
+.fr-lamp{position:absolute;left:50%;top:4px;width:40px;height:5px;margin-left:-20px;background:#fff8c8;box-shadow:0 0 14px 6px rgba(255,248,200,.9)}
+.fr-sh{display:grid;grid-template-columns:repeat(3,1fr);align-items:end;padding:6px 0 0;margin-bottom:12px;border-bottom:5px solid #9fc9de;box-shadow:0 3px 0 rgba(59,35,20,.12)}
+.fr-cr{display:flex;justify-content:center;background:rgba(140,200,120,.28);padding:6px 0 2px;box-shadow:inset 0 5px 0 rgba(255,255,255,.6),inset 0 -4px 0 rgba(90,150,80,.3)}
+.fr-ft{position:absolute;bottom:-12px;width:14px;height:8px;background:var(--ink)}
+.fr-ft.l{left:16px}.fr-ft.r{right:16px}
+.fi{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 2px 6px;background:none;border:0;box-shadow:none;font:inherit;color:var(--ink);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.fi-i{height:44px;display:grid;place-items:end center;transition:transform .15s steps(3)}
+.fi-n{font-size:13px;font-weight:800;padding:1px 6px}
+.fi:active .fi-i{transform:scale(.92)}
+.fi.on .fi-i{transform:translateY(-6px);filter:drop-shadow(0 6px 0 rgba(59,35,20,.18))}
+.fi.on .fi-n{background:var(--ink);color:#fff6dc}
+.fi.on::after{content:"";position:absolute;top:0;right:12%;width:12px;height:12px;background:#d8202a;box-shadow:0 0 0 2px #fff;clip-path:polygon(0 50%,40% 90%,100% 10%,85% 0,40% 60%,15% 35%)}
+.more-acts{display:flex;gap:10px;margin-top:14px;padding-top:12px;border-top:3px dashed rgba(59,35,20,.18)}
+.ma{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 6px;background:transparent;border:0;font:inherit;font-size:13px;font-weight:700;color:var(--soft);cursor:pointer;box-shadow:var(--pxb)}
+.ma svg{width:18px;height:18px}
+.ma:active{transform:translateY(3px)}
 @media (prefers-reduced-motion:reduce){.tapfx{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.star{opacity:.6}.cv-steam.b{display:none}}
 </style>
@@ -1087,11 +1412,11 @@ body:has(#cover:not(.gone):not(.leaving)) #mtab{display:none}
 <body>
 <div id="aurora" aria-hidden="true"><div id="clouds"></div><div id="stars"></div></div>
 <div id="mtab"><div class="mt-row"><div class="mt-side"><button id="mtHeart" class="mt-s heart-s" aria-label="喜欢的菜"></button><button id="mtBan" class="mt-s ban-s" aria-label="拉黑的菜"></button></div><button id="mtabTuck" aria-label="收起菜单">&gt;</button><button id="mtabBtn" aria-expanded="false">菜单<b id="mtabN"></b></button></div><div id="mtabP" role="dialog" aria-label="已选的菜"></div></div>
-<div id="cover" class="play" role="button" tabindex="0" aria-label="轻点开始"><div id="cvClouds" aria-hidden="true"></div><div class="cv-snd"><button class="rs snd" aria-label="音效"></button><button class="rs mus" aria-label="音乐"></button></div><div class="cv-fly" id="cvFly" aria-hidden="true"></div><div id="cvStars" aria-hidden="true"></div><div class="cv-grass" id="cvGrass" aria-hidden="true"></div><div class="cv-center"><div class="cv-sign"><i class="cv-nail l"></i><i class="cv-nail r"></i><h1 class="cv-title" id="cvTitle" aria-label="今天吃什么？"></h1></div><div class="cv-char" id="cvChar" aria-hidden="true"></div><p class="cv-tap">轻点开始</p></div><div class="cv-btns"><button class="cv-saved">以前的菜单</button><button class="cv-saved cv-quick">帮我配一桌</button></div></div>
+<div id="cover" class="play" role="button" tabindex="0" aria-label="轻点开始"><div id="cvClouds" aria-hidden="true"></div><div class="cv-snd"><button class="rs setb" aria-label="设置"></button></div><div class="cv-fly" id="cvFly" aria-hidden="true"></div><div id="cvStars" aria-hidden="true"></div><div class="cv-grass" id="cvGrass" aria-hidden="true"></div><div class="cv-center"><div class="cv-sign"><i class="cv-nail l"></i><i class="cv-nail r"></i><h1 class="cv-title" id="cvTitle" aria-label="今天吃什么？"></h1></div><div class="cv-char" id="cvChar" aria-hidden="true"></div><p class="cv-tap">轻点开始</p></div><div class="cv-btns"><button class="cv-saved">以前的菜单</button><button class="cv-saved cv-quick">帮我配一桌</button></div></div>
 <div class="wrap">
   <header class="mast">
     <button class="home-b" id="homeBtn" aria-label="回到封面" data-tip="回到封面（进度会保留）"><div id="mascot" aria-hidden="true"></div><div class="brand">今天<span class="chi-t">吃</span>什么？</div></button>
-    <button class="rs" id="startOver" aria-label="回到开头" data-tip="清空重来">重来</button><button class="rs bookb" id="tblBtn" aria-label="以前的菜单" data-tip="收藏的菜单" data-tip-r="1"></button><button class="rs snd" id="sndBtn" aria-label="音效" data-tip="音效开关" data-tip-r="1"></button><button class="rs mus" id="musBtn" aria-label="音乐" data-tip="音乐开关（长按或右键选歌）" data-tip-r="1"></button>
+    <span class="hid-ctl" hidden><button class="rs mus" id="musBtn" aria-label="音乐" data-tip="音乐开关（长按或右键选歌）" data-tip-r="1"></button><button class="rs" id="startOver" aria-label="回到开头">重来</button><button class="rs bookb" id="tblBtn" aria-label="以前的菜单"></button><button class="rs snd" id="sndBtn" aria-label="音效" data-tip="音效开关" data-tip-r="1"></button></span><button class="rs setb" id="setBtn" aria-label="设置" data-tip="设置" data-tip-r="1"></button>
   </header>
   <ol class="ticks" id="steps"></ol>
   <main id="app"></main>
@@ -1265,48 +1590,74 @@ function dishType(d){
 function dishArt(d, scale){ return '<span class="art">'+TOPART(d, dishType(d), scale || 2)+'</span>'; }
 /* ---------- top-view pixel dish art (procedural, one per dish) ---------- */
 const TOPART = (() => {
-  const N = 32, K = "#3b2314";
+  const N = 32, K = "#3b2314", S = 1.5, NF = 48;
   const hash = s => { let h = 2166136261; for (const ch of s) { h ^= ch.codePointAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
   const rng = seed => { let a = seed || 7; return () => { a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; };
   const hx = c => [parseInt(c.slice(1,3),16), parseInt(c.slice(3,5),16), parseInt(c.slice(5,7),16)];
   const sh = (c, a) => { const [r,g,b] = hx(c); const f = v => Math.max(0, Math.min(255, Math.round(a >= 0 ? v + (255 - v) * a : v * (1 + a)))).toString(16).padStart(2, "0"); return "#" + f(r) + f(g) + f(b); };
 
-  function grid(){ return {p: new Array(N*N).fill(null), occ: new Uint8Array(N*N)}; }
+  // drawing runs on a logical 32-grid; pixels land on a finer 48-grid so curves and food pieces get more detail
+  function grid(){ return {p: new Array(NF*NF).fill(null), occ: new Uint8Array(NF*NF)}; }
   const inb = (x,y) => x >= 0 && y >= 0 && x < N && y < N;
-  const put = (g,x,y,c) => { if (c && inb(x,y)) g.p[y*N+x] = c; };
+  const finb = (x,y) => x >= 0 && y >= 0 && x < NF && y < NF;
+  const fput = (g,x,y,c) => { if (c && finb(x,y)) g.p[y*NF+x] = c; };
+  const put = (g,x,y,c) => { if (!c || !inb(x,y)) return; const x0 = Math.floor(x*S), x1 = Math.floor((x+1)*S), y0 = Math.floor(y*S), y1 = Math.floor((y+1)*S); for (let yy = y0; yy < y1; yy++) for (let xx = x0; xx < x1; xx++) g.p[yy*NF+xx] = c; };
+  const occAt = (g,x,y) => g.occ[Math.floor((y+.5)*S)*NF + Math.floor((x+.5)*S)];
+  const occSet = (g,x,y,v) => { const x0 = Math.floor(x*S), x1 = Math.floor((x+1)*S), y0 = Math.floor(y*S), y1 = Math.floor((y+1)*S); for (let yy = y0; yy < y1; yy++) for (let xx = x0; xx < x1; xx++) if (finb(xx,yy)) g.occ[yy*NF+xx] = v; };
   const dist = (x,y,cx,cy) => Math.hypot(x + .5 - cx, y + .5 - cy);
+  // iterate fine pixels, giving the logical position of each pixel centre
+  const eachF = fn => { for (let fy = 0; fy < NF; fy++) for (let fx = 0; fx < NF; fx++) fn(fx, fy, (fx + .5)/S, (fy + .5)/S); };
   function disc(g, cx, cy, r, col, shade){
-    for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
-      const d = dist(x,y,cx,cy); if (d > r) continue;
+    eachF((fx, fy, lx, ly) => {
+      const d = Math.hypot(lx - cx, ly - cy); if (d > r) return;
       let c = col;
-      if (shade) { const k = (x + .5 - cx + y + .5 - cy) / r; c = k < -0.75 ? sh(col, .22) : k > 0.8 ? sh(col, -.18) : col; }
-      put(g,x,y,c);
-    }
+      if (shade) { const k = (lx - cx + ly - cy) / r; c = k < -0.75 ? sh(col, .22) : k > 0.8 ? sh(col, -.18) : col; }
+      fput(g,fx,fy,c);
+    });
   }
-  function ring(g, cx, cy, r0, r1, col){ for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) { const d = dist(x,y,cx,cy); if (d > r0 && d <= r1) put(g,x,y,col); } }
+  function ring(g, cx, cy, r0, r1, col){ eachF((fx, fy, lx, ly) => { const d = Math.hypot(lx - cx, ly - cy); if (d > r0 && d <= r1) fput(g,fx,fy,col); }); }
   function ell(g, cx, cy, rx, ry, col, rot){
     const cs = Math.cos(rot||0), sn = Math.sin(rot||0);
-    for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
-      const dx = x + .5 - cx, dy = y + .5 - cy, u = dx*cs + dy*sn, v = -dx*sn + dy*cs;
-      if ((u*u)/(rx*rx) + (v*v)/(ry*ry) <= 1) put(g,x,y,col);
-    }
+    eachF((fx, fy, lx, ly) => {
+      const dx = lx - cx, dy = ly - cy, u = dx*cs + dy*sn, v = -dx*sn + dy*cs;
+      if ((u*u)/(rx*rx) + (v*v)/(ry*ry) <= 1) fput(g,fx,fy,col);
+    });
   }
   function blob(g, cx, cy, r, col, R, edge){
     const ph = R()*6.28, ph2 = R()*6.28;
-    for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
-      const dx = x + .5 - cx, dy = y + .5 - cy, a = Math.atan2(dy, dx);
+    eachF((fx, fy, lx, ly) => {
+      const dx = lx - cx, dy = ly - cy, a = Math.atan2(dy, dx);
       const rr = r * (0.88 + 0.08*Math.sin(a*3 + ph) + 0.05*Math.sin(a*5 + ph2));
       const d = Math.hypot(dx, dy);
-      if (d <= rr) put(g,x,y, edge && d > rr - 1 ? edge : col);
-    }
+      if (d <= rr) fput(g,fx,fy, edge && d > rr - .75 ? edge : col);
+    });
   }
   function rect(g, x0, y0, w, h, col){ for (let y = y0; y < y0+h; y++) for (let x = x0; x < x0+w; x++) put(g,x,y,col); }
+  // a thin curled slice of meat: body, darker underside, seared spots and a glossy highlight
+  function sliceAt(g, x0, y0, ang, len, C, R){
+    const ca = Math.cos(ang), sa = Math.sin(ang), nx = -sa, ny = ca, bend = (R() - .5) * .5;
+    for (let t = 0; t <= len; t += .5) {
+      const k = t / len - .5, x = x0 + ca*t + nx*bend*k*len*.6, y = y0 + sa*t + ny*bend*k*len*.6;
+      const fx = Math.round(x*S), fy = Math.round(y*S);
+      fput(g, fx, fy, C.m); fput(g, Math.round((x + nx*.5)*S), Math.round((y + ny*.5)*S), C.m); fput(g, Math.round((x + nx)*S), Math.round((y + ny)*S), C.d);
+      if (R() < .2) fput(g, fx, fy, C.s); else if (R() < .2) fput(g, Math.round((x - nx*.4)*S), Math.round((y - ny*.4)*S), C.h);
+    }
+  }
+  // a craggy fried piece: crunchy crust speckles, darker rim, a lit top-left
+  function friedChunk(g, cx, cy, r, R, C){
+    blob(g, cx, cy, r, C.m, R, C.d);
+    eachF((fx, fy, lx, ly) => {
+      const d = Math.hypot(lx - cx, ly - cy); if (d > r - .9) return;
+      const q = R(); if (q < .2) fput(g, fx, fy, C.l); else if (q < .34) fput(g, fx, fy, C.k);
+    });
+    put(g, Math.round(cx - r*.45), Math.round(cy - r*.5), C.w); put(g, Math.round(cx - r*.45) + 1, Math.round(cy - r*.5), C.l);
+  }
   function line(g, x0, y0, x1, y1, col){ const n = Math.max(Math.abs(x1-x0), Math.abs(y1-y0)) || 1; for (let i = 0; i <= n; i++) put(g, Math.round(x0 + (x1-x0)*i/n), Math.round(y0 + (y1-y0)*i/n), col); }
   function outline(g, col){
     const src = g.p.slice();
-    for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
-      if (src[y*N+x]) continue;
-      if ([[1,0],[-1,0],[0,1],[0,-1]].some(([a,b]) => inb(x+a,y+b) && src[(y+b)*N+x+a])) put(g,x,y,col);
+    for (let y = 0; y < NF; y++) for (let x = 0; x < NF; x++) {
+      if (src[y*NF+x]) continue;
+      if ([[1,0],[-1,0],[0,1],[0,-1]].some(([a,b]) => finb(x+a,y+b) && src[(y+b)*NF+x+a])) fput(g,x,y,col);
     }
   }
   /* stamp a small pattern; returns false if it would overlap other toppings too much */
@@ -1316,24 +1667,56 @@ const TOPART = (() => {
       if (pat[j][i] === ".") continue; cells++;
       const x = x0+i, y = y0+j;
       if (!inb(x,y) || (mask && !mask(x,y))) return false;
-      if (g.occ[y*N+x]) over++;
+      if (occAt(g,x,y)) over++;
     }
     if (!force && over > cells * 0.25) return false;
-    for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) { const ch = pat[j][i]; if (ch === ".") continue; put(g, x0+i, y0+j, cols[ch]); g.occ[(y0+j)*N+x0+i] = 1; }
+    for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) { const ch = pat[j][i]; if (ch === ".") continue; put(g, x0+i, y0+j, cols[ch]); occSet(g, x0+i, y0+j, 1); }
+    return true;
+  }
+  // food pieces are stamped at fine resolution, so more and smaller pieces fit on a plate
+  function fstamp(g, pat, cols, fx0, fy0, mask, maxOver, tag){
+    const h = pat.length, w = pat[0].length; let over = 0, cells = 0;
+    for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) {
+      if (pat[j][i] === ".") continue; cells++;
+      const x = fx0+i, y = fy0+j;
+      if (!finb(x,y) || (mask && !mask(Math.floor((x+.5)/S), Math.floor((y+.5)/S)))) return false;
+      if (g.occ[y*NF+x]) over++;
+    }
+    if (over > cells * maxOver) return false;
+    for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) { const ch = pat[j][i]; if (ch === ".") continue; fput(g, fx0+i, fy0+j, cols[ch]); g.occ[(fy0+j)*NF+fx0+i] = tag || 1; }
     return true;
   }
   function scatter(g, top, n, R, area){
     const pat = top.p, w = pat[0].length, h = pat.length;
-    let placed = 0;
+    let placed = 0; n = Math.round(n * 1.7);
     for (let k = 0; k < n * 14 && placed < n; k++) {
       const a = R()*6.283, r = Math.sqrt(R()) * area.r;
-      const x0 = Math.round(area.cx + Math.cos(a)*r - w/2), y0 = Math.round(area.cy + Math.sin(a)*r*(area.sy||1) - h/2);
+      const x0 = Math.round((area.cx + Math.cos(a)*r)*S - w/2), y0 = Math.round((area.cy + Math.sin(a)*r*(area.sy||1))*S - h/2);
       const p2 = top.rot && R() < .5 ? rotPat(pat) : pat;
-      if (stamp(g, p2, top.c, x0, y0, area.mask, false)) placed++;
+      if (fstamp(g, p2, top.c, x0, y0, area.mask, .25)) placed++;
     }
     return placed;
   }
   const rotPat = p => p[0].split("").map((_, i) => p.map(r => r[i]).reverse().join(""));
+  // dense pile: pieces may overlap like a real heap of food
+  function pile(g, top, n, R, area){
+    const pat = top.p, w = pat[0].length, h = pat.length; let placed = 0; n = Math.round(n * 1.7);
+    for (let k = 0; k < n * 20 && placed < n; k++) {
+      const a = R()*6.283, r = Math.sqrt(R()) * area.r;
+      const x0 = Math.round((area.cx + Math.cos(a)*r)*S - w/2), y0 = Math.round((area.cy + Math.sin(a)*r)*S - h/2);
+      const p2 = top.rot && R() < .5 ? rotPat(pat) : pat;
+      if (fstamp(g, p2, top.c, x0, y0, area.mask, .55, 2)) placed++;
+    }
+  }
+  // thin dark rim around piled pieces so each piece reads against the sauce
+  function rim(g, area){
+    const add = [];
+    for (let y = 1; y < NF - 1; y++) for (let x = 1; x < NF - 1; x++) {
+      if (g.occ[y*NF+x] === 2) continue; if (area.mask && !area.mask(Math.floor((x+.5)/S), Math.floor((y+.5)/S))) continue;
+      if (g.occ[y*NF+x+1] === 2 || g.occ[y*NF+x-1] === 2 || g.occ[(y+1)*NF+x] === 2) add.push([x, y]);
+    }
+    add.forEach(([x, y]) => { const c = g.p[y*NF+x]; if (c) fput(g, x, y, sh(c, -.5)); });
+  }
 
   /* ---- toppings ---- */
   const T = {
@@ -1414,6 +1797,75 @@ const TOPART = (() => {
     lemongr:{p:[".g.","gwg",".g."], c:{g:"#b6cf7a",w:"#eef3cf"}},
     seaweed:{p:["kkk","kKk"], c:{k:"#1f3a2a",K:"#2f5a3a"}},
     nori:   {p:["kk","kk","kk"], c:{k:"#1c2a22"}},
+    honeyD: {p:["yyy"], c:{y:"#e8b84a"}, rot:1},
+    raisin: {p:["rr"], c:{r:"#5a2a2a"}},
+    hawC:   {p:["rR","rr"], c:{r:"#c8302a",R:"#f0705a"}},
+    redbean:{p:["rR"], c:{r:"#7a2a24",R:"#a84a3a"}},
+    tremella:{p:[".ww.","wWwW","wwWw"], c:{w:"#fbf3dc",W:"#efe0b8"}},
+    lotusSeed:{p:["ww","wW"], c:{w:"#f8f0d8",W:"#e0d0a0"}},
+    redDate:{p:["rR","rr"], c:{r:"#9a1e1a",R:"#c8402a"}},
+    ribC:   {p:["wbbb","bBbb",".bbd"], c:{w:"#f6ecd8",b:"#8a4a26",B:"#c27a44",d:"#5a2a14"}, rot:1},
+    ribRed: {p:["wbbb","bBbb",".bbd"], c:{w:"#f6ecd8",b:"#a8381e",B:"#e06a3a",d:"#6a1a0c"}, rot:1},
+    wingC:  {p:[".bbb","bBbb","bbbd",".dd."], c:{b:"#6a2e14",B:"#b8683a",d:"#3e1808"}, rot:1},
+    hongC:  {p:["rRr","fff","rrr","rrd"], c:{r:"#8a2e16",R:"#d0683a",f:"#f2c8a0",d:"#5a1a0a"}},
+    hongD:  {p:["rRr","fff","rrr"], c:{r:"#5a2a16",R:"#9a5a30",f:"#d8b088"}},
+    chicSl: {p:["yyyy","wwww","wwwW"], c:{y:"#f2d58a",w:"#fbf3e4",W:"#e8dcc4"}, rot:1},
+    peanut: {p:[".pp","pPp"], c:{p:"#c98a4a",P:"#ecc08a"}, rot:1},
+    chiliSeg:{p:["rrR"], c:{r:"#b81e14",R:"#e8402a"}, rot:1},
+    leekSeg:{p:["ggW"], c:{g:"#3f9a3a",W:"#e6f2d0"}, rot:1},
+    dumpC:  {p:[".ww.","wWWw","wwww"], c:{w:"#fbf6ea",W:"#e6dcc8"}},
+    shumaiC:{p:[".yy.","wyyw","wwww"], c:{y:"#f0c860",w:"#f8f0dc"}},
+    tyuanC: {p:[".w.","wWw",".w."], c:{w:"#ffffff",W:"#eeeae0"}},
+    fishSl: {p:["wwww","WwwW"], c:{w:"#fbf6ec",W:"#e6dccc"}, rot:1},
+    crabC:  {p:[".oo.","oOOo","o..o"], c:{o:"#e8602a",O:"#f6a05a"}},
+    snailC: {p:[".kk","kKk","kk."], c:{k:"#3a2a1e",K:"#7a5a3a"}},
+    friedStrip:{p:["oOoo","oooo"], c:{o:"#d8842a",O:"#f6c06a"}, rot:1},
+    sweetSour:{p:["oOoo","oooo"], c:{o:"#d8541e",O:"#f6904a"}, rot:1},
+    porkCube:{p:["pPp","ppp","ppd"], c:{p:"#b8784e",P:"#dca07a",d:"#7a4a2a"}},
+    bambooSh:{p:["yyyy"], c:{y:"#e8d49a"}, rot:1},
+    eggSlice:{p:[".ww.","wyyw",".ww."], c:{w:"#fbf6ea",y:"#f4c937"}},
+    riceG:  {p:["w"], c:{w:"#fbf8ee"}},
+    eggRice:{p:["y"], c:{y:"#f6d45a"}},
+    tofuSkin:{p:["yyyy","YyyY"], c:{y:"#e8c070",Y:"#c89a48"}, rot:1},
+    sausage2:{p:["rrr","RrR"], c:{r:"#b8302a",R:"#e86a5a"}},
+    cuminB: {p:["bb","bd"], c:{b:"#8a4a26",d:"#5a2a14"}},
+    potCube:{p:["yy","yd"], c:{y:"#e6bf5a",d:"#c9983a"}},
+    porksl: {p:["hccc","cccd"], c:{h:"#e8b294",c:"#c98a6a",d:"#9c6247"}, rot:1},
+    brussel:{p:[".gg.","gGgg","gggG",".gg."], c:{g:"#4f8a2f",G:"#9ccf6a"}},
+    duck:   {p:["hdd","ddD","dDD"], c:{h:"#c88a5a",d:"#8a4a2a",D:"#5e2a16"}},
+    eel:    {p:["eeee","EEEE"], c:{e:"#5a3a2a",E:"#8a6a4a"}, rot:1},
+    cauli:  {p:[".ww.","wWWw",".gg."], c:{w:"#fbf6e6",W:"#ece4c8",g:"#9ccf6a"}},
+    celtuce:{p:["llll","lLLl"], c:{l:"#c8e6a0",L:"#e2f2c4"}, rot:1},
+    celery: {p:["gggg","GGGG"], c:{g:"#5aa83f",G:"#9ad46a"}, rot:1},
+    chive:  {p:["gggggg"], c:{g:"#3f9a3a"}, rot:1},
+    wmelon: {p:["www","wWw","ggg"], c:{w:"#e6f2d8",W:"#d0e6b8",g:"#4f8a3a"}},
+    bitterm:{p:["gGgG","GgGg"], c:{g:"#4f9a3a",G:"#8acb5e"}, rot:1},
+    enoki:  {p:["w.w.w","w.w.w","wwwww"], c:{w:"#f6f0dc"}},
+    cegg:   {p:[".kk.","kAAk","kAak",".kk."], c:{k:"#2a2420",A:"#6a5a3a",a:"#c8a85a"}},
+    bokC:   {p:["gg..","gGg.",".www",".www"], c:{g:"#3f9a3a",G:"#6fc05a",w:"#e6f2d0"}, rot:1},
+    spinC:  {p:[".gG.","gGgg","Gggg",".gg."], c:{g:"#2f7230",G:"#4c9a3f"}, rot:1},
+    lettC:  {p:[".lL.","lLlL","LlLl",".lL."], c:{l:"#8fd06a",L:"#b8e68e"}, rot:1},
+    scrambleC:{p:[".yy.","yYyy","yyYy",".yy."], c:{y:"#f4c937",Y:"#fbe58a"}},
+    woodearC:{p:[".kk.","kKkk","kkK."], c:{k:"#2a2020",K:"#4a3a38"}, rot:1},
+    broccC: {p:[".gG.","gGgG","GgGg",".ll."], c:{g:"#2f7a32",G:"#4fa54a",l:"#9ccf6a"}},
+    shiitC: {p:[".mm.","mwMm","mMMm",".mm."], c:{m:"#6e4a30",M:"#8c6040",w:"#d9c6a6"}},
+    cucumberC:{p:["..kk.",".klLk","kllLk","kLll.",".kk.."], c:{k:"#2a6a26",l:"#b8dc82",L:"#eef6cc"}, rot:1},
+    eggplC: {p:["vvv.","vbbv","bbBb",".bb."], c:{v:"#4e2266",b:"#b9783a",B:"#d9a05a"}, rot:1},
+    potatoC:{p:["yyy","yYy","yyd"], c:{y:"#e6bf5a",Y:"#f6dc8a",d:"#c9983a"}},
+    pepgC:  {p:["gg.","gGg",".gg"], c:{g:"#3f9a3a",G:"#7cc864"}, rot:1},
+    peprC:  {p:["rr.","rRr",".rr"], c:{r:"#d83a2b",R:"#f0705a"}, rot:1},
+    pepyC:  {p:["yy.","yYy",".yy"], c:{y:"#f3c32a",Y:"#fbe27a"}, rot:1},
+    tomatoC:{p:[".rr.","rppr","rRRr"], c:{r:"#e2483a",R:"#b9302a",p:"#ff9a7a"}},
+    zuccC:  {p:[".gg.","gccg","gccg",".gg."], c:{g:"#3f7a2f",c:"#e6eebf"}},
+    radishC:{p:["www","wWw","www"], c:{w:"#fbf8ee",W:"#e8e2d0"}},
+    carrotC:{p:["oo.","oOo",".oo"], c:{o:"#ef8a2b",O:"#ffb062"}, rot:1},
+    cabbC:  {p:["ll.","lLl",".lL"], c:{l:"#d8edb0",L:"#b9dc86"}, rot:1},
+    beanC:  {p:["gGggg","gggGg"], c:{g:"#4a9a3a",G:"#8ccf5e"}, rot:1},
+    tofuC:  {p:["www","wwg","wgg"], c:{w:"#fbf6e6",g:"#e4dcc2"}},
+    lotusC: {p:[".ww.","wcwc","wwww",".ww."], c:{w:"#f4ecd6",c:"#a89870"}},
+    sweetpC:{p:["oo.","oOo",".oo"], c:{o:"#f0913a",O:"#d06a1e"}},
+    okraC:  {p:[".gg.","gwwg",".gg."], c:{g:"#4a8a2f",w:"#cfe3a0"}},
+    mushC:  {p:[".mm.","mMMm",".ss."], c:{m:"#a67a52",M:"#c89a6a",s:"#e8d6b8"}},
     kimchi: {p:["rR.",".rr"], c:{r:"#e2512b",R:"#f08a4a"}, rot:1},
     bread:  {p:["bbb","bwb","bbb"], c:{b:"#c98a3a",w:"#f3d9a0"}},
     tortchip:{p:["yy.","yYy"], c:{y:"#e9b84a",Y:"#f6d47a"}},
@@ -1448,7 +1900,34 @@ const TOPART = (() => {
     noodleg:{p:["ggg"], c:{g:"#cfe0b0"}, rot:1}
   };
   /* ingredient text -> topping (order matters) */
+  const FIXART = {"宫保鸡丁": ["plate", "#8a3a1e", 8.5, [["porkCube", 9], ["peanut", 9], ["chiliSeg", 8], ["leekSeg", 5]]], "红烧肉": ["plate", "#7a2a12", 8.5, [["hongC", 9]]], "简易红烧肉": ["plate", "#7a2a12", 8.5, [["hongC", 9]]], "湖南家常红烧肉": ["plate", "#7a2a12", 8.5, [["hongC", 8], ["chiliSeg", 4]]], "徽派红烧肉": ["plate", "#7a2a12", 8.5, [["hongC", 9]]], "南派红烧肉": ["plate", "#7a2a12", 8.5, [["hongC", 9]]], "梅菜扣肉": ["bowl", "#4a3018", 9, [["hongD", 10]]], "腐乳肉": ["plate", "#9a2e1e", 8.5, [["hongC", 9]]], "粉蒸肉": ["plate", null, 0, [["hongD", 9], ["riceG", 30]]], "糖醋里脊": ["plate", "#c8501e", 7.5, [["sweetSour", 12], ["sesame", 10]]], "可乐鸡翅": ["plate", "#5a2a12", 8, [["wingC", 8], ["sesame", 6]]], "红烧鸡翅": ["plate", "#5a2a12", 8, [["wingC", 8], ["scal", 4]]], "甜辣烤全翅": ["plate", "#a8381e", 7, [["wingC", 7], ["sesame", 6]]], "口水鸡": ["plate", "#b8301e", 9.5, [["chicSl", 9], ["peanut", 6], ["sesame", 8], ["scal", 4]]], "姜葱捞鸡": ["plate", "#e8dcb8", 8, [["chicSl", 10], ["leekSeg", 6]]], "凉拌鸡丝": ["bowl", "#c8784a", 7, [["chicSl", 8], ["cucumber", 6], ["sesame", 6]]], "卤菜": ["plate", null, 0, [["hongD", 5], ["eggSlice", 3], ["tofuSkin", 4], ["wingC", 3]]], "土豆炖排骨": ["bowl", "#8a4a26", 9, [["ribC", 8], ["potCube", 8]]], "糖醋排骨": ["plate", "#8a2e16", 7.5, [["ribRed", 10], ["sesame", 8]]], "豉汁排骨": ["plate", "#6a4a2a", 7, [["ribC", 10], ["chiliSeg", 3], ["scal", 3]]], "酱排骨": ["plate", "#5a2a12", 7.5, [["ribC", 10]]], "醉排骨": ["plate", "#7a3a1a", 7.5, [["ribC", 10], ["sesame", 6]]], "椒盐排条": ["plate", null, 0, [["friedStrip", 11], ["chiliSeg", 4], ["leekSeg", 4]]], "老式锅包肉": ["plate", null, 0, [["friedStrip", 10], ["carrot", 4], ["scal", 4]]], "小酥肉": ["plate", null, 0, [["friedStrip", 12]]], "孜然牛肉": ["plate", null, 0, [["cuminB", 16], ["chiliSeg", 5], ["onion", 4], ["herb", 4]]], "水煮牛肉": ["bowl", "#c8301e", 10, [["beefsl", 0], ["chiliSeg", 8], ["pepcorn", 8], ["herb", 4]]], "水煮肉片": ["bowl", "#c8301e", 10, [["porksl", 0], ["chiliSeg", 8], ["pepcorn", 8], ["herb", 4]]], "水煮鱼": ["bowl", "#c8301e", 10, [["fishSl", 11], ["chiliSeg", 10], ["pepcorn", 8], ["herb", 4]]], "白切鸡": ["plate", null, 0, [["chicSl", 12]]], "田螺酿": ["plate", "#6a3a1a", 8, [["snailC", 11], ["herb", 4]]], "手工水饺": ["plate", null, 0, [["dumpC", 10]]], "鲜肉烧卖": ["plate", null, 0, [["shumaiC", 8]]], "醪糟小汤圆": ["bowl", "#f4ecd4", 10, [["tyuanC", 14], ["herb", 0]]], "咖喱炒蟹": ["plate", "#e8a83a", 9, [["crabC", 8], ["scal", 4]]], "肉蟹煲": ["bowl", "#c8602a", 9.5, [["crabC", 7], ["potCube", 6], ["scal", 4]]], "酱炖蟹": ["plate", "#9a4a1e", 8.5, [["crabC", 8]]], "黄油鸡": ["plate", "#f0c860", 8.5, [["porkCube", 9], ["herb", 4]]], "枝竹羊腩煲": ["bowl", "#6a3a1a", 9.5, [["beef", 8], ["tofuSkin", 6], ["scal", 4]]], "蛋炒饭": ["plate", null, 0, [["eggRice", 60], ["riceG", 60], ["scramble", 6], ["scal", 5]]], "扬州炒饭": ["plate", null, 0, [["eggRice", 50], ["riceG", 60], ["shrimp", 4], ["ham", 4], ["pea", 5]]], "可乐炒饭": ["plate", null, 0, [["eggRice", 40], ["riceG", 50], ["ham", 5], ["scal", 4]]], "蛋包饭": ["plate", "#f6d45a", 9, [["chili", 0]]], "杀猪菜": ["bowl", "#e8e0c8", 10, [["belly", 0], ["cabbage", 8], ["sausage2", 5]]], "梅干菜扣肉": ["bowl", "#4a3018", 9, [["hongD", 10]]], "油焖大虾": ["plate", "#c8401e", 8, [["shrimp", 11], ["scal", 4]]], "白灼虾": ["plate", null, 0, [["shrimp", 16]]], "蒜蓉虾": ["plate", null, 0, [["shrimp", 13], ["garlic", 10], ["scal", 4]]], "龟苓膏": ["bowl", "#1e1612", 10, [["honeyD", 4]]], "冰粉": ["bowl", "#ead8b8", 10, [["raisin", 6], ["hawC", 5], ["sesame", 6]]], "红薯姜糖水": ["bowl", "#b8783a", 10, [["sweetpC", 7]]], "腊八粥": ["bowl", "#8a5038", 10, [["redbean", 14], ["peanut", 6], ["raisin", 5]]], "银耳莲子粥": ["bowl", "#f2e8cc", 10, [["tremella", 7], ["lotusSeed", 6], ["redDate", 3]]], "小米粥": ["bowl", "#eebe4a", 10, []], "红豆沙": ["bowl", "#6a2a24", 10, [["redbean", 10]]]};
   const ING = [
+    [/chili oil|辣椒油|红油/, "dchili"],
+    [/鸭|duck/, "duck"],
+    [/water spinach|空心菜|morning glory/, "spinach"],
+    [/brussels? sprout|抱子甘蓝/, "brussel"],
+    [/肋排|排骨/, "pork"],
+    [/鱔|鳝/, "eel"],
+    [/padr[oó]n|帕德龙|shishito/, "pepg"],
+    [/兔|rabbit|牛蛙|frog/, "chicken"],
+    [/鳝|eel|鳗/, "eel"],
+    [/鸡爪|凤爪|猪蹄|蹄花|肘子|trotter/, "pork"],
+    [/(thinly )?sliced pork|pork.*thinly sliced|猪肉片|肉片/, "porksl"],
+    [/肥牛|牛肉片|thinly sliced beef|sliced beef|beef.*thinly sliced|ribeye/, "beefsl"],
+    [/花菜|菜花|cauliflower/, "cauli"],
+    [/油麦菜|romaine/, "lettuce"],
+    [/菜心|叶菜|青菜|上海青|油菜|小白菜|bok choy|choy sum/, "bok"],
+    [/莴笋|celtuce/, "celtuce"],
+    [/芹菜|西芹|celery/, "celery"],
+    [/韭菜|韭黄|garlic chive/, "chive"],
+    [/四季豆|豆角|green bean|long bean|haricot|荷兰豆|snow pea|扁豆角/, "edam"],
+    [/冬瓜|winter melon|丝瓜|loofah/, "wmelon"],
+    [/苦瓜|bitter melon/, "bitterm"],
+    [/南瓜|pumpkin|kabocha/, "sweetp"],
+    [/金针菇|enoki/, "enoki"],
+    [/皮蛋|century egg/, "cegg"],
+    [/山药|yam\b/, "radish"],
+    [/娃娃菜|大白菜|napa/, "cabbage"],
     [/鱼露|fish sauce|蚝油|oyster sauce|酱油|soy sauce|生抽|老抽|醋|vinegar|糖|sugar|盐|salt|油$|oil|淀粉|starch|面粉|flour|water|^水$|高汤|broth|stock|dashi|酒|wine|sake|mirin|酱$|paste|powder|粉$|spice|香料|cumin|孜然|turmeric|姜黄|garam|cinnamon|肉桂|小豆蔻|cardamom|胡椒|pepper$|black pepper|saffron|藏红花|vanilla|香草|honey|蜂蜜|syrup|糖浆|蜜|caramel|焦糖|炼乳|condensed|evaporated|milk|牛奶|奶$|gelatin|吉利丁|酵母|yeast|baking|泡打|小苏打|bay leaf|star anise|八角|nutmeg|paprika|红椒粉|漆树|sumac|tamarind|罗望子|mayonnaise|沙拉酱|tahini|芝麻酱|ketchup|番茄酱(?!汁)|sauce$|豆豉|郫县|豆瓣|甜面酱|gochujang|韩式辣酱|doenjang|大酱|miso|味噌|咖喱块|curry powder|rose water|玫瑰水|橙花水|ghee|酥油|butter|黄油|lard|猪油|cocoa|可可|corn syrup|糖稀|麦芽|mustard seed|芥末籽|curry leaf|咖喱叶|fenugreek|lard/, null],
     [/鱼香/, null],
     [/pork belly|五花|bacon(?!.)|培根/, "belly"],
@@ -1578,7 +2057,7 @@ const TOPART = (() => {
       ["curry", /咖喱|curry|masala|dal|扁豆汤|turmeric|姜黄|korma|khao soi|massaman|玛莎曼|sambar|mulligatawny|kadhi|biryani/],
       ["cream", /奶油|cream|chowder|浓汤|bisque|椰浆|椰汁|coconut|carbonara|白酱|alfredo|yogurt|酸奶|tom kha|mac and cheese|通心粉|芝士|cheese|vichyssoise|avgolemono|stracciatella|蛋花|egg drop|white|white bean|豚骨|tonkotsu|butter chicken|黄油鸡|seolleong|cullen/],
       ["miso", /味噌|miso|大酱|doenjang|豚汁|酒粕/],
-      ["soy", /红烧|酱|soy|teriyaki|照烧|bulgogi|烤牛肉|焖|braise|炖|红酒|bourguignon|coq au vin|mole|摩尔|gravy|烧烤|bbq|焦糖|kho|可乐|回锅|蚝油|black bean|黑豆|pot roast|sukiyaki|寿喜|gyudon|牛丼|adobo|onion soup|洋葱汤|jorim|田乐|dengaku|kinpira|金平|羊栖菜/]
+      ["soy", /地三鲜|烧茄子|红烧|酱|soy|teriyaki|照烧|bulgogi|烤牛肉|焖|braise|炖|红酒|bourguignon|coq au vin|mole|摩尔|gravy|烧烤|bbq|焦糖|kho|可乐|回锅|蚝油|black bean|黑豆|pot roast|sukiyaki|寿喜|gyudon|牛丼|adobo|onion soup|洋葱汤|jorim|田乐|dengaku|kinpira|金平|羊栖菜/]
     ];
     for (const [k, re] of F) if (re.test(txt)) return k;
     return "clear";
@@ -1647,16 +2126,16 @@ const TOPART = (() => {
 
   /* fill helpers */
   function baseFill(g, a, col, R, texture){
-    for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
-      if (!a.mask(x,y)) continue;
-      const d = dist(x,y,a.cx,a.cy), k = (x - a.cx + y - a.cy);
+    eachF((fx, fy, lx, ly) => {
+      if (!a.mask(Math.floor(lx), Math.floor(ly))) return;
+      const d = Math.hypot(lx - a.cx, ly - a.cy), k = (lx - .5 - a.cx + ly - .5 - a.cy);
       let c = col;
       if (d > a.r - 1.2) c = sh(col, -.2);
       else if (k < -a.r*1.1 && d > a.r*.45) c = sh(col, .18);
       if (texture === "speck" && R() < .14) c = sh(col, R() < .5 ? .25 : -.15);
       if (texture === "oil" && R() < .06) c = sh(col, .35);
-      put(g,x,y,c);
-    }
+      fput(g,fx,fy,c);
+    });
   }
   function strands(g, a, col, R, n, curl){
     const dark = sh(col, -.25), hi = sh(col, .3);
@@ -1671,7 +2150,7 @@ const TOPART = (() => {
   function mound(g, a, col, R, rr){ blob(g, a.cx, a.cy, rr || a.r - 1.5, col, R, sh(col,-.2)); for (let i = 0; i < 4; i++) put(g, Math.round(a.cx - 4 + R()*3), Math.round(a.cy - 5 + R()*3), sh(col,.3)); }
   function riceTex(g, a, R, col, rr){
     blob(g, a.cx, a.cy, rr || a.r - 1, col || "#fbf8ef", R, "#ddd6c4");
-    for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) if (g.p[y*N+x] === (col || "#fbf8ef") && R() < .2) put(g,x,y, R() < .5 ? "#ffffff" : "#e8e1cf");
+    for (let y = 0; y < NF; y++) for (let x = 0; x < NF; x++) if (g.p[y*NF+x] === (col || "#fbf8ef") && R() < .2) fput(g,x,y, R() < .5 ? "#ffffff" : "#e8e1cf");
   }
 
   /* ---- main draw ---- */
@@ -1680,9 +2159,9 @@ const TOPART = (() => {
     const g = grid(), w = ware(d);
     const txt = (d.name + " " + d.zh + " " + d.ing.join(" ")).toLowerCase();
     const nm = (d.name + " " + d.zh).toLowerCase();
-    const fl = flavor(nm + " " + d.ing.join(" ").toLowerCase());
-    const tops = []; d.ing.forEach(i => { const t = topOf(i); if (t && !tops.includes(t)) tops.push(t); });
-    const prot = tops.filter(t => ["beef","beefsl","pork","belly","chicken","lamb","shred","sausage","bacon","ham","shrimp","fish","salmon","mussel","clam","squid","fishcake","tofu","paneer"].includes(t));
+    const fl = flavor(nm + " " + d.ing.join(" ").toLowerCase().replace(/酱油|生抽|soy sauce|蚝油|oyster sauce|鸡精|味精|小米辣|辣椒|chili|红椒/g, ""));
+    const tops = []; d.ing.flatMap(i => String(i).split(/[、，,／\/；;]/)).forEach(i => { const t = topOf(i.trim()); if (t && !tops.includes(t)) tops.push(t); });
+    const prot = tops.filter(t => ["beef","beefsl","porksl","pork","belly","chicken","lamb","duck","eel","shred","sausage","bacon","ham","shrimp","fish","salmon","mussel","clam","squid","fishcake","tofu","paneer"].includes(t));
     const veg = tops.filter(t => !prot.includes(t) && !["herb","scal","sesame","sesameb","pepcorn","garlic","basil","mint","parm","cocoa","coconut","pistach"].includes(t) && !["noodle","rice"].includes(t));
     const garn = tops.filter(t => ["herb","scal","sesame","sesameb","pepcorn","garlic","basil","mint","parm","cocoa","coconut","pistach"].includes(t));
     const sprinkle = (a, scale) => {
@@ -1690,8 +2169,33 @@ const TOPART = (() => {
       veg.forEach(t => scatter(g, T[t], Math.round((T[t].p.length === 1 && T[t].p[0].length <= 2 ? 9 : 4) * (scale||1)), R, a));
       garn.forEach(t => scatter(g, T[t], Math.round((T[t].p.length === 1 ? 9 : 4) * (scale||1)), R, a));
     };
+    const CHUNK = {bok:"bokC", spinach:"spinC", lettuce:"lettC", eggr:"scrambleC", scramble:"scrambleC", woodear:"woodearC", broc:"broccC", shiitake:"shiitC", cucumber:"cucumberC", eggpl:"eggplC", potato:"potatoC", pepg:"pepgC", pepr:"peprC", pepy:"pepyC", tomato:"tomatoC", zucc:"zuccC", radish:"radishC", carrot:"carrotC", cabbage:"cabbC", edam:"beanC", tofu:"tofuC", lotus:"lotusC", sweetp:"sweetpC", okra:"okraC", mush:"mushC"};
+    const MINOR = ["dchili","chili","pepcorn","garlic","ginger","scal","herb","sesame","sesameb","basil","mint","parm","lemon","lime","onion","onionw","lemongr"];
+    const heroes0 = tops.filter(t => !MINOR.includes(t) && !["noodle","rice","cream","ice","bread","pickle"].includes(t)).slice(0, 3);
+    const SLICED = /bulgogi|jeyuk|gyudon|sukiyaki|肥牛|stir|炒|片|fajita|carne asada|bò|beef and broccoli|mongolian|cheesesteak|shawarma|gyro|souvlaki/.test(nm);
+    if (SLICED) heroes0.forEach((t, i) => { if (t === "beef") heroes0[i] = "beefsl"; else if (t === "pork" && !/排骨|rib|蹄|肘/.test(nm)) heroes0[i] = "porksl"; });
+    const heroes = heroes0.length ? heroes0 : [topOf(d.name), topOf(d.zh || "")].filter(t => t && !MINOR.includes(t) && T[t]);
+    const heroPlate = (a, mult, base) => {
+      const ns = [11, 7, 5];
+      if (base && heroes.length) { const tp = T[CHUNK[heroes[0]]] || T[heroes[0]]; const cols = Object.values(tp.c); const bc = sh(cols[cols.length > 1 ? 1 : 0], -.12); blob(g, a.cx, a.cy, a.r - 2.5, bc, R, sh(bc, -.2)); for (let i = 0; i < 30; i++) { const t = R()*6.283, r = Math.sqrt(R()) * (a.r - 4); put(g, Math.round(a.cx + Math.cos(t)*r), Math.round(a.cy + Math.sin(t)*r), cols[i % cols.length]); } }
+      heroes.forEach((t, i) => {
+        if (t === "beefsl" || t === "porksl" || t === "lamb" && /片|slice/.test(nm)) { const C = /辣|spicy|gochujang|jeyuk/.test(txt) ? {m:"#b4442a",d:"#7a2414",s:"#5a1a0c",h:"#e07a52"} : t === "porksl" ? {m:"#c88a62",d:"#94583a",s:"#6e3a20",h:"#ecc0a0"} : {m:"#8a4a28",d:"#5a2a14",s:"#3e1c0c",h:"#c08050"}; for (let k = 0; k < Math.round((i ? 8 : 20) * (mult || 1)); k++) { const th = R()*6.283, rr = Math.sqrt(R()) * (a.r - 4.5); sliceAt(g, a.cx + Math.cos(th)*rr - 2.5, a.cy + Math.sin(th)*rr, R()*6.283, 4.5 + R()*3.5, C, R); } if (i === 0 && /bulgogi|gyudon|sukiyaki|肥牛/.test(nm)) for (let k = 0; k < 4; k++) { const x = Math.round(a.cx - 6 + R()*12), y = Math.round(a.cy - 6 + R()*12); put(g, x, y, "#f4ecd8"); put(g, x + 1, y - 1, "#f4ecd8"); put(g, x + 2, y - 1, "#e8dcc0"); } return; }
+        if (t === "belly" && i === 0) { for (let k = 0; k < Math.round(9 * (mult || 1)); k++) { const th = R()*6.283, rr = Math.sqrt(R()) * (a.r - 5); const x = Math.round(a.cx + Math.cos(th)*rr) - 2, y = Math.round(a.cy + Math.sin(th)*rr) - 1; rect(g, x, y, 5, 1, "#a8603e"); rect(g, x, y + 1, 5, 1, "#f4dcc4"); rect(g, x, y + 2, 5, 1, "#c67a52"); put(g, x, y, "#6e3a20"); } return; }
+        const tp = T[CHUNK[t]] || T[t]; if (tp) scatter(g, tp, Math.round(ns[i] * (mult || 1)), R, {...a, r:a.r - 1.5}); });
+      tops.filter(t => MINOR.includes(t) || (!heroes.includes(t) && T[t] && !["noodle","rice","cream","ice","bread"].includes(t))).forEach(t => scatter(g, T[t], ["sesame","sesameb","pepcorn","garlic"].includes(t) ? 8 : 3, R, a));
+    };
     const isKoreanPot = d.cuisine === "Korean" && d.course === "soup" && /jjigae|锅|stew|汤/.test(nm) && !/seaweed|裙带/.test(nm);
     let a;
+    const FX = FIXART[d.zh || d.name];
+    if (FX) {
+      a = FX[0] === "bowl" ? bowl(g, w, R) : plate(g, w);
+      if (FX[1]) { if (FX[0] === "bowl") baseFill(g, a, FX[1], R); else blob(g, a.cx, a.cy, FX[2], FX[1], R, sh(FX[1], -.2)); }
+      FX[3].forEach(([k, n]) => {
+        if (k === "beefsl" || k === "porksl" || k === "belly") { const old = heroes.slice(); heroes.length = 0; heroes.push(k); heroPlate({...a, r:a.r - 1}, 1, false); heroes.length = 0; old.forEach(x => heroes.push(x)); return; }
+        if (T[k] && n) { const big = T[k].p.length > 1 && T[k].p[0].length > 1; if (big) pile(g, T[k], Math.round(n * 1.6), R, {...a, r:a.r - 1.5}); else scatter(g, T[k], n, R, {...a, r:a.r - 1.5}); }
+      });
+      rim(g, a);
+    } else
     switch (type) {
       case "soup": {
         a = isKoreanPot || /stew|jjigae/.test(nm) ? stonepot(g) : bowl(g, w);
@@ -1701,7 +2205,7 @@ const TOPART = (() => {
         if (/馄饨|wonton|tortellini|dumpling/.test(nm)) scatter(g, T.dumpl, 5, R, a);
         if (/onion soup|洋葱汤/.test(nm)) { disc(g,16,16,9,"#e0a23a",true); for (let i = 0; i < 30; i++) put(g, 8 + Math.floor(R()*16), 8 + Math.floor(R()*16), R() < .5 ? "#f6d27a" : "#a8601a"); break; }
         if (/年糕|tteokguk|ozoni/.test(nm)) scatter(g, T.ricecake, 6, R, a);
-        sprinkle(a);
+        if (heroes.length) heroPlate({...a, r:a.r - .5}, .85, false); else sprinkle(a);
         break;
       }
       case "noodles": {
@@ -1860,13 +2364,13 @@ const TOPART = (() => {
       }
       case "dip": {
         a = bowl(g, w, R);
-        const col = /guac|牛油果/.test(nm) ? "#8ac04a" : /salsa|莎莎/.test(nm) ? "#d8503a" : /refried|豆泥/.test(nm) ? "#8a5a3a" : /mash|土豆泥/.test(nm) ? "#f4ead0" : /muhammara|红椒/.test(nm) ? "#c8502a" : "#e2c88a";
+        const col = /guac|牛油果/.test(nm) ? "#8ac04a" : /salsa|莎莎/.test(nm) ? "#d8503a" : /hummus|鹰嘴豆泥/.test(nm) ? "#e2c88a" : /mash|土豆泥/.test(nm) ? "#f4ead0" : /refried|豆泥/.test(nm) ? "#8a5a3a" : /muhammara|红椒/.test(nm) ? "#c8502a" : "#e2c88a";
         baseFill(g, a, col, R, /salsa|莎莎/.test(nm) ? "speck" : null);
         for (let t0 = 0; t0 < 6.28; t0 += .35) put(g, Math.round(16 + Math.cos(t0)*6), Math.round(16 + Math.sin(t0)*6), sh(col, -.18));
         if (/hummus|鹰嘴豆泥/.test(nm)) { disc(g, 16, 16, 3, "#e8c040"); scatter(g, T.paprika || T.chili, 4, R, a); scatter(g, T.bean, 3, R, a); }
         else if (/mash|土豆泥/.test(nm)) { disc(g, 16, 16, 2.2, "#f6d45a"); scatter(g, T.herb, 2, R, a); }
         else if (/guac|牛油果/.test(nm)) { scatter(g, T.tomato, 2, R, a); scatter(g, T.onion, 3, R, a); }
-        else if (/refried|豆泥/.test(nm)) scatter(g, T.cheese, 4, R, a);
+        else if (/refried|豆泥/.test(nm) && !/土豆泥/.test(nm)) scatter(g, T.cheese, 4, R, a);
         else if (/salsa|莎莎/.test(nm)) { scatter(g, T.onion, 4, R, a); scatter(g, T.herb, 4, R, a); }
         else scatter(g, T.nut, 3, R, a);
         break;
@@ -1941,9 +2445,24 @@ const TOPART = (() => {
         a = plate(g, w);
         scatter(g, T.cabbage, 6, R, {cx:a.cx + 5, cy:a.cy - 4, r:4, mask:a.mask});
         const gold = "#e0a23a";
-        if (/katsu|炸鸡排|cutlet|schnitzel|tonkatsu/.test(nm)) { for (let k = 0; k < 4; k++) { rect(g, 6 + k*4, 12, 3, 10, gold); rect(g, 6 + k*4, 12, 3, 1, "#f2c66a"); rect(g, 8 + k*4, 12, 1, 10, "#fbf0d8"); } for (let i = 0; i < 18; i++) put(g, 6 + Math.floor(R()*15), 12 + Math.floor(R()*10), "#b8762a"); }
-        else for (let i = 0; i < 7; i++) { const x = Math.round(a.cx - 7 + R()*9), y = Math.round(a.cy - 2 + R()*8); blob(g, x, y, 2.6, gold, R, "#b8762a"); put(g, x - 1, y - 1, "#f6cf7a"); }
-        if (/韩式|korean|yangnyeom/.test(nm)) for (let i = 0; i < 4; i++) { const x = Math.round(a.cx - 7 + R()*9), y = Math.round(a.cy - 2 + R()*8); blob(g, x, y, 2.6, "#c8402a", R, "#8a2a1a"); put(g,x-1,y-1,"#f06a4a"); }
+        if (/katsu|炸鸡排|炸猪排|cutlet|schnitzel|tonkatsu/.test(nm)) {
+          for (let i = 0; i < 22; i++) { const t = R()*6.283, r = Math.sqrt(R())*4.5; put(g, Math.round(21 + Math.cos(t)*r), Math.round(11 + Math.sin(t)*r*.7), R() < .5 ? "#bfe08a" : "#e2f2c0"); }
+          const cx = 14.5, cy = 18, rx = 9.5, ry = 5.6;
+          for (let y = 0; y < 32; y++) for (let x = 0; x < 32; x++) { const e = ((x + .5 - cx)/rx)**2 + ((y + .5 - cy)/ry)**2; if (e > 1) continue; const q = R(); put(g, x, y, e > .78 ? "#9a5818" : q < .22 ? "#f2c06a" : q < .36 ? "#b8762a" : "#d89438"); }
+          for (let k = -2; k <= 2; k++) { const x = Math.round(cx + k*3.4); for (let y = Math.round(cy - ry) + 1; y < cy + ry - 1; y++) put(g, x, y, "#7a4012"); put(g, x + 1, Math.round(cy - ry) + 1, "#fbf3e2"); put(g, x + 1, Math.round(cy - ry) + 2, "#f2e2c8"); }
+          for (let x = Math.round(cx - 6); x < cx + 6; x++) put(g, x, Math.round(cy - ry) + 1, "#f6cf7a");
+          rect(g, 22, 20, 3, 2, "#f6e04a"); put(g, 22, 19, "#fff2a0");
+        }
+        else {
+          const glazed = /韩式|korean|yangnyeom|甜辣|左宗|general tso|orange chicken|sweet and sour|糖醋/.test(nm) && !/plain|原味/.test(nm);
+          const C = glazed ? {m:"#c2401e",d:"#7e1e0c",l:"#e86a3a",k:"#9a2a14",w:"#ffd0b0"} : {m:"#d08a30",d:"#8a4a16",l:"#f2c06a",k:"#a8621e",w:"#fff0c8"};
+          const P = [[-5,-3,3.8],[2,-5,3.4],[6,1,3.8],[-1,4,3.6],[-7,4,3],[1,-1,3.2],[-3,-7,2.8]];
+          const nP = /wing|翅|nugget|popcorn|karaage|唐扬|小酥肉|鸡米花/.test(nm) ? 7 : 6;
+          P.slice(0, nP).forEach(([dx, dy, r]) => friedChunk(g, a.cx - 1 + dx + (R() - .5), a.cy + dy + (R() - .5), r, R, C));
+          if (/fried chicken|炸鸡|buttermilk/.test(nm) && !glazed) { rect(g, a.cx + 8, a.cy - 6, 1, 3, "#fbf3e2"); put(g, a.cx + 8, a.cy - 7, "#fbf3e2"); put(g, a.cx + 9, a.cy - 7, "#fbf3e2"); }
+          if (glazed) { for (let i = 0; i < 16; i++) put(g, Math.round(a.cx - 8 + R()*15), Math.round(a.cy - 8 + R()*15), R() < .7 ? "#fbf3dc" : "#3f9a3a"); }
+          if (/korean|韩式/.test(nm)) { rect(g, a.cx + 7, a.cy + 6, 2, 2, "#f6f2dc"); rect(g, a.cx + 9, a.cy + 7, 2, 2, "#fffbe6"); }
+        }
         stamp(g, T.lemon.p, T.lemon.c, 20, 22, null, true);
         scatter(g, T.sesame, /韩式|korean/.test(nm) ? 8 : 0, R, a);
         break;
@@ -1959,14 +2478,15 @@ const TOPART = (() => {
       }
       case "shrimp": {
         a = plate(g, w); const pool = SAUCE[fl] || (/garlic|蒜|ajillo/.test(nm) ? "#f2cf6a" : null); if (pool) blob(g,16,16,10,pool,R);
-        scatter(g, T.shrimp, 9, R, a); sprinkle(a, .6); break;
+        scatter(g, T.shrimp, 15, R, {...a, r:a.r - 1}); heroes.filter(t => t !== "shrimp").slice(0, 2).forEach(t => scatter(g, T[CHUNK[t]] || T[t], 4, R, a)); sprinkle(a, .5); break;
       }
       case "egg": {
         if (/shakshuka|沙克舒卡/.test(nm)) { a = pan(g); baseFill(g, a, "#d9503a", R, "speck"); [[9,11],[16,9],[12,18],[18,17]].forEach(([x,y]) => stamp(g, T.eggf.p, T.eggf.c, x - 2, y - 2, null, true)); scatter(g, T.herb, 6, R, a); break; }
         if (/tortilla espanola|土豆蛋饼|frittata|omelet/.test(nm)) { a = plate(g, w); disc(g,16,16,10,"#e9b84a",true); disc(g,16,16,8.6,"#f2d070"); for (let i = 0; i < 10; i++) put(g, 9 + Math.floor(R()*14), 9 + Math.floor(R()*14), "#d6a02a"); line(g,16,16,16,6,"#c9902a"); line(g,16,16,25,21,"#c9902a"); break; }
         if (/玉子烧|tamagoyaki/.test(nm)) { a = plate(g, w); for (let k = 0; k < 4; k++) { const x = 6 + k*5; rect(g, x, 12, 4, 8, "#f4c937"); rect(g, x + 1, 13, 2, 6, "#fbe58a"); line(g, x + 1, 15, x + 2, 16, "#e0a82a"); } stamp(g, T.radish.p, T.radish.c, 22, 22, null, true); break; }
         if (/蒸蛋|steamed egg|chawan/.test(nm)) { a = stonepot(g); baseFill(g, a, "#f6d45a", R); disc(g,15,15,5,"#fbe58a"); scatter(g, T.scal, 6, R, a); break; }
-        a = plate(g, w); scatter(g, T.scramble, 9, R, a); sprinkle(a, 1); break;
+        if (/鸡蛋羹|蛋羹|蒸蛋/.test(nm)) { a = bowl(g, w); baseFill(g, a, "#f6d45a", R); disc(g, a.cx - 1, a.cy - 1, 4, "#fbe58a"); scatter(g, T.scal, 5, R, a); break; }
+        a = plate(g, w); { const eggFirst = heroes.filter(t => t !== "eggr"); heroes.length = 0; heroes.push("eggr", ...eggFirst.slice(0, 2)); } heroPlate(a, 1.2, true); break;
       }
       case "tofu": {
         a = bowl(g, w); baseFill(g, a, SAUCE[fl] || BROTH[fl], R, fl === "red" ? "oil" : null);
@@ -1981,8 +2501,9 @@ const TOPART = (() => {
         else if (/som tam|青木瓜|slaw|卷心菜丝|胡萝卜沙拉|carrot salad|kachumber|shirazi|设拉子|tabbouleh|塔布勒/.test(nm)) { baseFill(g, a, /som tam|木瓜/.test(nm) ? "#dfeec0" : /slaw|卷心菜/.test(nm) ? "#f4f0dc" : /tabbouleh|塔布勒/.test(nm) ? "#5aa83f" : /carrot|胡萝卜/.test(nm) ? "#f0913a" : "#e9f3d6", R, "speck"); }
         else if (/raita|酸奶|tzatziki/.test(txt)) baseFill(g, a, "#fbf7ec", R);
         else if (/kimchi|泡菜|kkakdugi|萝卜块/.test(nm)) baseFill(g, a, "#e2602b", R, "speck");
-        else baseFill(g, a, sh(w.bowl, -.06), R);
-        sprinkle(a, 1.8);
+        else baseFill(g, a, /chili oil|辣椒油|红油/.test(txt) ? "#f0c8a8" : sh(w.bowl, -.06), R);
+        if (/chili oil|辣椒油|红油|麻辣|拍黄瓜/.test(txt)) { for (let i = 0; i < 18; i++) { const t = R()*6.283, r = Math.sqrt(R()) * (a.r - 2); put(g, Math.round(a.cx + Math.cos(t)*r), Math.round(a.cy + Math.sin(t)*r), R() < .5 ? "#c8302a" : "#e0582a"); } }
+        if (!leafy && heroes.length) heroPlate(a, 1.5, false); else sprinkle(a, 1.8);
         if (/caprese|卡布里/.test(nm)) { for (let i = 0; i < 6; i++) { const t = i/6*6.283; stamp(g, i % 2 ? T.mozz.p : T.tomato.p, i % 2 ? T.mozz.c : T.tomato.c, Math.round(15 + Math.cos(t)*6), Math.round(15 + Math.sin(t)*6), null, true); } scatter(g, T.basil, 3, R, a); }
         break;
       }
@@ -1997,8 +2518,8 @@ const TOPART = (() => {
         a = plate(g, w); const pool = SAUCE[fl]; blob(g, 16, 16, 10, pool || "#c99a5a", R);
         if (/baba|茄子泥|茄泥|bharta/.test(nm)) { baseFill(g, {...a, r:10, mask:(x,y)=>dist(x,y,16,16)<10}, "#c9a878", R, "speck"); for (let t = 0; t < 6.28; t += .3) put(g, Math.round(16 + Math.cos(t)*5), Math.round(16 + Math.sin(t)*5), "#e2c068"); scatter(g, T.herb, 4, R, a); break; }
         if (/parmigiana|焗茄子|moussaka|穆萨卡/.test(nm)) { rect(g,8,9,16,14,"#e8b45a"); for (let i = 0; i < 20; i++) put(g, 8 + Math.floor(R()*16), 9 + Math.floor(R()*14), R()<.5 ? "#c9802a" : "#d9503a"); scatter(g, T.basil, 2, R, a); break; }
-        for (let i = 0; i < 6; i++) { const x = 7 + Math.floor(R()*15), y = 8 + Math.floor(R()*14); rect(g, x, y, 5, 2, "#6a3a8a"); rect(g, x, y + 1, 5, 1, "#e8d0a0"); }
-        sprinkle(a, .7);
+        if (!heroes.includes("eggpl")) heroes.unshift("eggpl"); heroes.length = Math.min(heroes.length, 3);
+        heroPlate(a, 1.3, false);
         break;
       }
       case "greens": case "meat": default: {
@@ -2029,15 +2550,13 @@ const TOPART = (() => {
         }
         a = plate(g, w);
         const pool = SAUCE[fl] || (type === "meat" && /stir|炒|宫保|kung/.test(nm) ? "#a8582e" : null);
-        if (pool) blob(g, 16, 16, 10.5, pool, R);
+        if (pool) blob(g, 16, 16, /beefsl|porksl/.test(heroes[0] || "") ? 7.5 : heroes.length ? 9.5 : 10.5, fl === "soy" && heroes.length ? "#9a5a2e" : pool, R);
         if (type === "greens" && !prot.length && veg.length) {
-          scatter(g, T[veg[0]], 18, R, a); veg.slice(1).forEach(t => scatter(g, T[t], 6, R, a));
+          heroPlate(a, 1.3, !pool);
           if (/mashed|土豆泥/.test(nm)) { mound(g, a, "#f6ecc8", R, 8); disc(g,15,15,2.2,"#f6d14a"); }
           if (/hummus|鹰嘴豆泥/.test(nm)) { mound(g, a, "#e9cf96", R, 9); for (let t = 0; t < 6.28; t += .25) put(g, Math.round(16 + Math.cos(t)*4.5), Math.round(16 + Math.sin(t)*4.5), "#d99a3a"); scatter(g, T.bean, 4, R, {cx:16,cy:16,r:3,mask:a.mask}); scatter(g, T.herb, 3, R, a); }
-          garn.forEach(t => scatter(g, T[t], 6, R, a));
         } else {
-          prot.forEach(t => scatter(g, T[t], t === "shred" ? 12 : 8, R, a));
-          sprinkle(a, 1);
+          if (heroes.length) heroPlate(a, 1.1, !pool); else { prot.forEach(t => scatter(g, T[t], t === "shred" ? 12 : 8, R, a)); sprinkle(a, 1); }
           if (/宫保|kung pao/.test(nm)) { scatter(g, T.peanut, 6, R, a); scatter(g, T.dchili, 5, R, a); }
           if (/红烧肉|red braised|pork belly|dongpo/.test(nm)) { for (let i = 0; i < 6; i++) stamp(g, ["mmmm","wwww","mmmm","mmmm"], {m:"#8a3a1a",w:"#f0d0b0"}, Math.round(9 + (i%3)*5), Math.round(10 + Math.floor(i/3)*6), null, true); scatter(g, T.scal, 3, R, a); }
           if (/鱼香/.test(nm)) { scatter(g, T.woodear, 4, R, a); scatter(g, T.scal, 4, R, a); }
@@ -2053,7 +2572,7 @@ const TOPART = (() => {
     const R = rng(hash(d.course + d.cuisine + d.name));
     const g = grid(), w = ware(d);
     const nm = (d.name + " " + d.zh).toLowerCase();
-    const tops = []; d.ing.forEach(i => { const t = topOf(i); if (t && !tops.includes(t)) tops.push(t); });
+    const tops = []; d.ing.flatMap(i => String(i).split(/[、，,／\/；;]/)).forEach(i => { const t = topOf(i.trim()); if (t && !tops.includes(t)) tops.push(t); });
     const deco = tops.filter(t => ["strawb","berry","mango","banana","pineap","nut","pistach","peanut","choc","redbean","coconut","raisin","pom","sesame","sesameb","cream","mint","lemon","lime","sago","rice"].includes(t));
     const decorate = (a, n) => deco.forEach(t => scatter(g, T[t], n || 4, R, a));
     let a;
@@ -2396,8 +2915,8 @@ const TOPART = (() => {
 
   function toSvg(g, scale){
     let out = "";
-    for (let y = 0; y < N; y++) { let x = 0; while (x < N) { const c = g.p[y*N+x]; if (!c) { x++; continue; } let e = x; while (e < N && g.p[y*N+e] === c) e++; out += '<rect x="'+x+'" y="'+y+'" width="'+(e-x)+'" height="1.02" fill="'+c+'"/>'; x = e; } }
-    return '<svg viewBox="0 0 32 32" width="'+(32*scale)+'" height="'+(32*scale)+'" shape-rendering="crispEdges" aria-hidden="true">'+out+'</svg>';
+    for (let y = 0; y < NF; y++) { let x = 0; while (x < NF) { const c = g.p[y*NF+x]; if (!c) { x++; continue; } let e = x; while (e < NF && g.p[y*NF+e] === c) e++; out += '<rect x="'+x+'" y="'+y+'" width="'+(e-x)+'" height="1.02" fill="'+c+'"/>'; x = e; } }
+    return '<svg viewBox="0 0 48 48" width="'+(32*scale)+'" height="'+(32*scale)+'" shape-rendering="crispEdges" aria-hidden="true">'+out+'</svg>';
   }
   const cache = new Map();
   return function(d, type, scale){
@@ -2405,7 +2924,7 @@ const TOPART = (() => {
     const k = keyOf(d) + "|" + scale;
     if (cache.has(k)) return cache.get(k);
     let g;
-    try { if (d.course === "drink") g = drawDrink(d); else { g = d.course === "dessert" ? drawDessert(d, type) : draw(d, type); outline(g, K); } }
+    try { if (d.course === "drink" && !FIXART[d.zh || d.name]) g = drawDrink(d); else { g = d.course === "dessert" && !FIXART[d.zh || d.name] ? drawDessert(d, type) : draw(d, type); outline(g, K); } }
     catch (e) { g = grid(); }
     const s = toSvg(g, scale); cache.set(k, s); return s;
   };
@@ -2698,7 +3217,7 @@ try { SAVED = JSON.parse(localStorage.getItem(LINK_KEY) || "{}") || {}; } catch(
 let savedLoc = "";
 try { savedLoc = localStorage.getItem(LOC_KEY) || ""; } catch(e){}
 
-const state = { czView:(() => { try { return localStorage.getItem("mealCzView") || "map"; } catch(e){ return "map"; } })(), pinNew:"", visited:new Set(), pos:{}, wiggle:false, soupT:new Set(), mainM:new Set(), mainLast:"any", dk:{temp:"", alc:false, caf:false}, ph:{}, step:1, q:"", cuisines:new Set(), proteins:new Set(), times:new Set(), wantRaw:"", temp:"either", eatOut:!!savedLoc, allMode:"", have:new Set(), fresh:new Set(), force:new Set(), pq:"", caf:"any", alc:"any", wantDrink:true, dsel:{hot:false, cold:false, alc:false, caf:false, done:false}, force:new Set(), pq:"", caf:"any", alc:"any", wantDrink:true, dsel:{hot:false, cold:false, alc:false, caf:false, done:false}, loc:savedLoc, page:{}, picks:{}, open:new Set(), panel:{}, anim:false };
+const state = { maxMin:0, vegM:new Set(), czView:(() => { try { return localStorage.getItem("mealCzView") || "map"; } catch(e){ return "map"; } })(), pinNew:"", visited:new Set(), pos:{}, wiggle:false, soupT:new Set(), mainM:new Set(), mainLast:"any", dk:{temp:"", alc:false, caf:false}, ph:{}, step:1, q:"", cuisines:new Set(), proteins:new Set(), times:new Set(), wantRaw:"", temp:"either", eatOut:!!savedLoc, allMode:"", have:new Set(), fresh:new Set(), force:new Set(), pq:"", caf:"any", alc:"any", wantDrink:true, dsel:{hot:false, cold:false, alc:false, caf:false, done:false}, force:new Set(), pq:"", caf:"any", alc:"any", wantDrink:true, dsel:{hot:false, cold:false, alc:false, caf:false, done:false}, loc:savedLoc, page:{}, picks:{}, open:new Set(), panel:{}, anim:false };
 
 const EXTRA = "Japanese|main|California Sushi Roll|加州卷寿司|30|~seafood|寿司米;蟹柳;牛油果;黄瓜;海苔\nJapanese|main|Salmon Avocado Sushi Roll|三文鱼牛油果卷寿司|30|~fish|寿司米;三文鱼;牛油果;海苔\nJapanese|main|Spicy Tuna Sushi Roll|辣金枪鱼卷寿司|30|~fish|寿司米;金枪鱼;是拉差辣酱;蛋黄酱;海苔\nJapanese|main|Shrimp Tempura Sushi Roll|天妇罗虾卷寿司|40|~shrimp|寿司米;虾;天妇罗粉;牛油果;海苔\nJapanese|main|Unagi Sushi Roll|鳗鱼卷寿司|30|~fish|寿司米;鳗鱼;黄瓜;鳗鱼酱;海苔\nJapanese|main|Chirashi Sushi|散寿司|25|~fish|寿司米;三文鱼;金枪鱼;玉子烧;鱼籽\nJapanese|main|Temaki Hand Roll Sushi|手卷寿司|20|~fish|寿司米;海苔;三文鱼;黄瓜;牛油果\nJapanese|main|Salmon Nigiri Sushi|三文鱼握寿司|25|~fish|寿司米;三文鱼;山葵\nJapanese|main|Inari Sushi|稻荷寿司|25|tofu|寿司米;油豆腐皮;芝麻\nJapanese|main|Futomaki Sushi Roll|太卷寿司|35|~seafood|寿司米;玉子烧;黄瓜;蟹柳;海苔\nJapanese|main|Cucumber Sushi Roll|黄瓜细卷寿司|15|none|寿司米;黄瓜;芝麻;海苔\nAmerican|drink|Warm Honey Milk|蜂蜜热牛奶|5|none|牛奶;蜂蜜|hot\nAmerican|drink|Cold Fresh Milk|冰鲜奶|2|none|牛奶;冰|cool\nKorean|drink|Banana Milk|香蕉牛奶|5|none|牛奶;香蕉;蜂蜜|cool\nAmerican|drink|Chocolate Milk|巧克力牛奶|5|none|牛奶;可可粉;糖|cool\nAmerican|drink|Hot Cocoa|热可可|10|none|牛奶;可可粉;棉花糖|hot\nJapanese|drink|Matcha Latte|抹茶拿铁|5|none|抹茶粉;牛奶;糖|hot\nChinese|drink|Brown Sugar Boba Milk|黑糖珍珠鲜奶|20|none|牛奶;黑糖;木薯珍珠|cool\nIndian|drink|Golden Turmeric Milk|姜黄热牛奶|10|none|牛奶;姜黄;姜;蜂蜜|hot\nAmerican|drink|Oat Milk Latte|燕麦拿铁|5|none|燕麦奶;浓缩咖啡|hot\nAmerican|drink|Blueberry Yogurt Smoothie|蓝莓酸奶奶昔|5|none|酸奶;蓝莓;牛奶;蜂蜜|cool\nChinese|soup|Corn and Pork Rib Soup|玉米排骨汤|90|~pork|排骨;玉米;胡萝卜;姜\nChinese|soup|West Lake Beef Soup|西湖牛肉羹|30|~beef|牛肉末;蛋清;香菜;豆腐\nChinese|soup|Seaweed and Egg Soup|紫菜蛋花汤|10|~egg|紫菜;鸡蛋;虾皮;葱\nChinese|soup|Winter Melon Rib Soup|冬瓜排骨汤|60|~pork|冬瓜;排骨;姜;葱\nChinese|soup|Fish Head Tofu Soup|鱼头豆腐汤|45|~fish|鱼头;豆腐;姜;葱;白胡椒\nChinese|main|Sweet and Sour Pork|糖醋里脊|40|~pork|猪里脊;番茄酱;鸡蛋;葱\nChinese|main|Twice Cooked Pork|回锅肉|40|~pork|五花肉;青蒜;郫县豆瓣酱;甜面酱;青椒\nChinese|main|Steamed Sea Bass|清蒸鲈鱼|30|~fish|鲈鱼;姜;葱;蒸鱼豉油\nChinese|main|Cola Chicken Wings|可乐鸡翅|35|~chicken|鸡翅;可乐;姜;葱\nChinese|main|Yu Xiang Shredded Pork|鱼香肉丝|30|~pork|猪里脊;木耳;冬笋;泡椒;葱;姜;蒜\nChinese|main|Dan Dan Noodles|担担面|25|~pork|面条;猪肉末;芽菜;花生;辣椒油\nChinese|veg|Vinegar Napa Cabbage|醋溜白菜|15|none|大白菜;干辣椒;蒜\nChinese|veg|Di San Xian|地三鲜|30|none|茄子;土豆;青椒;蒜\nChinese|veg|Hot and Sour Potato Shreds|酸辣土豆丝|15|none|土豆;干辣椒;青椒;蒜\nChinese|veg|Garlic Broccoli|蒜蓉西兰花|10|none|西兰花;蒜\nChinese|veg|Tiger Skin Peppers|虎皮青椒|15|none|青椒;蒜;豆豉\nChinese|dessert|Tangyuan|黑芝麻汤圆|25|none|糯米粉;黑芝麻;猪油|hot\nChinese|dessert|Double Skin Milk|双皮奶|40|none|牛奶;蛋清;红豆|cool\nChinese|dessert|Mango Pudding|芒果布丁|20|none|芒果;吉利丁;淡奶油|cool\nChinese|dessert|Osmanthus Cake|桂花糕|60|none|糯米粉;桂花;冰糖|cool\nChinese|dessert|Sweet Potato Ginger Soup|红薯姜糖水|30|none|红薯;姜;红糖|hot\nKorean|soup|Galbitang|韩式牛排骨汤|120|~beef|牛排骨;白萝卜;粉丝;大葱;蒜\nKorean|soup|Samgyetang|参鸡汤|90|~chicken|童子鸡;人参;糯米;红枣;蒜\nKorean|soup|Budae Jjigae|部队锅|30|~pork|午餐肉;香肠;泡菜;方便面;芝士片\nKorean|soup|Tteokguk|年糕汤|30|~beef|韩式年糕;牛肉;鸡蛋;紫菜;大葱\nKorean|soup|Yukgaejang|辣牛肉汤|90|~beef|牛胸肉;蕨菜;豆芽;大葱;韩式辣椒粉\nKorean|main|Tteokbokki|辣炒年糕|25|~fish|韩式年糕;鱼饼;韩式辣酱;大葱;鸡蛋\nKorean|main|Dakgalbi|春川辣炒鸡排|35|~chicken|鸡腿肉;卷心菜;红薯;韩式年糕;韩式辣酱\nKorean|main|Samgyeopsal|韩式烤五花肉|30|~pork|五花肉;生菜;蒜;大酱;泡菜\nKorean|main|Kimchi Fried Rice|泡菜炒饭|20|~pork|米饭;泡菜;五花肉;鸡蛋;海苔\nKorean|main|Haemul Pajeon|海鲜葱饼|30|~seafood|大葱;鱿鱼;虾;面粉;鸡蛋\nKorean|veg|Hobak Jeon|韩式西葫芦煎饼|20|egg|西葫芦;鸡蛋;面粉\nKorean|veg|Kkakdugi|萝卜块泡菜|30|~none|白萝卜;韩式辣椒粉;鱼露;蒜;葱\nKorean|veg|Eomuk Bokkeum|韩式炒鱼饼|15|~fish|鱼饼;洋葱;胡萝卜;青椒\nKorean|veg|Myeolchi Bokkeum|炒小银鱼|15|~fish|小银鱼;蜂蜜;芝麻;核桃\nKorean|veg|Yeongeun Jorim|韩式酱莲藕|40|none|莲藕;糖稀;芝麻\nKorean|dessert|Bungeoppang|鲫鱼饼|30|none|面粉;红豆沙;鸡蛋;牛奶|hot\nKorean|dessert|Yaksik|药食|60|none|糯米;红枣;栗子;松子;红糖|cool\nKorean|dessert|Hodu Gwaja|核桃小饼|40|none|面粉;红豆沙;核桃;鸡蛋|hot\nKorean|dessert|Sikhye|甜米露|120|none|米饭;麦芽粉|cool\nKorean|dessert|Injeolmi|黄豆粉年糕|30|none|糯米;黄豆粉|cool\nJapanese|soup|Kenchinjiru|建长汁|40|tofu|豆腐;白萝卜;胡萝卜;牛蒡;芋头\nJapanese|soup|Kasujiru|酒粕汤|30|~fish|酒粕;三文鱼;白萝卜;胡萝卜;味噌\nJapanese|soup|Oden|关东煮|90|~fish|白萝卜;鸡蛋;鱼饼;魔芋;昆布\nJapanese|soup|Nabeyaki Udon|锅烧乌冬|25|~shrimp|乌冬面;鸡蛋;香菇;炸虾;葱\nJapanese|soup|Butter Corn Miso Ramen|黄油玉米味噌拉面|40|~pork|拉面;味噌;玉米;黄油;豆芽\nJapanese|main|Tonkotsu Ramen|豚骨拉面|60|~pork|拉面;叉烧;溏心蛋;海苔;葱\nJapanese|main|Japanese Curry Rice|日式咖喱饭|50|~beef|牛肉;土豆;胡萝卜;洋葱;咖喱块\nJapanese|main|Okonomiyaki|大阪烧|30|~pork|卷心菜;面粉;鸡蛋;五花肉;大阪烧酱\nJapanese|main|Karaage|日式炸鸡块|30|~chicken|鸡腿肉;姜;蒜;土豆淀粉\nJapanese|main|Sukiyaki|寿喜烧|30|~beef|肥牛;豆腐;大葱;香菇;鸡蛋\nJapanese|main|Saba Shioyaki|盐烤青花鱼|20|~fish|青花鱼;柠檬;白萝卜泥\nJapanese|veg|Ingen Goma-ae|芝麻拌四季豆|15|none|四季豆;白芝麻\nJapanese|veg|Agedashi Tofu|日式炸豆腐|25|~tofu|豆腐;土豆淀粉;高汤;白萝卜泥;葱\nJapanese|veg|Hijiki Nimono|煮羊栖菜|30|tofu|羊栖菜;胡萝卜;油豆腐\nJapanese|veg|Japanese Potato Salad|日式土豆沙拉|30|egg|土豆;黄瓜;胡萝卜;鸡蛋;丘比沙拉酱\nJapanese|veg|Tamagoyaki|日式玉子烧|15|~egg|鸡蛋;高汤\nJapanese|dessert|Hanami Dango|三色团子|30|none|糯米粉;抹茶粉;草莓粉|cool\nJapanese|dessert|Taiyaki|鲷鱼烧|30|none|面粉;红豆沙;鸡蛋;牛奶|hot\nJapanese|dessert|Warabi Mochi|蕨饼|20|none|蕨根粉;黄豆粉;黑糖蜜|cool\nJapanese|dessert|Oshiruko|日式红豆年糕汤|30|none|红豆;年糕|hot\nJapanese|dessert|Castella|长崎蛋糕|90|none|鸡蛋;面粉;蜂蜜|cool\nItalian|soup|Ribollita|托斯卡纳面包汤|60|beans|白豆;羽衣甘蓝;面包;胡萝卜;番茄\nItalian|soup|Tortellini in Brodo|意式馄饨清汤|40|~pork|意式小馄饨;鸡汤;帕玛森芝士\nItalian|soup|Zuppa Toscana|托斯卡纳香肠土豆汤|40|~pork|意式香肠;土豆;羽衣甘蓝;淡奶油;培根\nItalian|soup|Pappa al Pomodoro|番茄面包汤|40|none|番茄;面包;罗勒;蒜\nItalian|soup|Brodetto|意式海鲜汤|45|~seafood|鱼;蛤蜊;虾;番茄;白葡萄酒\nItalian|main|Margherita Pizza|玛格丽特披萨|90|none|披萨面团;番茄;马苏里拉芝士;罗勒\nItalian|main|Osso Buco|米兰炖小牛腿|150|~beef|小牛腿;番茄;胡萝卜;西芹;白葡萄酒\nItalian|main|Pesto Pasta|青酱意面|20|none|意面;罗勒;松子;帕玛森芝士;蒜\nItalian|main|Spaghetti Bolognese|肉酱意面|60|~beef|意面;牛肉末;番茄;洋葱;胡萝卜\nItalian|main|Chicken Piccata|柠檬酸豆鸡排|30|~chicken|鸡胸肉;柠檬;酸豆;黄油;白葡萄酒\nItalian|main|Cacio e Pepe|黑胡椒芝士意面|20|none|意面;佩科里诺芝士\nItalian|veg|Caponata|西西里炖茄子|45|none|茄子;西芹;番茄;酸豆;橄榄\nItalian|veg|Roasted Peppers|意式烤彩椒|30|none|彩椒;蒜;罗勒\nItalian|veg|Arugula Salad|芝麻菜沙拉|10|none|芝麻菜;帕玛森芝士;柠檬\nItalian|veg|Grilled Zucchini|意式烤西葫芦|20|none|西葫芦;薄荷;柠檬\nItalian|veg|Bruschetta|番茄烤面包片|15|none|面包;番茄;罗勒;蒜\nItalian|dessert|Cannoli|西西里奶酪卷|60|none|卷饼皮;意式乳清干酪;巧克力碎|cool\nItalian|dessert|Gelato|意式冰淇淋|30|none|牛奶;淡奶油|cool\nItalian|dessert|Zabaglione|萨芭雍|15|none|蛋黄;马沙拉酒|hot\nItalian|dessert|Biscotti|意式脆饼|60|none|面粉;杏仁;鸡蛋|cool\nItalian|dessert|Torta della Nonna|奶奶挞|90|none|酥皮;卡仕达酱;松子;柠檬|cool\nMediterranean|soup|Fasolada|希腊白豆汤|60|beans|白豆;番茄;胡萝卜;西芹\nMediterranean|soup|Psarosoupa|希腊鱼汤|50|~fish|白鱼;土豆;胡萝卜;柠檬\nMediterranean|soup|Revithia|希腊鹰嘴豆汤|60|beans|鹰嘴豆;洋葱;柠檬;迷迭香\nMediterranean|soup|Moroccan Chorba|摩洛哥羊肉汤|60|~lamb|羊肉;番茄;鹰嘴豆;香菜;孜然\nMediterranean|soup|Greek Orzo Chicken Soup|希腊米形面鸡汤|40|~chicken|鸡肉;米形意面;柠檬;莳萝\nMediterranean|main|Moussaka|穆萨卡|90|~lamb|茄子;羊肉末;土豆;白酱;番茄\nMediterranean|main|Chicken Tagine|摩洛哥鸡肉塔吉锅|75|~chicken|鸡腿;腌柠檬;橄榄;洋葱;姜黄\nMediterranean|main|Spanakopita|希腊菠菜派|60|egg|酥皮;菠菜;菲达奶酪;鸡蛋;莳萝\nMediterranean|main|Pork Gyros|希腊皮塔卷|30|~pork|猪肉;皮塔饼;酸奶黄瓜酱;番茄;洋葱\nMediterranean|main|Grilled Octopus|希腊烤章鱼|60|~seafood|章鱼;柠檬;牛至\nMediterranean|veg|Gigantes Plaki|希腊烤巨豆|90|beans|大白豆;番茄;莳萝;洋葱\nMediterranean|veg|Spanakorizo|希腊菠菜饭|30|none|米;菠菜;莳萝;柠檬\nMediterranean|veg|Briam|希腊烤蔬菜|60|none|西葫芦;土豆;茄子;番茄\nMediterranean|veg|Moroccan Carrot Salad|摩洛哥胡萝卜沙拉|15|none|胡萝卜;孜然;柠檬;香菜\nMediterranean|veg|Vegetable Couscous|蔬菜古斯古斯|30|beans|古斯古斯;西葫芦;胡萝卜;鹰嘴豆\nMediterranean|dessert|Galaktoboureko|希腊奶油酥派|90|none|酥皮;粗粒小麦粉;牛奶;鸡蛋|hot\nMediterranean|dessert|Tahini Halva|芝麻酥糖|20|none|芝麻酱;开心果|cool\nMediterranean|dessert|Revani|希腊糖浆蛋糕|60|none|粗粒小麦粉;鸡蛋;酸奶|cool\nMediterranean|dessert|Kourabiedes|希腊黄油饼干|45|none|黄油;面粉;杏仁|cool\nMediterranean|dessert|Moroccan Orange Salad|摩洛哥肉桂橙子|10|none|橙子;肉桂;橙花水|cool\nMexican|soup|Sopa de Lima|墨西哥青柠鸡汤|50|~chicken|鸡肉;青柠;玉米片;番茄;洋葱\nMexican|soup|Menudo|墨西哥牛肚汤|180|~beef|牛肚;玉米粒;瓜希柳辣椒;牛至\nMexican|soup|Caldo de Pollo|墨西哥鸡肉蔬菜汤|60|~chicken|鸡肉;土豆;胡萝卜;西葫芦\nMexican|soup|Sopa de Albondigas|墨西哥肉丸汤|60|~beef|牛肉末;米;胡萝卜;西葫芦;薄荷\nMexican|soup|Crema de Elote|墨西哥玉米浓汤|30|none|玉米;牛奶;黄油;墨西哥辣椒\nMexican|main|Chiles Rellenos|墨西哥酿辣椒|60|egg|波布拉诺辣椒;芝士;鸡蛋;番茄\nMexican|main|Tamales|墨西哥粽|150|~pork|玉米面团;猪肉;玉米叶;红辣椒酱\nMexican|main|Quesadillas|芝士薄饼|15|none|墨西哥薄饼;芝士;青椒;洋葱\nMexican|main|Carne Asada|墨西哥烤牛排|40|~beef|牛腩排;青柠;蒜;香菜\nMexican|main|Fish Tacos|炸鱼塔可|35|~fish|白鱼;墨西哥薄饼;卷心菜;青柠;酸奶油\nMexican|main|Mole Poblano|摩尔酱鸡|120|~chicken|鸡肉;摩尔酱;巧克力;芝麻\nMexican|veg|Pico de Gallo|墨西哥番茄莎莎|10|none|番茄;洋葱;墨西哥辣椒;香菜;青柠\nMexican|veg|Guacamole|牛油果酱|10|none|牛油果;洋葱;青柠;香菜;墨西哥辣椒\nMexican|veg|Refried Beans|墨西哥豆泥|20|beans|斑豆;洋葱;蒜;孜然\nMexican|veg|Rajas con Crema|奶油辣椒条|25|none|波布拉诺辣椒;洋葱;酸奶油;玉米\nMexican|veg|Calabacitas|墨西哥炒西葫芦|20|none|西葫芦;玉米;番茄;芝士\nMexican|dessert|Conchas|墨西哥贝壳面包|120|none|面粉;鸡蛋;黄油|cool\nMexican|dessert|Champurrado|墨西哥巧克力玉米饮|20|none|玉米面;巧克力;牛奶;肉桂|hot\nMexican|dessert|Paletas|墨西哥水果冰棍|15|none|芒果;草莓;青柠|cool\nMexican|dessert|Sopapillas|墨西哥炸面包|30|none|面粉;蜂蜜;肉桂|hot\nMexican|dessert|Cajeta Crepes|焦糖羊奶酱可丽饼|25|none|可丽饼;羊奶焦糖酱;核桃|hot\nAmerican|soup|Split Pea Soup|豌豆火腿汤|90|~pork|干豌豆;火腿;胡萝卜;洋葱\nAmerican|soup|Corn Chowder|玉米巧达浓汤|40|~pork|玉米;土豆;培根;牛奶\nAmerican|soup|Gumbo|秋葵浓汤|120|~seafood|虾;香肠;秋葵;西芹;青椒\nAmerican|soup|Chicken Wild Rice Soup|鸡肉野米浓汤|60|~chicken|鸡肉;野米;蘑菇;胡萝卜;淡奶油\nAmerican|soup|Loaded Potato Soup|培根土豆浓汤|45|~pork|土豆;培根;切达芝士;酸奶油\nAmerican|main|Meatloaf|美式烤肉卷|75|~beef|牛肉末;面包糠;鸡蛋;番茄酱;洋葱\nAmerican|main|Pot Roast|美式炖牛肉|180|~beef|牛肩肉;土豆;胡萝卜;洋葱\nAmerican|main|Shrimp and Grits|鲜虾玉米粥|40|~shrimp|虾;玉米糁;培根;切达芝士\nAmerican|main|Chicken Pot Pie|鸡肉酥皮派|75|~chicken|鸡肉;酥皮;豌豆;胡萝卜;淡奶油\nAmerican|main|Jambalaya|什锦饭|60|~shrimp|米;虾;香肠;鸡肉;青椒\nAmerican|main|BBQ Ribs|烤猪肋排|180|~pork|猪肋排;烧烤酱;红糖;烟熏辣椒粉\nAmerican|veg|Creamed Spinach|奶油菠菜|20|none|菠菜;淡奶油;蒜;帕玛森芝士\nAmerican|veg|Sweet Potato Casserole|红薯焗|60|none|红薯;棉花糖;山核桃\nAmerican|veg|Southern Collard Greens|南方炖绿叶甘蓝|60|~pork|绿叶甘蓝;烟熏火腿;洋葱\nAmerican|veg|Mashed Potatoes|土豆泥|30|none|土豆;黄油;牛奶\nAmerican|veg|Wedge Salad|楔形生菜沙拉|10|~pork|球生菜;培根;蓝纹芝士酱;番茄\nAmerican|dessert|Pumpkin Pie|南瓜派|90|none|南瓜;酥皮;鸡蛋;炼乳;肉桂|cool\nAmerican|dessert|Strawberry Shortcake|草莓酥饼|40|none|草莓;司康;淡奶油|cool\nAmerican|dessert|Key Lime Pie|青柠派|60|none|青柠;炼乳;蛋黄;全麦饼干|cool\nAmerican|dessert|Cinnamon Rolls|肉桂卷|150|none|面粉;肉桂;黄油;奶油奶酪|hot\nAmerican|dessert|Pecan Pie|山核桃派|75|none|山核桃;酥皮;玉米糖浆;鸡蛋|cool\nThai|soup|Khao Tom|泰式米粥|30|~pork|米饭;猪肉末;姜;香菜;蒜酥\nThai|soup|Gaeng Som|泰式酸咖喱汤|30|~shrimp|虾;罗望子;青木瓜;四季豆\nThai|soup|Boat Noodle Soup|泰式船面|40|~beef|河粉;牛肉;豆芽;空心菜;八角\nThai|soup|Khao Soi|泰北咖喱面|45|~chicken|鸡腿;鸡蛋面;椰浆;红咖喱酱\nThai|soup|Tom Kha Hed|泰式椰汁蘑菇汤|25|~none|蘑菇;椰浆;香茅;南姜;青柠\nThai|main|Pad See Ew|泰式酱油炒河粉|20|~chicken|宽河粉;鸡肉;芥兰;鸡蛋\nThai|main|Panang Curry|帕能咖喱牛肉|35|~beef|牛肉;帕能咖喱酱;椰浆;卡菲尔青柠叶\nThai|main|Larb|泰式肉末沙拉|20|~pork|猪肉末;烤米粉;青柠;鱼露;薄荷\nThai|main|Gai Yang|泰式烤鸡|60|~chicken|鸡腿;香茅;蒜;鱼露;糯米\nThai|main|Pla Rad Prik|泰式辣汁炸鱼|40|~fish|鱼;辣椒;蒜;罗望子;棕榈糖\nThai|veg|Pad Pak Ruam|泰式炒杂菜|15|~none|西兰花;胡萝卜;玉米笋;蚝油;蒜\nThai|veg|Yum Woon Sen|泰式粉丝沙拉|20|~shrimp|粉丝;虾;芹菜;洋葱;青柠\nThai|veg|Thai Corn Salad|泰式玉米沙拉|15|~none|玉米;花生;青柠;鱼露;番茄\nThai|veg|Red Curry Long Beans|红咖喱炒豆角|15|none|长豆角;红咖喱酱;卡菲尔青柠叶\nThai|veg|Yam Makheua Yao|泰式烤茄子沙拉|25|~shrimp|长茄子;虾;青柠;红葱头\nThai|dessert|Khanom Krok|泰式椰奶小煎饼|30|none|米粉;椰浆;葱|hot\nThai|dessert|Lod Chong|泰式椰奶珍多|30|none|班兰叶;米粉;椰浆;棕榈糖|cool\nThai|dessert|Sangkaya Fak Thong|南瓜椰奶布丁|60|none|南瓜;鸡蛋;椰浆;棕榈糖|hot\nThai|dessert|Kluay Tod|泰式炸香蕉|20|none|香蕉;米粉;椰丝;芝麻|hot\nThai|dessert|Bua Loy|泰式椰奶汤圆|30|none|糯米粉;南瓜;椰浆|hot\nIndian|soup|Sambar|桑巴汤|45|beans|木豆;罗望子;秋葵;茄子;桑巴粉\nIndian|soup|Kadhi|酸奶咖喱汤|40|none|酸奶;鹰嘴豆粉;咖喱叶\nIndian|soup|Paya|羊蹄汤|180|~lamb|羊蹄;洋葱;姜;蒜\nIndian|soup|Mushroom Shorba|印度蘑菇汤|30|none|蘑菇;洋葱;孜然;奶油\nIndian|soup|Indian Sweet Corn Soup|印式玉米汤|25|none|玉米;胡萝卜;四季豆\nIndian|main|Chicken Biryani|鸡肉香饭|90|~chicken|巴斯马蒂米;鸡肉;酸奶;藏红花;炸洋葱\nIndian|main|Tandoori Chicken|唐杜里烤鸡|60|~chicken|鸡腿;酸奶;唐杜里香料;柠檬\nIndian|main|Paneer Tikka|烤奶豆腐串|40|paneer|奶豆腐;酸奶;彩椒;洋葱\nIndian|main|Kerala Fish Curry|喀拉拉鱼咖喱|40|~fish|鱼;椰浆;罗望子;咖喱叶\nIndian|main|Rajma|红腰豆咖喱|60|beans|红腰豆;番茄;洋葱;姜;蒜\nIndian|main|Masala Dosa|马萨拉薄饼|60|none|米;黑扁豆;土豆;芥末籽\nIndian|veg|Sarson ka Saag|印式炖芥菜|40|none|芥菜;菠菜;姜;酥油\nIndian|veg|Kachumber Salad|印式黄瓜番茄沙拉|10|none|黄瓜;番茄;洋葱;青柠\nIndian|veg|Dum Aloo|印式焖小土豆|40|none|小土豆;酸奶;印度香料\nIndian|veg|Cabbage Poriyal|椰丝炒卷心菜|15|none|卷心菜;椰丝;芥末籽;咖喱叶\nIndian|veg|Vegetable Pakora|印度炸蔬菜|30|none|洋葱;土豆;鹰嘴豆粉;青辣椒\nIndian|dessert|Rasmalai|拉斯马莱奶酪球|60|none|鲜奶酪;牛奶;藏红花;开心果|cool\nIndian|dessert|Jalebi|印度炸糖圈|45|none|面粉;酸奶;藏红花|hot\nIndian|dessert|Kulfi|印度冰淇淋|30|none|牛奶;开心果;小豆蔻|cool\nIndian|dessert|Sooji Halwa|粗麦哈尔瓦|20|none|粗粒小麦粉;酥油;小豆蔻|hot\nIndian|dessert|Besan Ladoo|鹰嘴豆粉甜球|30|none|鹰嘴豆粉;酥油;小豆蔻|cool\nVietnamese|soup|Pho Bo|越南牛肉河粉|180|~beef|河粉;牛骨;牛肉片;八角;九层塔\nVietnamese|soup|Canh Chua|越南酸鱼汤|30|~fish|鱼;菠萝;番茄;罗望子;豆芽\nVietnamese|soup|Bun Bo Hue|顺化牛肉粉|150|~beef|米粉;牛腱;香茅;辣椒油\nVietnamese|soup|Chao Ga|越南鸡肉粥|60|~chicken|米;鸡肉;姜;葱\nVietnamese|soup|Canh Bi Do|越南南瓜虾汤|30|~shrimp|南瓜;虾;葱\nVietnamese|main|Banh Mi|越南法棍三明治|20|~pork|法棍;烤猪肉;腌萝卜;香菜;黄瓜\nVietnamese|main|Bun Cha|越南烤肉米粉|45|~pork|猪肉饼;五花肉;米粉;鱼露;生菜\nVietnamese|main|Com Tam|越南碎米饭|40|~pork|碎米;烤猪排;鸡蛋;腌菜\nVietnamese|main|Ca Kho To|越南焦糖焖鱼|40|~fish|鲶鱼;鱼露;黑胡椒\nVietnamese|main|Ga Xao Sa Ot|越南香茅辣椒鸡|30|~chicken|鸡腿肉;香茅;鱼露;蒜;辣椒\nVietnamese|veg|Goi Cuon|越南春卷|30|~shrimp|米纸;虾;米粉;生菜;薄荷\nVietnamese|veg|Rau Muong Xao Toi|越南蒜炒空心菜|10|~none|空心菜;蒜;鱼露\nVietnamese|veg|Do Chua|越南腌萝卜胡萝卜|20|none|白萝卜;胡萝卜\nVietnamese|veg|Dau Hu Sot Ca Chua|番茄汁豆腐|20|tofu|豆腐;番茄;葱\nVietnamese|veg|Goi Ngo Sen|越南莲藕沙拉|20|~shrimp|莲藕茎;虾;花生;薄荷\nVietnamese|dessert|Che Ba Mau|越南三色甜品|30|none|红豆;绿豆;椰浆;冰|cool\nVietnamese|dessert|Banh Flan|越南焦糖布丁|60|none|鸡蛋;炼乳;咖啡|cool\nVietnamese|dessert|Che Chuoi|椰奶香蕉西米露|20|none|香蕉;西米;椰浆;花生|hot\nVietnamese|dessert|Ca Phe Sua Da|越南冰咖啡|10|none|咖啡;炼乳;冰|cool\nVietnamese|dessert|Banh Bo|越南米发糕|120|none|米粉;椰浆;酵母|cool\nFrench|soup|French Onion Soup|法式洋葱汤|75|~none|洋葱;牛肉高汤;法棍;格鲁耶尔芝士\nFrench|soup|Bouillabaisse|马赛鱼汤|90|~seafood|鱼;青口;藏红花;茴香;番茄\nFrench|soup|Vichyssoise|法式土豆韭葱冷汤|45|~none|土豆;韭葱;淡奶油;鸡汤\nFrench|soup|Soupe au Pistou|法式青酱蔬菜汤|45|beans|白豆;西葫芦;四季豆;罗勒酱\nFrench|soup|Lobster Bisque|龙虾浓汤|90|~seafood|龙虾;淡奶油;白兰地;番茄\nFrench|main|Coq au Vin|红酒炖鸡|120|~chicken|鸡腿;红酒;培根;蘑菇;洋葱\nFrench|main|Beef Bourguignon|勃艮第红酒炖牛肉|180|~beef|牛肩肉;红酒;胡萝卜;蘑菇;培根\nFrench|main|Quiche Lorraine|洛林咸派|75|~egg|酥皮;鸡蛋;培根;淡奶油;格鲁耶尔芝士\nFrench|main|Croque Monsieur|法式火腿芝士三明治|20|~pork|吐司;火腿;格鲁耶尔芝士;白酱\nFrench|main|Steak Frites|牛排配薯条|30|~beef|牛排;土豆;黄油\nFrench|main|Moules Marinieres|白酒青口|25|~seafood|青口;白葡萄酒;红葱头;欧芹\nFrench|veg|Ratatouille|普罗旺斯炖菜|60|none|茄子;西葫芦;彩椒;番茄\nFrench|veg|Haricots Verts Amandine|杏仁四季豆|15|none|四季豆;杏仁片;黄油\nFrench|veg|Gratin Dauphinois|法式焗土豆|75|none|土豆;淡奶油;蒜;格鲁耶尔芝士\nFrench|veg|Salade Nicoise|尼斯沙拉|25|~fish|金枪鱼;鸡蛋;四季豆;橄榄;土豆\nFrench|veg|Carottes Vichy|法式黄油胡萝卜|20|none|胡萝卜;黄油\nFrench|dessert|Creme Brulee|法式焦糖炖蛋|60|none|蛋黄;淡奶油;香草|cool\nFrench|dessert|Crepes|法式可丽饼|20|none|面粉;鸡蛋;牛奶;黄油|hot\nFrench|dessert|Chocolate Mousse|巧克力慕斯|30|none|黑巧克力;鸡蛋;淡奶油|cool\nFrench|dessert|Tarte Tatin|反烤苹果挞|60|none|苹果;酥皮;黄油|hot\nFrench|dessert|Madeleines|玛德琳蛋糕|40|none|面粉;鸡蛋;黄油;柠檬|cool\nSpanish|soup|Salmorejo|西班牙番茄冷汤|15|~egg|番茄;面包;蒜;鸡蛋;火腿\nSpanish|soup|Caldo Gallego|加利西亚汤|90|~pork|白豆;绿叶甘蓝;土豆;西班牙香肠\nSpanish|soup|Sopa de Ajo|西班牙大蒜汤|25|egg|大蒜;面包;鸡蛋;红椒粉\nSpanish|soup|Fabada Asturiana|阿斯图里亚斯炖豆|150|~pork|白豆;西班牙香肠;血肠;五花肉\nSpanish|soup|Ajo Blanco|西班牙杏仁冷汤|15|none|杏仁;蒜;面包;葡萄\nSpanish|main|Paella|西班牙海鲜饭|60|~seafood|米;虾;青口;鱿鱼;藏红花\nSpanish|main|Tortilla Espanola|西班牙土豆蛋饼|40|egg|鸡蛋;土豆;洋葱\nSpanish|main|Gambas al Ajillo|西班牙蒜香虾|15|~shrimp|虾;大蒜;辣椒\nSpanish|main|Pollo al Ajillo|西班牙蒜香鸡|40|~chicken|鸡腿;大蒜;白葡萄酒;百里香\nSpanish|main|Albondigas|西班牙番茄肉丸|45|~pork|猪肉末;牛肉末;番茄;面包糠\nSpanish|veg|Patatas Bravas|西班牙辣酱土豆|35|none|土豆;红椒粉;番茄;蒜泥蛋黄酱\nSpanish|veg|Pimientos de Padron|煎帕德龙小辣椒|10|none|帕德龙辣椒;海盐\nSpanish|veg|Espinacas con Garbanzos|鹰嘴豆炖菠菜|30|beans|菠菜;鹰嘴豆;孜然;红椒粉\nSpanish|veg|Pisto|西班牙炖蔬菜|45|none|西葫芦;彩椒;番茄;洋葱\nSpanish|veg|Champinones al Ajillo|蒜香蘑菇|15|none|蘑菇;大蒜;欧芹;白葡萄酒\nSpanish|dessert|Crema Catalana|加泰罗尼亚焦糖奶冻|40|none|牛奶;蛋黄;柠檬皮;肉桂|cool\nSpanish|dessert|Tarta de Santiago|圣地亚哥杏仁蛋糕|60|none|杏仁粉;鸡蛋;柠檬|cool\nSpanish|dessert|Basque Cheesecake|巴斯克芝士蛋糕|60|none|奶油奶酪;鸡蛋;淡奶油|cool\nSpanish|dessert|Torrijas|西班牙蜜汁炸面包|25|none|面包;牛奶;鸡蛋;肉桂;蜂蜜|hot\nSpanish|dessert|Leche Frita|西班牙炸牛奶|60|none|牛奶;玉米淀粉;鸡蛋;肉桂|hot\nMiddle Eastern|soup|Shorbat Adas|中东红扁豆汤|35|beans|红扁豆;洋葱;孜然;柠檬\nMiddle Eastern|soup|Ash Reshteh|波斯面条豆汤|90|beans|面条;鹰嘴豆;芸豆;菠菜;酸奶乳清\nMiddle Eastern|soup|Freekeh Soup|烟熏青麦鸡汤|50|~chicken|烟熏青麦;鸡肉;洋葱;肉桂\nMiddle Eastern|soup|Yayla Corbasi|土耳其酸奶米汤|30|none|酸奶;米;薄荷;鸡蛋\nMiddle Eastern|soup|Molokhia|埃及黄麻菜汤|45|~chicken|黄麻叶;鸡汤;蒜;香菜\nMiddle Eastern|main|Chicken Shawarma|鸡肉沙威玛|60|~chicken|鸡腿;皮塔饼;蒜酱;腌黄瓜\nMiddle Eastern|main|Shish Tawook|中东烤鸡肉串|40|~chicken|鸡胸肉;酸奶;柠檬;蒜\nMiddle Eastern|main|Maqluba|翻转饭|90|~chicken|米;鸡肉;茄子;花椰菜;土豆\nMiddle Eastern|main|Mujadara|扁豆焦糖洋葱饭|50|beans|扁豆;米;洋葱\nMiddle Eastern|main|Kebab Koobideh|波斯烤肉串|40|~lamb|羊肉末;洋葱;藏红花;番茄\nMiddle Eastern|main|Fesenjan|波斯石榴核桃炖鸡|90|~chicken|鸡肉;核桃;石榴糖浆;洋葱\nMiddle Eastern|veg|Fattoush|中东面包沙拉|15|none|生菜;番茄;黄瓜;皮塔饼;漆树粉\nMiddle Eastern|veg|Muhammara|红椒核桃酱|15|none|烤红椒;核桃;石榴糖浆;面包糠\nMiddle Eastern|veg|Dolma|葡萄叶包饭|90|none|葡萄叶;米;薄荷;柠檬\nMiddle Eastern|veg|Shirazi Salad|设拉子沙拉|10|none|黄瓜;番茄;洋葱;薄荷\nMiddle Eastern|veg|Imam Bayildi|土耳其橄榄油酿茄子|60|none|茄子;番茄;洋葱;蒜\nMiddle Eastern|dessert|Kunafa|库纳法|45|none|卡达伊夫面丝;奶酪;开心果|hot\nMiddle Eastern|dessert|Basbousa|椰丝粗麦蛋糕|50|none|粗粒小麦粉;酸奶;椰丝|cool\nMiddle Eastern|dessert|Muhallebi|中东牛奶布丁|25|none|牛奶;米粉;玫瑰水;开心果|cool\nMiddle Eastern|dessert|Sholeh Zard|波斯藏红花米布丁|60|none|米;藏红花;玫瑰水;杏仁|cool\nMiddle Eastern|dessert|Maamoul|椰枣酥饼|60|none|粗粒小麦粉;椰枣;黄油;橙花水|cool\nChinese|drink|Bubble Milk Tea|珍珠奶茶|15|none|红茶;牛奶;珍珠;冰|cool\nChinese|drink|Chrysanthemum Tea|菊花茶|10|none|菊花;冰糖;枸杞|hot\nChinese|drink|Sour Plum Drink|酸梅汤|60|none|乌梅;山楂;陈皮;桂花;冰|cool\nChinese|drink|Fresh Soy Milk|现磨豆浆|30|none|黄豆|hot\nChinese|drink|Hong Kong Iced Lemon Tea|港式冻柠茶|10|none|红茶;柠檬;冰|cool\nKorean|drink|Yuja Tea|柚子茶|5|none|柚子酱;热水|hot\nKorean|drink|Boricha|大麦茶|10|none|大麦|hot\nKorean|drink|Korean Strawberry Milk|韩式草莓牛奶|10|none|草莓;牛奶|cool\nKorean|drink|Soju|烧酒|1|none|烧酒|cool\nKorean|drink|Makgeolli|马格利米酒|1|none|马格利米酒|cool\nJapanese|drink|Matcha|抹茶|5|none|抹茶粉;热水|hot\nJapanese|drink|Mugicha|冰麦茶|10|none|大麦;冰|cool\nJapanese|drink|Ramune|弹珠汽水|1|none|弹珠汽水|cool\nJapanese|drink|Sake|清酒|1|none|清酒|hot\nJapanese|drink|Calpis Soda|可尔必思苏打|5|none|可尔必思;苏打水;冰|cool\nItalian|drink|Espresso|意式浓缩咖啡|5|none|咖啡豆|hot\nItalian|drink|Cappuccino|卡布奇诺|10|none|浓缩咖啡;牛奶;可可粉|hot\nItalian|drink|Limonata|意式柠檬汽水|5|none|柠檬;苏打水;冰|cool\nItalian|drink|Aperol Spritz|阿佩罗橙光|5|none|阿佩罗;起泡酒;苏打水;橙子;冰|cool\nItalian|drink|Italian Hot Chocolate|意式浓郁热巧克力|15|none|黑巧克力;牛奶;淡奶油|hot\nMediterranean|drink|Greek Frappe|希腊冰咖啡|5|none|速溶咖啡;冰;牛奶|cool\nMediterranean|drink|Moroccan Mint Tea|摩洛哥薄荷茶|10|none|绿茶;薄荷|hot\nMediterranean|drink|Pomegranate Juice|石榴汁|10|none|石榴;冰|cool\nMediterranean|drink|Greek Mountain Tea|希腊山茶|10|none|山茶;蜂蜜;柠檬|hot\nMediterranean|drink|Ouzo|茴香酒|1|none|茴香酒;冰|cool\nMexican|drink|Horchata|墨西哥米浆|20|none|米;肉桂;牛奶;冰|cool\nMexican|drink|Agua de Jamaica|洛神花茶|20|none|洛神花;青柠;冰|cool\nMexican|drink|Agua de Sandia|西瓜鲜果水|10|none|西瓜;青柠;冰|cool\nMexican|drink|Mexican Hot Chocolate|墨西哥热巧克力|15|none|墨西哥巧克力;牛奶;肉桂|hot\nMexican|drink|Margarita|玛格丽特|5|none|龙舌兰;青柠;橙酒;海盐|cool\nAmerican|drink|Lemonade|柠檬水|10|none|柠檬;冰|cool\nAmerican|drink|Southern Sweet Tea|美式甜冰茶|15|none|红茶;柠檬;冰|cool\nAmerican|drink|Milkshake|奶昔|10|none|冰淇淋;牛奶;樱桃;淡奶油|cool\nAmerican|drink|Hot Apple Cider|热苹果西打|20|none|苹果汁;肉桂;橙子|hot\nAmerican|drink|Root Beer Float|根汁汽水漂浮|5|none|根汁汽水;冰淇淋|cool\nThai|drink|Thai Iced Tea|泰式奶茶|10|none|泰式红茶;炼乳;牛奶;冰|cool\nThai|drink|Fresh Coconut Water|鲜椰子水|5|none|椰青|cool\nThai|drink|Butterfly Pea Lemonade|蝶豆花柠檬饮|10|none|蝶豆花;柠檬;冰|cool\nThai|drink|Oliang|泰式冰咖啡|10|none|咖啡;炼乳;冰|cool\nThai|drink|Lemongrass Ginger Tea|香茅姜茶|15|none|香茅;姜;蜂蜜|hot\nIndian|drink|Masala Chai|印度马萨拉奶茶|15|none|红茶;牛奶;姜;小豆蔻|hot\nIndian|drink|Nimbu Pani|印式青柠水|5|none|青柠;薄荷;冰|cool\nIndian|drink|Badam Milk|杏仁奶|20|none|牛奶;杏仁;藏红花|hot\nIndian|drink|Jaljeera|孜然薄荷饮|10|none|孜然;薄荷;青柠;冰|cool\nIndian|drink|South Indian Filter Coffee|南印滤泡咖啡|15|none|咖啡粉;牛奶|hot\nVietnamese|drink|Ca Phe Trung|越南蛋咖啡|15|none|咖啡;蛋黄;炼乳|hot\nVietnamese|drink|Nuoc Mia|甘蔗汁|5|none|甘蔗;金桔;冰|cool\nVietnamese|drink|Sinh To Bo|牛油果奶昔|10|none|牛油果;炼乳;冰|cool\nVietnamese|drink|Tra Da|越南冰茶|5|none|绿茶;冰|cool\nVietnamese|drink|Soda Chanh|越南青柠苏打|5|none|青柠;苏打水;冰|cool\nFrench|drink|Cafe au Lait|法式欧蕾咖啡|10|none|咖啡;热牛奶|hot\nFrench|drink|Citron Presse|法式鲜榨柠檬水|5|none|柠檬;冰|cool\nFrench|drink|Kir Royale|皇家基尔|5|none|黑加仑利口酒;香槟|cool\nFrench|drink|Vin Chaud|法式热红酒|20|none|红酒;橙子;肉桂;八角|hot\nFrench|drink|Diabolo Menthe|薄荷汽水|5|none|薄荷糖浆;柠檬汽水;冰|cool\nSpanish|drink|Sangria|桑格利亚|15|none|红酒;橙子;苹果;冰|cool\nSpanish|drink|Spanish Hot Chocolate|西班牙浓稠热巧克力|15|none|黑巧克力;牛奶;玉米淀粉|hot\nSpanish|drink|Cafe con Hielo|西班牙冰咖啡|5|none|浓缩咖啡;冰|cool\nSpanish|drink|Horchata de Chufa|虎坚果冷饮|20|none|虎坚果;肉桂;冰|cool\nSpanish|drink|Tinto de Verano|夏日红酒|5|none|红酒;柠檬汽水;冰|cool\nMiddle Eastern|drink|Turkish Coffee|土耳其咖啡|10|none|咖啡粉;小豆蔻|hot\nMiddle Eastern|drink|Turkish Tea|土耳其红茶|10|none|红茶|hot\nMiddle Eastern|drink|Ayran|咸酸奶饮|5|none|酸奶;冰|cool\nMiddle Eastern|drink|Limonana|薄荷柠檬冰沙|5|none|柠檬;薄荷;冰|cool\nMiddle Eastern|drink|Sahlab|萨勒普热奶|15|none|牛奶;兰茎粉;肉桂;开心果|hot\nChinese|drink|Shaoxing Huangjiu|温绍兴黄酒|10|none|绍兴黄酒;话梅;姜丝|hot\nChinese|drink|Baijiu|白酒|1|none|白酒|cool\nChinese|drink|Chinese Plum Wine|青梅酒|1|none|青梅酒;冰|cool\nKorean|drink|Somaek|烧啤|2|none|烧酒;啤酒|cool\nKorean|drink|Bokbunja|覆盆子酒|1|none|覆盆子酒|cool\nJapanese|drink|Umeshu on the Rocks|加冰梅酒|2|none|梅酒;青梅;冰|cool\nJapanese|drink|Japanese Whisky Highball|日式威士忌嗨棒|3|none|威士忌;苏打水;柠檬;冰|cool\nItalian|drink|Negroni|内格罗尼|3|none|金酒;金巴利;红味美思;橙皮;冰|cool\nItalian|drink|Chianti|基安蒂红葡萄酒|1|none|基安蒂红葡萄酒|cool\nItalian|drink|Prosecco|普罗塞克起泡酒|1|none|普罗塞克起泡酒|cool\nItalian|drink|Bellini|贝利尼|5|none|白桃泥;普罗塞克起泡酒|cool\nItalian|drink|Limoncello|柠檬甜酒|1|none|柠檬甜酒|cool\nMediterranean|drink|Retsina|希腊松香白葡萄酒|1|none|松香白葡萄酒|cool\nMexican|drink|Paloma|帕洛玛|5|none|龙舌兰;西柚汽水;青柠;海盐;冰|cool\nMexican|drink|Michelada|米切拉达|5|none|啤酒;青柠;番茄汁;辣酱;辣椒盐|cool\nAmerican|drink|Old Fashioned|古典鸡尾酒|5|none|波本威士忌;方糖;苦精;橙皮;樱桃;冰|cool\nAmerican|drink|Manhattan|曼哈顿|5|none|黑麦威士忌;红味美思;苦精;樱桃|cool\nAmerican|drink|Napa Cabernet Sauvignon|纳帕赤霞珠红葡萄酒|1|none|赤霞珠红葡萄酒|cool\nFrench|drink|Bordeaux Red|波尔多红葡萄酒|1|none|波尔多红葡萄酒|cool\nFrench|drink|French 75|法国75|5|none|金酒;香槟;柠檬;糖浆|cool\nFrench|drink|Provence Rose|普罗旺斯桃红葡萄酒|1|none|桃红葡萄酒;冰|cool\nSpanish|drink|Rioja|里奥哈红葡萄酒|1|none|里奥哈红葡萄酒|cool\nSpanish|drink|Cava|卡瓦起泡酒|1|none|卡瓦起泡酒|cool\nSpanish|drink|Rebujito|雪莉雪碧|3|none|雪莉酒;柠檬汽水;薄荷;冰|cool\nMiddle Eastern|drink|Arak|亚力酒|2|none|亚力酒;冰水|cool";
 const CAF_RE = /红茶|绿茶|乌龙|普洱|茶叶|咖啡|抹茶|巧克力|可可|可乐|cola|coffee|espresso|matcha|black tea|green tea|chocolate|cocoa|yerba|马黛/i;
@@ -2720,6 +3239,26 @@ function applyEdit(d){ const k = d.cuisine + "|" + d.name, e = EDITS[k]; if (!e)
   if (e.protein) { d.protein = e.protein; d.v = !MEATS.includes(e.protein); }
   if (Array.isArray(e.ing)) d.ing = e.ing;
   d.edited = true; }
+/* ---- library tidy-up: drop non-dishes and duplicates, fix cuisines, standardize ingredient names ---- */
+const LIB_HIDE = new Set(["煮锅蒸米饭","电饭煲蒸米饭","米粥","基础牛奶面包","煮泡面加蛋","炒方便面","老干妈拌面","麻油拌面","微波炉鸡蛋羹","蒸箱鸡蛋羹","简易红烧肉","南派红烧肉","徽派红烧肉","汤面","麻辣减脂荞麦面","鸡蛋花","朱雀汤","凉拌黄瓜","番茄红酱","乡村啤酒鸭","意式肉酱面","黄油鸡","红芸豆拌饭"]);
+const CUISINE_FIX = {"奶酪培根通心粉":"American","意式烤鸡":"Italian","巴基斯坦牛肉咖喱":"Indian","利提巧卡":"Indian","鹰嘴豆炸饼":"Indian","牛排":"American","奶油蘑菇汤":"American","蒜香黄油虾":"American","鲣鱼海苔玉米饭":"Japanese","电饭煲三文鱼炊饭":"Japanese","蒲烧茄子":"Japanese","火腿饭团":"Japanese"};
+const RCP_ALIAS = {"红烧肉":"徽派红烧肉"};
+const ING_TOOL = /筛网|手套|纱布|塑料杯|一次性|保鲜膜|牙签|工具|温度计|簸箕|刷子|汤匙|量杯|擀面杖|蒸笼|笼屉|篦子|烤箱|烤盘|烤网|烧烤炉|炭火|燃气|空气炸锅|微波炉|电饭煲|电饼铛|蒸箱|冰箱|密封袋|捣药罐|原则|建议|厨房|搅拌器|擦丝器|吸油纸|锡箔|铝箔|---|[锅盆碗盖]$|^盘子$|^水$|^清水$|^开水$|^饮用水$|^凉白开水$|^温水$|^冷水$/;
+const ING_SYN = [[/^(食用盐|食盐|精盐|盐巴|海盐|食用盐)$/, "盐"], [/^(白砂糖|白糖|细砂糖)$/, "糖"], [/^(大蒜|蒜瓣|蒜头|蒜末|蒜蓉|蒜片|蒜仔)$/, "蒜"], [/^(生姜|老姜|姜片|姜末|姜丝|生姜片)$/, "姜"], [/^(小葱|香葱|葱花)$/, "葱"], [/^(西红柿|蕃茄)$/, "番茄"], [/^油$/, "食用油"], [/^耗油$/, "蚝油"], [/^生抽酱油$/, "生抽"], [/^老抽酱油$/, "老抽"], [/^(红萝卜)$/, "胡萝卜"], [/^(食用油|植物油|花生油|菜籽油|菜油|玉米油|食用植物油)$/, "食用油"], [/^(生粉|土豆淀粉|玉米淀粉|水淀粉)$/, "淀粉"], [/^(麻油|芝麻香油|芝麻油)$/, "香油"], [/^(料酒或者黄酒|黄酒或料酒|料酒或花雕酒)$/, "料酒"]];
+function cleanIng(list){
+  const out = [];
+  (list || []).flatMap(x => String(x).replace(/葱姜蒜/g, "葱、姜、蒜").replace(/葱，姜，蒜/g, "葱、姜、蒜").split(/[、，,／\/；;+]/)).forEach(t => {
+    t = t.replace(/[（(][^）)]*[）)]/g, "").replace(/\*+/g, "").replace(/^(主料|必备|可选|其他调味料|必须材料|可选工具|原料|小料)[：:]?/, "").replace(/[：:].*$/, "")
+         .replace(/\s*\d+(\.\d+)?\s*(g|kg|克|ml|毫升|个|根|颗|片|勺|斤|只|块|碗|杯|cm)?\s*$/i, "").replace(/[🌶️]/g, "").replace(/\s*(or|或).*$/i, "").replace(/(一个|一颗|一根|半只|若干|适量|一颗)$/, "").replace(/\s*\d+\s*[-~]?\s*\d*$/, "").replace(/^热干面特有的/, "").replace(/^\d+(\.\d+)?\s*(g|kg|克|ml|毫升|个|根|颗|片|勺)?\s*/i, "").replace(/^一个鸡蛋的/, "").replace(/^安琪/, "").replace(/(一包|一块)$/, "").replace(/^椰树牌/, "").trim();
+    if (!t || t.length > 14 || ING_TOOL.test(t)) return;
+    for (const [re, v] of ING_SYN) if (re.test(t)) { t = v; break; }
+    if (!out.includes(t)) out.push(t);
+  });
+  return out;
+}
+function tidyLibrary(lib){
+  for (let i = lib.length - 1; i >= 0; i--) { const d = lib[i], key = d.zh || d.name; if (LIB_HIDE.has(key)) { lib.splice(i, 1); continue; } if (CUISINE_FIX[key]) d.cuisine = CUISINE_FIX[key]; if (d.htc || /[一-龥]/.test(d.ing.join(""))) d.ing = cleanIng(d.ing); }
+}
 function buildLibrary(){
   const lib = [];
   for (const [cuisine, byCourse] of Object.entries(BASE)) {
@@ -2740,13 +3279,14 @@ function buildLibrary(){
   const have = new Set(lib.map(d => rnorm(d.zh || d.name)));
   for (const r of HTC) { if (have.has(rnorm(r.t))) continue;
     lib.push({course:r.c, cuisine:r.cu, name:r.t, zh:"", min:r.m, protein:r.p, ing:r.ing, temp:r.tp, link:"", v:!MEATS.includes(r.p), htc:true}); }
+  tidyLibrary(lib);
   for (const d of custom) {
     const protein = d.protein || "none";
     lib.push({mix:d.mix || null, mine:!d.gen, gen:!!d.gen, course:d.course, cuisine:d.cuisine, name:d.name, zh:d.zh||"", min:d.min, protein, ing:Array.isArray(d.ing)?d.ing:[], temp:d.temp||(d.course==="dessert"?"cool":""), link:d.link||"", v: typeof d.v === "boolean" ? d.v : !MEATS.includes(protein)});
   }
   lib.forEach(applyEdit);
   lib.forEach(drinkFlags);
-  lib.forEach(d => { const r = HTC_MAP.get(rnorm(d.zh)) || HTC_MAP.get(rnorm(d.name)); if (r) d.rcp = r; else if (ENR[d.name]) d.rcp = Object.assign({en: true}, ENR[d.name]); });
+  lib.forEach(d => { const r = HTC_MAP.get(rnorm(d.zh)) || HTC_MAP.get(rnorm(d.name)) || (RCP_ALIAS[d.zh || d.name] && HTC_MAP.get(rnorm(RCP_ALIAS[d.zh || d.name]))); if (r) d.rcp = r; else if (ENR[d.name]) d.rcp = Object.assign({en: true}, ENR[d.name]); });
   return lib;
 }
 let LIB = buildLibrary();
@@ -2890,6 +3430,39 @@ const wantTerms = () => parseTerms(state.wantRaw);
 
 /* ---------- Matching: soups and mains need 2 of 3 (cuisine, protein, other) ---------- */
 const GOT_ZH = {cuisine:"菜系", protein:"主料", other:"其他要求"};
+/* ---- table balance: what the other picked dishes already cover ---- */
+const SEASON_ING = /^(盐|糖|食用油|油|生抽|老抽|酱油|蚝油|料酒|淀粉|鸡精|味精|胡椒粉|白胡椒粉|黑胡椒粉|香油|醋|水|冰糖|salt|sugar|oil|soy sauce|water|pepper|black pepper|cornstarch|vinegar|sesame oil|葱|姜|蒜|scallion|garlic|ginger|花椒|sichuan peppercorn|干辣椒|dried chili|chili oil|辣椒油|white pepper|star anise|八角|rice vinegar|shaoxing wine|豆瓣酱|doubanjiang)$/i;
+const isSpicy = d => /辣|麻婆|麻辣|水煮|剁椒|豆瓣|花椒|chili|spicy|gochu|jalape|sriracha|vindaloo|curry paste|kimchi/i.test(d.name + " " + d.zh + " " + d.ing.join(" "));
+const isFried = d => /炸|酥|fried|tempura|katsu|karaage|crispy|churro|pakora|fritter|schnitzel/i.test(d.name + " " + d.zh);
+const isRich = d => /红烧|扣肉|五花|肥|焖|cream|奶油|cheese|芝士|carbonara|alfredo|belly|braised|butter chicken|mac and/i.test(d.name + " " + d.zh);
+const coreIng = d => d.ing.map(x => String(x).toLowerCase().trim()).filter(x => x && !SEASON_ING.test(x));
+function tableOthers(course){ return pickedList().filter(([c]) => c.id !== course && c.id !== "drink" && c.id !== "dessert").map(([, d]) => d); }
+function fitScore(d, others){
+  if (!others.length || d.course === "drink" || d.course === "dessert") return 0;
+  let s = 0;
+  const sp = others.filter(isSpicy).length, fr = others.filter(isFried).length, ri = others.filter(isRich).length;
+  if (isSpicy(d) && sp) s -= sp >= 2 ? 2 : 1;
+  if (isFried(d) && fr) s -= 1;
+  if (isRich(d) && ri) s -= 1;
+  if (d.protein && d.protein !== "none" && others.some(o => o.protein === d.protein)) s -= 1;
+  const mine = coreIng(d), shared = new Set(others.flatMap(coreIng).filter(x => mine.includes(x)));
+  if (shared.size) s += shared.size >= 2 ? 1 : .5;
+  if ((d.course === "soup" || d.course === "veg") && ri + fr + sp >= 2 && !isSpicy(d) && !isFried(d) && !isRich(d)) s += 1;
+  return Math.round(s);
+}
+function tableBalance(){
+  const ds = pickedList().filter(([c]) => c.id !== "drink" && c.id !== "dessert").map(([, d]) => d);
+  if (ds.length < 2) return "";
+  const notes = [], sp = ds.filter(isSpicy).length, fr = ds.filter(isFried).length, ri = ds.filter(isRich).length;
+  if (sp >= 2) notes.push(sp + " 道偏辣"); if (fr >= 2) notes.push(fr + " 道油炸"); if (ri >= 2) notes.push(ri + " 道偏油腻");
+  const cnt = {}, show = {}; ds.forEach(d => new Set(d.ing.filter(x => !SEASON_ING.test(String(x).toLowerCase().trim()))).forEach(x => { const k = String(x).toLowerCase().trim(); cnt[k] = (cnt[k] || 0) + 1; show[k] = iz(String(x).trim()); }));
+  const share = Object.keys(cnt).filter(x => cnt[x] >= 2).slice(0, 3).map(x => show[x]);
+  const bits = [];
+  if (notes.length) bits.push('<span class="bal-w">'+notes.join("、")+'，可以换一道清淡的</span>');
+  else bits.push('<span class="bal-ok">口味搭配均衡</span>');
+  if (share.length) bits.push('<span class="bal-s">共用食材：'+share.map(esc).join("、")+'</span>');
+  return '<div class="balance">'+bits.join("")+'</div>';
+}
 function candidates(course){
   const want = wantTerms();
   const q = state.q.trim().toLowerCase();
@@ -2902,7 +3475,7 @@ function candidates(course){
   const setCount = (useCuisine?1:0) + (useProtein?1:0) + (useOther?1:0);
   const nc = nodeCrit(course), nf = nc ? nodeFull(course) : 0, useTemp = course === "dessert" && state.temp !== "either";
   const need = nc ? 0 : Math.min((course === "soup" || course === "main") ? 2 : 1, setCount);
-  const out = [], sq = (state.sq || "").trim().toLowerCase();
+  const out = [], sq = (state.sq || "").trim().toLowerCase(), others = tableOthers(course);
   LIB.forEach((d, idx) => {
     if (d.course !== course) return;
     if (BLACK.has(keyOf(d))) return;
@@ -2915,16 +3488,17 @@ function candidates(course){
     if (useCuisine && state.cuisines.has(d.cuisine)) got.push("cuisine");
     const ws = want.reduce((n,re) => n + (re.test(h) ? 1 : 0), 0);
     if (useProtein && ((big && allowed.has(d.protein)) || ws > 0)) got.push("protein");
-    if (useOther && [...state.times].some(i => d.min >= TIME_RANGES[i][1] && d.min <= TIME_RANGES[i][2])) got.push("other");
+    if (useOther && (state.maxMin ? d.min <= state.maxMin : [...state.times].some(i => d.min >= TIME_RANGES[i][1] && d.min <= TIME_RANGES[i][2]))) got.push("other");
     if (useTemp && d.temp === state.temp) got.push("temp");
     const fresh = state.fresh.has(keyOf(d)) || state.force.has(keyOf(d)), heart = (HEART_SNAP || HEARTS).has(keyOf(d)), recent = RECENT.has(keyOf(d));
     const matched = got.length + Math.min(ns, nf), total = setCount + (useTemp ? 1 : 0) + nf;
     const tier = !total || matched >= total ? 2 : matched > 0 ? 1 : 0, cu = got.includes("cuisine") ? 1 : 0;
     const gk = [d.cuisine, nc ? nc.map(f => f(d) ? 1 : 0).join("") : "", big ? d.protein : "", useTemp ? "" : d.temp || ""];
-    out.push({d, idx, got, setCount, ws, fresh, heart, ns, hh, recent, matched, total, tier, cu, gk});
+    const fit = fitScore(d, others);
+    out.push({d, idx, got, setCount, ws, fresh, heart, ns, hh, recent, matched, total, tier, cu, gk, fit});
   });
-  out.sort((a,b) => b.hh - a.hh || b.tier - a.tier || b.matched - a.matched || b.cu - a.cu || (b.fresh?1:0) - (a.fresh?1:0) || (b.heart?1:0) - (a.heart?1:0) || (a.recent?1:0) - (b.recent?1:0) || b.ws - a.ws || a.idx - b.idx);
-  const same = (a, b) => a.hh === b.hh && a.tier === b.tier && a.matched === b.matched && a.cu === b.cu && !!a.fresh === !!b.fresh && !!a.heart === !!b.heart && !!a.recent === !!b.recent && a.ws === b.ws;
+  out.sort((a,b) => b.hh - a.hh || b.tier - a.tier || b.matched - a.matched || b.cu - a.cu || (b.fresh?1:0) - (a.fresh?1:0) || (b.heart?1:0) - (a.heart?1:0) || (a.recent?1:0) - (b.recent?1:0) || b.fit - a.fit || b.ws - a.ws || a.idx - b.idx);
+  const same = (a, b) => a.hh === b.hh && a.tier === b.tier && a.matched === b.matched && a.cu === b.cu && !!a.fresh === !!b.fresh && !!a.heart === !!b.heart && !!a.recent === !!b.recent && a.fit === b.fit && a.ws === b.ws;
   const res = [];
   for (let i = 0; i < out.length;) {
     let j = i + 1; while (j < out.length && same(out[i], out[j])) j++;
@@ -3010,12 +3584,12 @@ const COOK_STAGES = [["..........", "...KK.....", "..KWWK....", "...KK..KK.", ".
 function stepChosen(s){
   const t = state.dk;
   switch (s) {
-    case 1: return state.cuisines.size > 0 || state.proteins.size > 0 || !!state.wantRaw.trim();
-    case 2: return state.times.size > 0 || state.temp !== "either";
+    case 1: return state.cuisines.size > 0;
+    case 2: return state.times.size > 0 || state.proteins.size > 0 || !!state.wantRaw.trim() || !state.wantDrink;
     case 7: return state.soupT.size > 0 || picksOf("soup").length > 0;
     case 8: return state.mainM.size > 0 || picksOf("main").length > 0;
-    case 3: return picksOf("veg").length > 0;
-    case 9: return picksOf("dessert").length > 0;
+    case 3: return state.vegM.size > 0 || picksOf("veg").length > 0;
+    case 9: return picksOf("dessert").length > 0 || state.temp !== "either";
     case 6: return !!(t.temp || t.alc || t.caf) || picksOf("drink").length > 0;
     case 4: case 5: return state.visited.has(s) && pickedList().length > 0;
   }
@@ -3186,21 +3760,109 @@ function pageTastes(){
       const on = state.cuisines.has(c);
       return '<button class="cbar'+(on ? ' on' : '')+'" data-c="'+esc(c)+'" aria-pressed="'+on+'"><span class="fbox">'+flagSvg(c, 2.2)+'</span><span class="cb-n">'+esc(cz(c))+'</span>'+(on ? PIN_SVG : '')+'</button>'; }).join("")+'</div>')+
 
-  '<h2 class="h2">主料</h2><div class="pills">'+
-    PROTEIN_GROUPS.map(([l,_,col],i) => pill(ico(["p_chicken","p_beef","p_pork","p_lamb","p_sea","p_egg","p_veg"][i], 2)+esc(l),"p",i,state.proteins.has(i),col)).join("")+'</div>'+
-  '<input class="txt" id="want" value="'+esc(state.wantRaw)+'" placeholder="自己写，比如：豆腐、蘑菇、奥尔良" autocomplete="off" autocapitalize="off">';
+  '';
 }
 
 /* ---------- Step 2 ---------- */
+function timeLabel(m){ if (m < 60) return m + "分钟"; const h = Math.floor(m / 60), r = m % 60; return h + "小时" + (r ? r + "分" : ""); }
+const HCOL = ["#ffd35c", "#ffa94d", "#ff7b6b"];
+function clockSvg(m){
+  const cx = 60, cy = 60, R = 44, full = Math.floor(m / 60), part = m % 60;
+  let g = '<circle cx="60" cy="64" r="54" fill="rgba(59,35,20,.18)"/><circle cx="60" cy="60" r="54" fill="#3b2314"/><circle cx="60" cy="60" r="50" fill="#e25a4a"/><circle cx="60" cy="60" r="47" fill="#3b2314"/><circle cx="60" cy="60" r="'+R+'" fill="#fffaf0"/>';
+  if (full) g += '<circle cx="60" cy="60" r="'+(R-2)+'" fill="'+HCOL[Math.min(full - 1, 2)]+'"/>';
+  if (part) { const a = part / 60 * Math.PI * 2, x = cx + (R-2) * Math.sin(a), y = cy - (R-2) * Math.cos(a);
+    g += '<path d="M60 60 L60 '+(cy-R+2)+' A'+(R-2)+' '+(R-2)+' 0 '+(part > 30 ? 1 : 0)+' 1 '+x.toFixed(2)+' '+y.toFixed(2)+' Z" fill="'+HCOL[Math.min(full, 2)]+'"/>'; }
+  for (let i = 0; i < 12; i++) { const a = i / 12 * Math.PI * 2, big = i % 3 === 0, r1 = R - (big ? 8 : 5);
+    g += '<line x1="'+(cx + r1 * Math.sin(a)).toFixed(1)+'" y1="'+(cy - r1 * Math.cos(a)).toFixed(1)+'" x2="'+(cx + (R-1) * Math.sin(a)).toFixed(1)+'" y2="'+(cy - (R-1) * Math.cos(a)).toFixed(1)+'" stroke="#3b2314" stroke-width="'+(big ? 3 : 2)+'"/>'; }
+  const a = (m % 60) / 60 * Math.PI * 2, hx = cx + (R - 9) * Math.sin(a), hy = cy - (R - 9) * Math.cos(a);
+  g += '<line x1="60" y1="60" x2="'+hx.toFixed(1)+'" y2="'+hy.toFixed(1)+'" stroke="#3b2314" stroke-width="4" stroke-linecap="square"/><rect x="55" y="55" width="10" height="10" fill="#3b2314"/>';
+  g += '<rect x="'+(hx-7).toFixed(1)+'" y="'+(hy-7).toFixed(1)+'" width="14" height="14" fill="#e25a4a" stroke="#3b2314" stroke-width="3"/>';
+  g += '<rect x="40" y="0" width="12" height="8" fill="#3b2314"/><rect x="68" y="0" width="12" height="8" fill="#3b2314"/><rect x="54" y="2" width="12" height="6" fill="#e25a4a" stroke="#3b2314" stroke-width="2"/>';
+  return '<svg class="ck-svg" viewBox="0 -2 120 128" width="108" height="115" aria-hidden="true">'+g+'</svg>';
+}
+function clockHtml(){
+  const m = state.maxMin;
+  return '<div class="ck" id="ck"><div class="ck-face" id="ckFace" role="slider" tabindex="0" aria-label="做菜时间" aria-valuemin="0" aria-valuemax="180" aria-valuenow="'+m+'">'+clockSvg(m)+'</div>'+
+    '<div class="ck-q">'+[[15,"15分钟"],[30,"半小时"],[60,"1小时"]].map(([v,l]) => '<button class="pill-btn'+(m===v?' on':'')+'" style="--c:var(--yolk)" data-ckset="'+v+'" aria-pressed="'+(m===v)+'">'+l+'</button>').join("")+'</div>'+
+    '<button class="ck-any'+(!m?' on':'')+'" data-ckset="0" aria-pressed="'+(!m)+'">'+'<svg viewBox="0 0 14 14" width="40" height="40" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="#3b2314"/><rect x="2" y="2" width="10" height="10" fill="#fffaf0"/><rect x="2" y="10" width="10" height="2" fill="#e7e1d5"/><rect x="3" y="3" width="2" height="2" fill="#e25a4a"/><rect x="6" y="6" width="2" height="2" fill="#3b2314"/><rect x="9" y="8" width="2" height="2" fill="#3b2314"/></svg>'+'<span>都行</span></button></div>';
+}
+function setMaxMin(m, rerender){
+  state.maxMin = m; state.times = new Set(m ? TIME_RANGES.map((r, i) => r[1] <= m ? i : -1).filter(i => i >= 0) : []);
+  if (rerender) keepScroll(()=>{});
+  else { const f = $("ckFace"), v = $("ckV"); if (f) { f.innerHTML = clockSvg(m); f.setAttribute("aria-valuenow", m); } if (v) v.textContent = m ? timeLabel(m) + '以内' : '拖动指针或点按钮'; }
+}
+(function(){
+  let drag = false, last = 0;
+  const angM = (e, f) => { const r = f.getBoundingClientRect(), x = e.clientX - (r.left + r.width / 2), y = e.clientY - (r.top + r.height * 60 / 128 + r.height * 2 / 128); let a = Math.atan2(x, -y); if (a < 0) a += Math.PI * 2; return a / (Math.PI * 2) * 60; };
+  document.addEventListener("pointerdown", e => { const f = e.target.closest && e.target.closest("#ckFace"); if (!f) return; e.preventDefault(); drag = true; try { f.setPointerCapture(e.pointerId); } catch(_){}
+    SND.unlock(); const mm = angM(e, f); last = mm; let t = Math.floor(state.maxMin / 60) * 60 + Math.round(mm / 5) * 5; if (state.maxMin && state.maxMin % 60 === 0 && mm > 45) t -= 60; setMaxMin(Math.max(0, Math.min(180, t))); SND.fx.tick && SND.fx.tick(); });
+  document.addEventListener("pointermove", e => { if (!drag) return; const f = $("ckFace"); if (!f) return; const mm = angM(e, f); let d = mm - last; if (d < -30) d += 60; if (d > 30) d -= 60; last = mm;
+    const raw = Math.max(0, Math.min(180, (state._ckRaw ?? state.maxMin) + d)); state._ckRaw = raw; const snap = Math.round(raw / 5) * 5; if (snap !== state.maxMin) { setMaxMin(snap); SND.fx.tick && SND.fx.tick(); } });
+  const end = () => { if (!drag) return; drag = false; state._ckRaw = undefined; setMaxMin(state.maxMin, true); };
+  document.addEventListener("pointerup", end); document.addEventListener("pointercancel", end);
+  document.addEventListener("keydown", e => { if (!e.target.closest || !e.target.closest("#ckFace")) return; if (e.key === "ArrowRight" || e.key === "ArrowUp") { setMaxMin(Math.min(180, state.maxMin + 5)); e.preventDefault(); } if (e.key === "ArrowLeft" || e.key === "ArrowDown") { setMaxMin(Math.max(0, state.maxMin - 5)); e.preventDefault(); } });
+  document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("[data-ckset]"); if (!b) return; e.stopPropagation(); SND.unlock(); SND.fx.on(); setMaxMin(+b.dataset.ckset, true); }, true);
+})();
+function cupHtml(){
+  const on = state.wantDrink, an = state.cupAnim ? (on ? ' pour' : ' drain') : ''; state.cupAnim = false;
+  return '<h2 class="h2 fr-h">饮品</h2><div class="cupq"><button class="cupb'+(on ? ' on' : '')+an+'" data-wantdrink="1" aria-pressed="'+on+'" aria-label="要饮品">'+
+    '<svg viewBox="0 0 22 28" width="72" height="92" shape-rendering="crispEdges" aria-hidden="true">'+
+      '<rect x="2" y="2" width="18" height="2" fill="#3b2314"/><rect x="2" y="2" width="2" height="22" fill="#3b2314"/><rect x="18" y="2" width="2" height="22" fill="#3b2314"/><rect x="2" y="24" width="18" height="2" fill="#3b2314"/>'+
+      '<rect x="4" y="4" width="14" height="20" fill="#eef8fc"/>'+
+      '<g class="liq"><rect x="4" y="8" width="14" height="16" fill="#ff8fb1"/><rect x="4" y="8" width="14" height="2" fill="#ffc2d4"/><rect x="7" y="16" width="2" height="2" fill="#fff"/><rect x="13" y="12" width="2" height="2" fill="#fff"/><rect x="10" y="20" width="2" height="2" fill="#fff"/></g>'+
+      '<rect x="5" y="5" width="2" height="16" fill="#fff" opacity=".7"/>'+
+      '<g class="straw"><rect x="14" y="0" width="2" height="16" fill="#e25a4a"/><rect x="14" y="0" width="5" height="2" fill="#e25a4a"/></g>'+
+    '</svg></button><div class="cupt"><b>'+(on ? '要饮品' : '今天不喝')+'</b></div></div>';
+}
+function thermoHtml(){
+  const v = state.temp, pos = v === "cool" ? 0 : v === "hot" ? 2 : 1;
+  return '<div class="thq"><div class="th" id="thermo" data-pos="'+pos+'" role="slider" tabindex="0" aria-label="甜点冷热" aria-valuetext="'+(["冷甜点","都行","热甜点"][pos])+'">'+
+    '<svg viewBox="0 0 220 44" aria-hidden="true">'+
+      '<rect x="28" y="12" width="186" height="20" rx="10" fill="#fffaf0" stroke="#3b2314" stroke-width="4"/>'+
+      '<rect x="30" y="19" width="176" height="6" rx="3" fill="#e9e2d4"/>'+
+      Array.from({length: 11}, (_, i) => '<rect x="'+(44 + i * 16)+'" y="'+(i % 5 === 0 ? 4 : 6)+'" width="2" height="'+(i % 5 === 0 ? 7 : 5)+'" fill="#3b2314"/>').join("")+
+      '<rect class="th-hg" x="24" y="19" width="'+[30,95,182][pos]+'" height="6" rx="3"/>'+
+      '<circle cx="20" cy="22" r="16" fill="#fffaf0" stroke="#3b2314" stroke-width="4"/><circle class="th-ball" cx="20" cy="22" r="10"/>'+
+      '<rect x="14" y="16" width="4" height="4" fill="#fff" opacity=".8"/><rect x="40" y="15" width="150" height="3" fill="#fff" opacity=".7"/>'+
+    '</svg></div>'+
+    '<div class="th-l">'+[["cool","冷的","d_cold"],["either","都行",""],["hot","热的","d_hot"]].map(([k,l,ic]) => '<button class="th-s'+(v===k?' on':'')+'" data-temp="'+k+'">'+(ic ? ico(ic,1.8) : '')+l+'</button>').join("")+'</div></div>';
+}
+(function(){
+  let dr = null;
+  const posAt = (e, el) => { const r = el.getBoundingClientRect(), f = ((e.clientX - r.left) / r.width * 220 - 30) / 184; return f < .33 ? 0 : f > .67 ? 2 : 1; };
+  document.addEventListener("pointerdown", e => { const t = e.target.closest && e.target.closest("#thermo"); if (!t) return; e.preventDefault(); dr = t; try { t.setPointerCapture(e.pointerId); } catch(_){} SND.unlock(); t.dataset.pos = posAt(e, t); const m0 = t.querySelector(".th-hg"); if (m0) m0.setAttribute("width", [30,95,182][+t.dataset.pos]); });
+  document.addEventListener("pointermove", e => { if (!dr) return; const p = posAt(e, dr); if (+dr.dataset.pos !== p) { dr.dataset.pos = p; const m = dr.querySelector(".th-hg"); if (m) m.setAttribute("width", [30,95,182][p]); SND.fx.on && SND.fx.on(); } });
+  const end = () => { if (!dr) return; const p = +dr.dataset.pos; dr = null; state.temp = ["cool","either","hot"][p]; keepScroll(()=>{}); };
+  document.addEventListener("pointerup", end); document.addEventListener("pointercancel", end);
+  document.addEventListener("keydown", e => { if (!e.target.closest || !e.target.closest("#thermo")) return; const i = ["cool","either","hot"].indexOf(state.temp); if (e.key === "ArrowRight" && i < 2) { state.temp = ["cool","either","hot"][i+1]; keepScroll(()=>{}); } if (e.key === "ArrowLeft" && i > 0) { state.temp = ["cool","either","hot"][i-1]; keepScroll(()=>{}); } });
+})();
+function drinkFi(){
+  const on = state.wantDrink, an = state.cupAnim ? (on ? ' pour' : ' drain') : ''; state.cupAnim = false;
+  return '<button class="fi fi-dk cupb'+(on ? ' on' : '')+an+'" data-wantdrink="1" aria-pressed="'+on+'" aria-label="要饮品"><span class="fi-i"><svg viewBox="0 0 14 18" width="40" height="52" shape-rendering="crispEdges" aria-hidden="true">'+
+    '<rect x="2" y="3" width="10" height="1" fill="#3b2314"/><rect x="2" y="3" width="1" height="14" fill="#3b2314"/><rect x="11" y="3" width="1" height="14" fill="#3b2314"/><rect x="2" y="16" width="10" height="1" fill="#3b2314"/>'+
+    '<rect x="3" y="4" width="8" height="12" fill="#eef8fc"/>'+
+    '<g class="liq"><rect x="3" y="7" width="8" height="9" fill="#ff8fb1"/><rect x="3" y="7" width="8" height="1" fill="#ffc2d4"/><rect x="5" y="11" width="1" height="1" fill="#fff"/><rect x="8" y="9" width="1" height="1" fill="#fff"/></g><g class="straw"><rect x="8" y="0" width="1" height="10" fill="#e25a4a"/><rect x="8" y="0" width="3" height="1" fill="#e25a4a"/></g>'+
+    '<rect x="4" y="5" width="1" height="8" fill="#fff" opacity=".7"/></svg></span><span class="fi-n">饮品</span></button>';
+}
+function fridgeHtml(){
+  const IC = ["p_chicken","p_beef","p_pork","p_lamb","p_sea","p_egg","p_veg"], NM = ["鸡肉","牛肉","猪肉","羊肉","海鲜","蛋和豆腐","素菜"];
+  const it = i => { const on = state.proteins.has(i); return '<button class="fi'+(on?' on':'')+'" data-p="'+i+'" aria-pressed="'+on+'" aria-label="'+NM[i]+'"><span class="fi-i">'+ico(IC[i], 4.4)+'</span><span class="fi-n">'+NM[i]+'</span></button>'; };
+  const deco = '<span class="fz-bottle" aria-hidden="true"></span><span class="fz-jar" aria-hidden="true"></span>';
+  return '<div class="fz"><div class="fz-body">'+
+    '<div class="fz-top"><span class="fz-h v"></span><span class="fz-mag"></span><span class="fz-note">买菜！</span></div>'+
+    '<div class="fz-main"><div class="fz-in"><span class="fz-lamp"></span>'+
+      '<div class="fz-sh">'+[0,1,2].map(it).join("")+'</div><div class="fz-sh">'+[3,4,6].map(it).join("")+'</div>'+
+      '<div class="fz-cr"></div></div></div>'+
+    '<div class="fz-kick"></div>'+
+    '<div class="fz-door"><span class="fz-hinge t"></span><span class="fz-hinge b"></span><div class="fz-bin">'+it(5)+'</div><div class="fz-bin">'+drinkFi()+'</div></div></div>'+
+    '<span class="fz-floor"></span></div>';
+}
 function pageDetails(){
   return '<h1 class="h1">还有其他要求吗？</h1>'+
-  '<section class="card" style="--c:var(--yolk)"><h2 class="h2">做菜时间</h2><div class="pills">'+
-    TIME_RANGES.map(([l],i) => pill(clockIco([.25,.75,1,1][i], i === 3)+l,"tr",i,state.times.has(i),"var(--yolk)")).join("")+pill(ico("dice",2)+"都行","tr",-1,!state.times.size,"var(--pea)")+
-  '</div></section>'+
-  '<section class="card" style="--c:var(--ice)"><button class="chk'+(state.wantDrink?' on':'')+'" data-wantdrink="1" aria-pressed="'+state.wantDrink+'"><span class="sbox">'+(state.wantDrink?CHECK:'')+'</span>'+ico("cup",3)+'要饮品</button></section>'+
-  '<section class="card" style="--c:var(--taro)"><h2 class="h2">甜点</h2><div class="pills">'+
-    [["热甜点","hot","var(--shrimp)","d_hot"],["冷甜点","cool","var(--ice)","d_cold"],["都行","either","var(--yolk)","dice"]].map(([l,v,c,ic]) => pill(ico(ic,2)+l,"temp",v,state.temp===v,c)).join("")+
-  '</div></section>'+
+  '<div class="p2grid"><div class="p2l"><h2 class="h2 fr-h">主料</h2>'+fridgeHtml()+
+  '<input class="txt" id="want" value="'+esc(state.wantRaw)+'" placeholder="冰箱里没有？自己写，比如：豆腐、蘑菇" autocomplete="off" autocapitalize="off">'+
+  '</div><div class="p2r"><div class="tdrow"><div class="td-t"><h2 class="h2 fr-h">做菜时间</h2>'+clockHtml()+'</div>'+
+  '</div></div></div>'+
   '';
 }
 
@@ -3216,10 +3878,10 @@ function summaryText(){
 function pagePick(only, title, lead){
   const sections = activeCourses().filter(c => only ? only.includes(c.id) : (c.id === "veg" || c.id === "dessert")).map(c => {
     const all = candidates(c.id);
-    const pages = Math.max(1, Math.ceil(all.length / 3));
+    const PG = 4, pages = Math.max(1, Math.ceil(all.length / PG));
     const p = Math.max(0, Math.min(state.page[c.id] || 0, pages - 1));
     state.page[c.id] = p;
-    const shown = all.slice(p*3, p*3+3);
+    const shown = all.slice(p*PG, p*PG+PG);
     const myPicks = picksOf(c.id);
     const ncc = nodeCrit(c.id), fullN = nodeFull(c.id), hasFull = all.some(x => x.tier === 2), sel = nodeCrit(c.id) || state.cuisines.size || state.times.size;
     const cards = shown.length ? shown.map((x,i) => {
@@ -3227,12 +3889,12 @@ function pagePick(only, title, lead){
       const isPicked = isPickedIn(c.id, d);
       const isOpen = state.open.has(key);
       const badge = '';
-      const body = isOpen ? '<div class="body">'+badge+ingredientsHtml(d)+recipeHtml(d)+eatGroup(d)+'</div>' : '';
+      const body = isOpen ? '<div class="body">'+badge+ingredientsHtml(d)+recipeHtml(d)+eatGroup(d)+
+        '<div class="more-acts"><button class="ma" data-edit="'+esc(key)+'">'+EDIT_ICON+'<span>编辑这道菜</span></button><button class="ma" data-ban="'+esc(key)+'">'+BAN_ICON+'<span>不想再看到</span></button></div></div>' : '';
       return '<article class="dish'+(isPicked?' picked':'')+(x.hh?' hit':'')+(x.tier === 1 ? ' part' : x.tier === 0 ? ' miss' : '')+'" data-key="'+esc(key)+'">'+(isPicked?'<span class="flag">已选</span>':'')+
-        '<div class="dish-top">'+dishArt(d,2.5)+'<div class="dish-title"><div class="name-row"><div class="name-col">'+nameHtml(d)+'</div>'+
-        '<div class="icn"><button class="ban edt" data-edit="'+esc(key)+'" aria-label="编辑这道菜">'+EDIT_ICON+'</button><button class="heart'+(HEARTS.has(key)?' on':'')+'" data-heart="'+esc(key)+'" aria-pressed="'+HEARTS.has(key)+'" aria-label="'+(HEARTS.has(key)?'取消喜欢':'喜欢')+'">'+(HEARTS.has(key)?HEART_ON:HEART_OFF)+'</button>'+
-        '<button class="ban" data-ban="'+esc(key)+'" aria-label="拉黑这道菜">'+BAN_ICON+'</button></div></div><div class="tags">'+(x.tier < 2 && x.total ? '<span class="t fit'+x.tier+'">符合 '+x.matched+'/'+x.total+'</span>' : '')+tagsHtml(d)+'</div></div>'+
-        '<div class="dbtns"><button class="qpick'+(isPicked?' on':'')+'" data-course="'+c.id+'" data-i="'+(p*3+i)+'" aria-pressed="'+isPicked+'">'+(isPicked?'已选':'选这道')+'</button>'+
+        '<div class="dish-top">'+dishArt(d,2.1)+'<div class="dish-title"><div class="name-row"><div class="name-col">'+nameHtml(d)+'</div>'+
+        '<div class="icn"><button class="heart'+(HEARTS.has(key)?' on':'')+'" data-heart="'+esc(key)+'" aria-pressed="'+HEARTS.has(key)+'" aria-label="'+(HEARTS.has(key)?'取消喜欢':'喜欢')+'">'+(HEARTS.has(key)?HEART_ON:HEART_OFF)+'</button></div></div><div class="tags">'+(x.tier < 2 && x.total ? '<span class="t fit'+x.tier+'">符合 '+x.matched+'/'+x.total+'</span>' : '')+tagsHtml(d)+'</div></div>'+
+        '<div class="dbtns"><button class="qpick'+(isPicked?' on':'')+'" data-course="'+c.id+'" data-i="'+(p*PG+i)+'" aria-pressed="'+isPicked+'">'+(isPicked?'已选':'选这道')+'</button>'+
         '<button class="tg'+(isOpen?' open':'')+'" data-open="'+esc(key)+'" aria-expanded="'+isOpen+'">'+(isOpen?'收起':'展开')+'</button></div></div>'+body+'</article>';
     }).join("") : '';
     const fitBtn = SAMPLE ? (GEN_BUSY.has(c.id) ? '<button class="more gen busy" disabled>正在想…</button>' : '<button class="more gen fit" data-genfit="'+c.id+'">按你的选项生成新的'+({soup:"汤", main:"主菜", veg:"菜", dessert:"甜点", drink:"饮品"}[c.id])+'</button>') : '';
@@ -3246,11 +3908,12 @@ function pagePick(only, title, lead){
     const more = pagerHtml(c.id, p, pages, all.length)+
       (SAMPLE ? (GEN_BUSY.has(c.id) ? '<div class="gen-row"><button class="more gen busy" disabled>正在想…</button></div>' :
         '<div class="gen-row"><button class="more gen" data-gen1="'+c.id+'">添加一道</button><button class="more gen alt" data-genq="'+c.id+'">按需求想</button></div>') : '');
-    return '<section class="course" data-cid="'+c.id+'" style="--c:'+c.color+'"><div class="ch"><div class="ico">'+sprite(SPR_COURSE[c.id],4)+'</div>'+
-      '<h2>'+c.title+'</h2></div>'+kept+banner+cards+more+'</section>';
+    const solo = only && only.length === 1;
+    return '<section class="course'+(solo ? ' solo' : '')+'" data-cid="'+c.id+'" style="--c:'+c.color+'">'+(solo ? '' : '<div class="ch"><div class="ico">'+sprite(SPR_COURSE[c.id],4)+'</div>'+
+      '<h2>'+c.title+'</h2></div>')+kept+banner+cards+more+'</section>';
   }).join("");
   return '<h1 class="h1">'+(title || '再配点菜')+'</h1>'+(lead || '')+
-    '<div class="search pick-search">'+sprite(SPR.magnifier,2)+'<input id="pq" value="'+esc(state.pq)+'" placeholder="搜菜名或食材，比如：拉面、虾" autocomplete="off" autocapitalize="off" enterkeyhint="search"><button class="pq-go" id="pqGo">搜索</button></div>'+((state.sq || "").trim() ? '<div class="sq-chip"><span>按「'+esc(state.sq.trim())+'」排序中</span><button class="mode" id="sqClear">清除</button></div>' : '')+sections;
+    '<div class="search pick-search">'+sprite(SPR.magnifier,2)+'<input id="pq" value="'+esc(state.pq)+'" placeholder="搜菜名或食材，比如：'+(({soup:"排骨、番茄", veg:"西兰花、豆腐", main:"红烧肉、鸡腿", dessert:"布丁、芒果", drink:"奶茶、柠檬"})[only && only.length === 1 ? only[0] : ""] || "番茄、鸡蛋")+'" autocomplete="off" autocapitalize="off" enterkeyhint="search"><button class="pq-go" id="pqGo">搜索</button></div>'+((state.sq || "").trim() ? '<div class="sq-chip"><span>按「'+esc(state.sq.trim())+'」排序中</span><button class="mode" id="sqClear">清除</button></div>' : '')+sections;
 }
 
 const PGJ_ICON = (() => { const P = ["KKKKKK.", "KWWWWK.", "KWKKWK.", "KWWWWKK", "KWKKWKK", "KWWWWK.", "KKKKKK."], C = {K:"#3b2314", W:"#fff6dc"}; let g = "";
@@ -3258,19 +3921,30 @@ const PGJ_ICON = (() => { const P = ["KKKKKK.", "KWWWWK.", "KWKKWK.", "KWWWWKK",
   return '<svg viewBox="0 0 7 7" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true">'+g+'</svg>'; })();
 function pagerHtml(cid, p, pages, total){
   if (pages <= 1) return '';
-  const nums = [];
-  if (pages <= 7) { for (let i = 0; i < pages; i++) nums.push(i); }
-  else { nums.push(0); if (p > 2) nums.push("…"); for (let i = Math.max(1, p - 1); i <= Math.min(pages - 2, p + 1); i++) nums.push(i); if (p < pages - 3) nums.push("…"); nums.push(pages - 1); }
-  const b = (n, label, extra) => '<button class="pg'+(extra||'')+'" data-pg="'+cid+':'+n+'"'+(n < 0 || n >= pages ? ' disabled' : '')+'>'+label+'</button>';
-  return '<nav class="pager" aria-label="翻页"><button class="pg pgjump" data-pgjump="'+cid+':'+pages+':'+p+'" aria-label="跳到第几页">选页</button>'+b(p - 1, '‹', ' arr')+nums.map(n => n === "…" ? '<span class="pg-gap">…</span>' : b(n, n + 1, n === p ? ' on' : '')).join("")+b(p + 1, '›', ' arr')+'</nav>'+
-    '<div class="pg-count">共'+total+'道，第'+(p + 1)+'/'+pages+'页</div>';
+  const W = Math.min(pages, 9); let st = Math.max(0, Math.min(p - 4, pages - W));
+  const dots = Array.from({length: W}, (_, i) => st + i);
+  const arr = (n, label, cls) => '<button class="pg-arr '+cls+'" data-pg="'+cid+':'+n+'"'+(n < 0 || n >= pages ? ' disabled' : '')+'>'+label+'</button>';
+  return '<nav class="gpager" aria-label="翻页">'+arr(p - 1, '‹<span>上一页</span>', 'prev')+
+    '<div class="gp-dots">'+dots.map(n => '<button class="gp-d'+(n === p ? ' on' : '')+'" data-pg="'+cid+':'+n+'" aria-label="第'+(n + 1)+'页"'+(n === p ? ' aria-current="page"' : '')+'><i></i><span>'+(n + 1)+'</span></button>').join("")+'</div>'+
+    arr(p + 1, '<span>下一页</span>›', 'next')+'</nav>'+
+    '<div class="gp-foot"><span class="pg-count">共'+total+'道，第'+(p + 1)+'/'+pages+'页</span>'+(pages > W ? '<button class="gp-jump" data-pgjump="'+cid+':'+pages+':'+p+'">'+PGJ_ICON+'选页</button>' : '')+'</div>';
 }
 
 
 /* ---------- Choice nodes: soup / main / drink ---------- */
-const SOUP_OPTS = [["thick","浓汤",""],["meat","肉汤",""],["sea","海鲜汤",""],["clear","清汤",""],["other","其他",""],["any","都行",""]];
-const MAIN_OPTS = [["noodle","面",""],["rice","饭",""],["dumpling","面点",""],["stir","炒",""],["stew","炖煮",""],["roast","烤煎炸",""],["sous","低温慢煮",""],["cold","凉菜生食",""],["other","其他",""],["any","都行",""]];
-const DRINK_OPTS = [["hot","热","热乎乎"],["cold","冰","冰冰凉"],["alc","酒精","来一杯"],["caf","咖啡因","提提神"],["any","都行","随便来"]];
+const SOUP_OPTS = [["any","都行",""],["thick","浓汤",""],["meat","肉汤",""],["clear","清汤",""]];
+const VEG_OPTS = [["any","都行",""],["stir","炒菜",""],["cold","凉拌沙拉",""],["braise","烧炖",""],["roast","烤炸",""],["steam","蒸煮",""]];
+const VEG_ICO = {stir:"m_stir", cold:"m_cold", braise:"m_stew", roast:"m_roast", steam:"m_dumpling"};
+const VEG_RE = {
+  stir:/炒|煸|醋溜|土豆丝|干锅|榄菜|蒜香|松仁|椒盐|爆|garlic|sautéed|mushroom|蘑菇|stir|sauté|saute|xao|地三鲜|鱼香|手撕|蒜蓉|清炒|sabzi|bhaji|poriyal|thoran|gomen/i,
+  cold:/凉拌|拍|拌|浸|酱莲藕|皮蛋豆腐|乾隆白菜|salsa|莎莎|guacamole|牛油果酱|hummus|鹰嘴豆泥|\bdip\b|春卷|核桃酱|muhammara|葡萄叶|dolma|salad|沙拉|slaw|tabbouleh|fattoush|caprese|kimchi|泡菜|namul|pickle|腌|raita|tzatziki|gazpacho|ceviche|som tam|waldorf|panzanella|horiatiki/i,
+  braise:/烧|炖|焖|煲|金平|番茄汁|丸子|日本豆腐|土豆花菜|gobi|braise|stew|curry|咖喱|ratatouille|dal|saag|palak|chana|aloo|korma|caponata|imam|stewed|creamed|mapo|麻婆|kho|ragout|confit/i,
+  roast:/烤|roast|煎|田乐|虎皮|拔丝|pancake|blister|padron|辣椒条|grill|bake|焗|gratin|炸|fried|tempura|天妇罗|fritter|pakora|croquette|chips|fries|tots|elote|smashed potato|hasselback|patatas bravas|onion rings|bhaji/i,
+  steam:/蒸|白灼|饭|rice|土豆泥|mash|couscous|古斯古斯|玉米棒|玉米杯|corn|灼|焯|上汤|steam|blanch|boil|煮|edamame|毛豆|汤/i
+};
+function vegKinds(d){ if (d.kinds && d.kinds.length && d.kinds.some(k => VEG_RE[k])) return d.kinds; const h = d.name + " " + d.zh; return Object.keys(VEG_RE).filter(k => VEG_RE[k].test(h)); }
+const MAIN_OPTS = [["any","都行",""],["noodle","面",""],["rice","饭",""],["dumpling","面点",""],["stir","炒",""],["stew","炖煮",""],["roast","烤煎炸",""],["sous","低温慢煮",""],["cold","凉菜生食",""]];
+const DRINK_OPTS = [["any","都行","随便来"],["hot","热","热乎乎"],["cold","冰","冰冰凉"],["alc","酒精","来一杯"],["caf","咖啡因","提提神"]];
 const SOUP_RE = {
   thick:/chowder|bisque|浓汤|cream|cheddar|vichyssoise|lentil|\bdal\b|black bean|split pea|chili|gumbo|ribollita|pappa|salmorejo|ajo blanco|gazpacho|crema|fabada|potato soup|reshteh|面包|粥|khao tom|chao|harira|sambar|kadhi|yayla|羹|fasolada|revithia|adas|mulligatawny|wild rice|豆汤/i,
   clearHint:/wonton|馄饨|egg drop|蛋花|miso|味噌|brodo|seaweed|紫菜|tom yum|canh|oden|关东|豆腐汤|rasam|psarosoupa|kenchin/i,
@@ -3279,6 +3953,9 @@ const SOUP_RE = {
 const SOUP_OTHER = /粥|congee|jook|cháo|chao\b|khao tom|冷汤|gazpacho|salmorejo|ajo blanco|vichyssoise|okroshka|甜汤|糖水|银耳|红豆汤|绿豆汤|kheer|cold soup/i;
 const SOUP_SEA = /鱼|虾|蟹|贝|蛤|海鲜|鱿|蚝|clam|mussel|seafood|fish|shrimp|prawn|lobster|bouillabaisse|tom yum|冬阴功|psarosoupa|cioppino/i;
 function soupKind(d){
+  const k0 = soupKind0(d); return k0 === "sea" ? "meat" : k0 === "other" ? (SOUP_RE.thick.test(d.name + " " + d.zh) || /粥|congee|jook/i.test(d.name + " " + d.zh) ? "thick" : "clear") : k0;
+}
+function soupKind0(d){
   if (d.kinds && d.kinds.length) return d.kinds[0];
   const h = d.name + " " + d.zh;
   if (SOUP_OTHER.test(h)) return "other";
@@ -3306,6 +3983,7 @@ MAIN_RE.stir = new RegExp(MAIN_RE.stir.source + "|爆|滑|小炒|肉丝|蚂蚁�
 function mainKinds(d){ if (d.kinds && d.kinds.length) return d.kinds; const h = d.name + " " + d.zh; const k = Object.keys(MAIN_RE).filter(k => MAIN_RE[k].test(h)); return k.length ? k : ["other"]; }
 function nodeCrit(course){
   if (course === "soup" && state.soupT.size) return [d => state.soupT.has(soupKind(d))];
+  if (course === "veg" && state.vegM.size) return [d => vegKinds(d).some(k => state.vegM.has(k))];
   if (course === "main" && state.mainM.size) return [...state.mainM].map(m => d => mainKinds(d).includes(m));
   if (course === "drink") { const t = state.dk; if (!t.temp && !t.alc && !t.caf) return null;
     const c = [d => !!d.alc === t.alc];
@@ -3314,9 +3992,10 @@ function nodeCrit(course){
     return c; }
   return null;
 }
-function nodeFull(course){ const c = nodeCrit(course); if (!c) return true; return course === "main" ? 1 : c.length; }
+function nodeFull(course){ const c = nodeCrit(course); if (!c) return true; return course === "main" || course === "veg" ? 1 : c.length; }
 function nodeSelect(v){
   const [kind, val] = v.split(":");
+  if (kind === "veg") { if (val === "any") state.vegM.clear(); else state.vegM.has(val) ? state.vegM.delete(val) : state.vegM.add(val); }
   if (kind === "soup") { state.soupLast = val; if (val === "any") state.soupT.clear(); else state.soupT.has(val) ? state.soupT.delete(val) : state.soupT.add(val); }
   if (kind === "main") { if (val === "any") state.mainM.clear(); else state.mainM.has(val) ? state.mainM.delete(val) : state.mainM.add(val); state.mainLast = state.mainM.size ? (state.mainM.has(val) ? val : [...state.mainM].pop()) : "any"; }
   if (kind === "drink") { const t = state.dk;
@@ -3326,6 +4005,7 @@ function nodeSelect(v){
   state.page[{soup:"soup", main:"main", drink:"drink"}[kind]] = 0;
 }
 function nodeOn(kind, val){
+  if (kind === "veg") return val === "any" ? !state.vegM.size : state.vegM.has(val);
   if (kind === "soup") return val === "any" ? !state.soupT.size : state.soupT.has(val);
   if (kind === "main") return val === "any" ? !state.mainM.size : state.mainM.has(val);
   const t = state.dk; if (val === "any") return !t.temp && !t.alc && !t.caf; if (val === "hot" || val === "cold") return t.temp === val; return t[val];
@@ -3338,14 +4018,28 @@ function nodeSummary(s){
 }
 Object.assign(ICO, {s_sea:ICO.p_sea, s_other:ICO._cuisine, m_cold:ICO.Japanese, m_other:ICO._cuisine});
 function nodeIco(kind, v){
-  if (v === "any") return ico("dice", 3);
+  if (v === "any") {
+    const C = ["#ff2a2a","#ff9a00","#ffe600","#33e000","#1a9cff","#7a3cff"];
+    const seg = i => '<span class="rb-seg'+(i % 2 ? ' o' : '')+'">'+C.map(c => '<i style="background:'+c+'"></i>').join("")+'</span>';
+    const stars = [[8,12],[78,8],[90,70],[20,78],[60,86],[40,6]].map(([x,y], i) => '<i class="rb-star" style="left:'+x+'%;top:'+y+'%;animation-delay:'+(i*.18)+'s"></i>').join("");
+    return '<span class="rb">'+stars+'<span class="rb-trail">'+[0,1,2,3,4,5,6,7].map(seg).join("")+'</span><span class="rb-ico">'+(kind === "soup" ? sprite(SPR.soup, 3.6) : ico(kind === "drink" ? "cup" : "m_stir", 3.6))+'</span></span>';
+  }
   if (kind === "drink") return '<span class="ico dpi">'+DP_IC[v]+'</span>';
   return ico((kind === "soup" ? "s_" : "m_") + v, 3);
 }
+function nodeR(s){ return true; }
+function catStrip(s){
+  const kind = s === 3 ? "veg" : NODE_COURSE[s], opts = s === 7 ? SOUP_OPTS : s === 3 ? VEG_OPTS : s === 6 ? DRINK_OPTS : MAIN_OPTS;
+  return '<div class="cstrip'+(s !== 7 && s !== 6 ? ' many' : '')+'">'+opts.map(([v, l]) => { const on = nodeOn(kind, v);
+    if (v === "any") { const C = ["#ff2a2a","#ff9a00","#ffe600","#33e000","#1a9cff","#7a3cff"];
+      return '<button class="cs-b cs-any'+(on ? ' on' : '')+'" data-nsel="'+kind+':any" aria-pressed="'+on+'"><span class="cs-i"><span class="cs-rb">'+[0,1,2,3].map(i => '<span class="rb-seg'+(i % 2 ? ' o' : '')+'">'+C.map(c => '<i style="background:'+c+'"></i>').join("")+'</span>').join("")+'</span>'+(s === 7 ? sprite(SPR.soup, 2.6) : s === 3 ? sprite(SPR.veg, 2.6) : s === 6 ? ico("cup", 2.6) : ico("m_stir", 2.6))+'</span><b>都行</b></button>'; }
+    return '<button class="cs-b'+(on ? ' on' : '')+'" data-nsel="'+kind+':'+v+'" aria-pressed="'+on+'"><span class="cs-i">'+(kind === "drink" ? '<span class="ico dpi cs-dpi">'+DP_IC[v]+'</span>' : ico(kind === "veg" ? VEG_ICO[v] : (kind === "soup" ? "s_" : "m_") + v, 3.2))+'</span><b>'+l+'</b></button>'; }).join("")+'</div>';
+}
 function pageNode(s){
   const kind = NODE_COURSE[s];
-  if (state.ph[s] === "r") {
-    const title = {7:"推荐的汤", 8:"推荐的主菜", 6:"推荐的饮品"}[s];
+  if (nodeR(s)) {
+    const title = {7:"来碗汤", 8:"主菜", 6:"喝点什么"}[s];
+    return pagePick([kind], title, catStrip(s));
     const lead = '<div class="nsum"><span class="nsum-art">'+nodeArt(s, 1.2)+'</span><span class="nsum-t">'+esc(nodeSummary(s))+'</span><button class="mode" data-ph="q">改一改</button></div>';
     return pagePick([kind], title, lead);
   }
@@ -3556,7 +4250,7 @@ function pageMenu(){
       return n ? '<span class="mc on" style="--ci:'+(ci++)+'"><span class="sbox on">'+CHECK+'</span>'+c.label+'</span>'
                : '<button class="mc" data-add="'+({soup:7, main:8, drink:6, dessert:9}[c.id] || 3)+'" aria-label="去选'+c.label+'"><span class="sbox"></span>'+c.label+'</button>'; }).join("")+
       (k ? '<span class="minstamp"><span>就吃它</span></span>' : '')+'</div>';
-  const table = checks+'<div class="feast'+(anim ? ' play' : '')+(state.wiggle ? ' wiggle' : '')+'" style="--sd:'+sd+'s;--ds:'+dsz+'px;--dstep:'+dstep.toFixed(3)+'s">'+(state.wiggle ? '<button class="wig-done" id="wigDone">完成</button>' : '')+
+  const table = checks+tableBalance()+'<div class="feast'+(anim ? ' play' : '')+(state.wiggle ? ' wiggle' : '')+'" style="--sd:'+sd+'s;--ds:'+dsz+'px;--dstep:'+dstep.toFixed(3)+'s">'+(state.wiggle ? '<button class="wig-done" id="wigDone">完成</button>' : '')+
     spots+free+'</div>'+
     (k ? '<div class="save-row"><button class="stk share" id="copyPost">'+ico("env",2.5)+'<span>复制菜单</span></button><button class="stk keep'+(savedIndex() >= 0 ? ' kept' : '')+'" id="saveTable">'+ico("book",2.5)+'<span>'+(savedIndex() >= 0 ? '已收藏' : '收藏这桌')+'</span>'+(savedIndex() >= 0 ? '<i class="stk-star">★</i>' : '')+'</button></div>' : '');
   const rows = activeCourses().map(c => {
@@ -3671,7 +4365,7 @@ function genPrompt(course, o){
   o = o || {}; const n = o.n || 3;
   const cu = state.cuisines.size ? [...state.cuisines] : Object.keys(CUISINE_ZH);
   const pro = [...state.proteins].map(i => PROTEIN_GROUPS[i][0]);
-  const times = [...state.times].map(i => TIME_RANGES[i][0]);
+  const times = state.maxMin ? [timeLabel(state.maxMin) + "内"] : [...state.times].map(i => TIME_RANGES[i][0]);
   const have = LIB.filter(d => d.course === course && (!state.cuisines.size || state.cuisines.has(d.cuisine))).map(d => d.name).slice(0, 150);
   const lines = [
     "你在帮一对情侣想今天吃什么。请推荐" + n + "道真实存在、家里能做的" + COURSE_ZH[course] + "。",
@@ -3697,7 +4391,7 @@ function fitText(course){
   if (course === "soup") return state.soupT.size ? "汤的类型是" + [...state.soupT].map(k => ({sea:"海鲜汤", other:"粥、冷汤或甜汤", thick:"浓汤（奶油、浓稠，可以用面包碗）", meat:"肉汤（排骨、牛骨、鸡骨熬的）", clear:"清汤（清淡、汤色清）"})[k]).join("或") : "任意汤";
   if (course === "main") return state.mainM.size ? "做法是" + [...state.mainM].map(k => ({dumpling:"饺子、包子、饼等面点", cold:"凉菜或生食（寿司、刺身、凉拌、沙拉）", other:"不属于常见做法的", noodle:"面食", rice:"米饭类", stir:"炒", stew:"炖煮", roast:"烤、煎或炸", sous:"低温慢煮（sous vide）"})[k]).join("或") : "任意做法";
   if (course === "drink") { const t = state.dk; return [t.temp ? (t.temp === "hot" ? "热饮" : "冰饮") : "", t.alc ? "含酒精" : "不含酒精", t.caf ? "含咖啡因" : ""].filter(Boolean).join("，"); }
-  const b = []; if (state.cuisines.size) b.push("菜系是" + [...state.cuisines].map(cz).join("或")); if (state.times.size) b.push("时间在" + [...state.times].map(i => TIME_RANGES[i][0]).join("或"));
+  const b = []; if (state.cuisines.size) b.push("菜系是" + [...state.cuisines].map(cz).join("或")); if (state.times.size) b.push(state.maxMin ? "时间在" + timeLabel(state.maxMin) + "内" : "时间在" + [...state.times].map(i => TIME_RANGES[i][0]).join("或"));
   if (course === "dessert" && state.temp !== "either") b.push(state.temp === "hot" ? "热甜点" : "冷甜点");
   return b.join("，") || "符合前面的选项";
 }
@@ -4143,7 +4837,7 @@ function cdSvg(cols, light, sc){
 }
 function soundBtnHtml(){ return sprite(SPK, 1.9); }
 function musicBtnHtml(){ return sprite(NOTE_IC, 1.9); }
-function syncBook(){ const b = $("tblBtn"); if (b) b.innerHTML = sprite(ICO.book, 1.9); }
+function syncBook(){ const b = $("tblBtn"); if (b) b.innerHTML = sprite(ICO.book, 1.9); document.querySelectorAll(".setb").forEach(g => { if (!g.innerHTML) g.innerHTML = GEAR_ICON; }); }
 function syncSoundBtns(){ syncBook();
   document.querySelectorAll(".snd").forEach(b => { b.innerHTML = soundBtnHtml(); b.classList.toggle("off", !SND.isOn()); b.setAttribute("aria-pressed", SND.isOn()); b.setAttribute("aria-label", SND.isOn() ? "关闭音效" : "打开音效"); });
   document.querySelectorAll(".mus").forEach(b => { b.innerHTML = musicBtnHtml(); b.classList.toggle("off", !SND.musicOn()); b.classList.toggle("playing", SND.musicOn()); b.setAttribute("aria-pressed", SND.musicOn()); b.setAttribute("aria-label", "音乐（长按选歌）"); });
@@ -4822,7 +5516,7 @@ function render(){
   const cv = $("cover");
   if (cv && (cv.classList.contains("gone") || cv.classList.contains("leaving"))) SND.music("s" + s);
   const app = $("app");
-  app.innerHTML = s===1 ? pageTastes() : s===2 ? pageDetails() : s===3 ? pagePick(["veg"], "配个青菜") : s===9 ? pagePick(["dessert"], "来点甜的") : NODE_COURSE[s] ? pageNode(s) : s===4 ? pageMenu() : pageList();
+  app.innerHTML = s===1 ? pageTastes() : s===2 ? pageDetails() : s===3 ? pagePick(["veg"], "配个青菜", catStrip(3)) : s===9 ? pagePick(["dessert"], "来点甜的", thermoHtml()) : NODE_COURSE[s] ? pageNode(s) : s===4 ? pageMenu() : pageList();
   if (PAGE_DEF[s] && s !== 4 && s !== 5) app.insertAdjacentHTML("afterbegin", '<button class="redo-pg" id="redoPg" aria-label="重做这一页" data-tip="重做这一页">'+REDO_ICON+'</button>');
   document.querySelectorAll(".dish .name-row .icn > .edt").forEach(ed => { const db = ed.closest(".dish").querySelector(".dbtns"); if (db) db.prepend(ed); });
   pixifyHeadings(); renderSearch(); renderMtab(); if (window.applyCursor) applyCursor();
@@ -4840,7 +5534,7 @@ function render(){
       else el.classList.add("pop");
     }
   }
-  $("addWrap").style.display = (s===3 || s===9 || (NODE_COURSE[s] && state.ph[s] === "r")) ? "block" : "none";
+  $("addWrap").style.display = (s===3 || s===9 || (NODE_COURSE[s] && nodeR(s))) ? "block" : "none";
   $("libOpen").innerHTML = HEART_ON + BAN_ICON + '<span>菜库</span>';
   $("cuisineList").innerHTML = cuisineList().map(c => '<option value="'+esc(cz(c))+'">').join("");
   if (state.returnTo && (s === 3 || s === 9 || NODE_COURSE[s])) { $("nav").innerHTML = '<button class="btn" data-go="4">回到菜单</button>'; return; }
@@ -4848,8 +5542,8 @@ function render(){
     s===1 ? '<button class="btn" data-go="2">下一步</button>' :
     s===2 ? '<button class="btn ghost" data-go="1">返回</button><button class="btn" data-go="'+stepAfter(2)+'">下一步</button>' :
     (s===3 || s===9) ? '<button class="btn ghost" data-go="'+stepBefore(s)+'">返回</button><button class="btn" data-go="'+stepAfter(s)+'">'+(stepAfter(s) === 4 ? '看菜单' : '下一步')+'</button>' :
-    NODE_COURSE[s] ? (state.ph[s] === 'r'
-      ? '<button class="btn ghost" data-ph="q">上一页</button><button class="btn" data-go="'+stepAfter(s)+'">'+(stepAfter(s) === 4 ? '看菜单' : '下一步')+'</button>'
+    NODE_COURSE[s] ? (nodeR(s)
+      ? '<button class="btn ghost" data-go="'+stepBefore(s)+'">返回</button><button class="btn" data-go="'+stepAfter(s)+'">'+(stepAfter(s) === 4 ? '看菜单' : '下一步')+'</button>'
       : '<button class="btn ghost" data-go="'+stepBefore(s)+'">返回</button><button class="btn" data-ph="r">下一步</button>') :
     s===4 ? '<button class="btn ghost" data-go="'+stepBefore(4)+'">返回</button><button class="btn" data-go="5">购物清单</button>' :
             '<button class="btn ghost" data-go="4">返回</button><button class="btn alt" id="startOver2">重新开始</button>';
@@ -4859,11 +5553,49 @@ let HEART_SNAP = null;
 function go(step){ popSel = null; HEART_SNAP = new Set(HEARTS); state.visited.add(state.step); if (step === 6 && !state.wantDrink) step = 4; const o = stepOrder(); state.enter = o.indexOf(step) > o.indexOf(state.step) ? 'fwd' : 'back'; if (NODE_COURSE[step]) { state.ph[step] = state.enter === 'fwd' ? 'q' : 'r'; state.page[NODE_COURSE[step]] = 0; } state.step = step; if (step === 3 || step === 9) state.page = {}; state.sq = ""; state.pq = ""; state.srch = ""; if (step === 4) { state.anim = true; state.returnTo = 0; } if (step === 5) logMenu(); render(); window.scrollTo(0,0);
 }
 const REDO_ICON = (() => { const P = [".#.###..",".##...#.",".###...#",".......#","#......#","#......#",".#....#.","..####.."]; let g = ""; P.forEach((r, y) => { for (let x = 0; x < r.length; x++) if (r[x] === "#") g += '<rect x="'+x+'" y="'+y+'" width="1" height="1"/>'; }); return '<svg viewBox="0 0 8 8" width="24" height="24" fill="#3b2314" shape-rendering="crispEdges">'+g+'</svg>'; })();
+const GEAR_ICON = (() => { const P = ["....##....",".##.##.##.",".########.","..##..##..","###....###","###....###","..##..##..",".########.",".##.##.##.","....##...."]; let g = ""; P.forEach((r, y) => { for (let x = 0; x < 10; x++) if (r[x] === "#") g += '<rect x="'+x+'" y="'+y+'" width="1" height="1"/>'; }); return '<svg viewBox="0 0 10 10" width="22" height="22" fill="var(--ink)" shape-rendering="crispEdges" aria-hidden="true">'+g+'</svg>'; })();
+const CD_ICON = '<svg viewBox="0 0 16 16" width="34" height="34" shape-rendering="crispEdges" aria-hidden="true">'+
+  [[5,0,6],[3,1,10],[2,2,12],[1,3,14],[1,4,14],[0,5,16],[0,6,16],[0,7,16],[0,8,16],[0,9,16],[0,10,16],[1,11,14],[1,12,14],[2,13,12],[3,14,10],[5,15,6]].map(([x,y,w]) => '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="1" fill="#3b2314"/><rect x="'+(x+1)+'" y="'+y+'" width="'+Math.max(0,w-2)+'" height="1" fill="#d9dde6"/>').join("")+
+  '<rect x="3" y="3" width="3" height="2" fill="#ffb3d1"/><rect x="2" y="5" width="2" height="2" fill="#bae1ff"/><rect x="10" y="11" width="3" height="2" fill="#fff2a8"/><rect x="12" y="9" width="2" height="2" fill="#baffc9"/><rect x="6" y="2" width="2" height="1" fill="#fff"/>'+
+  '<rect x="5" y="5" width="6" height="6" fill="#9aa3b5"/><rect x="6" y="6" width="4" height="4" fill="#3b2314"/><rect x="7" y="7" width="2" height="2" fill="#fdf0d2"/></svg>';
+function bellIcon(on){
+  const P = ["......##......",".....####.....","....######....","...########...","...########...","...########...","..##########..","..##########..",".############.","##############","..............",".....####.....","......##......"];
+  let g = ""; P.forEach((r, y) => { for (let x = 0; x < 14; x++) if (r[x] === "#") g += '<rect x="'+x+'" y="'+(y+1)+'" width="1" height="1" fill="'+(y === 9 || (r[x-1] !== "#" || r[x+1] !== "#") ? "#3b2314" : "#ffd35c")+'"/>'; });
+  g += '<rect x="5" y="3" width="1" height="4" fill="#fff6c8"/>';
+  if (!on) for (let i = 0; i < 14; i++) g += '<rect x="'+i+'" y="'+(i)+'" width="2" height="2" fill="#e25a4a"/>';
+  return '<svg viewBox="0 0 14 15" width="32" height="34" shape-rendering="crispEdges" aria-hidden="true">'+g+'</svg>';
+}
+function openSettings(){
+  const on = SND.isOn(), mo = SND.musicOn();
+  const tile = (k, ic, big, cls) => '<button class="set-o'+(cls ? ' ' + cls : '')+'" data-set="'+k+'"><span class="set-i">'+ic+'</span><b>'+big+'</b></button>';
+  $("sheet").innerHTML = '<div class="sheet-in" role="dialog" aria-modal="true" aria-label="设置"><div class="sheet-t">设置</div><div class="set-grid">'+
+    tile("mus", musicBtnHtml(), "音乐："+(mo ? "开" : "关"), mo ? "" : "off")+
+    tile("cds", CD_ICON, "换音乐")+
+    tile("snd", bellIcon(on), "音效："+(on ? "开" : "关"), on ? "" : "off")+
+    tile("book", sprite(ICO.book, 1.9), "收藏的菜单")+
+    tile("lib", HEART_ON, "我的菜库")+
+    tile("restart", REDO_ICON, "清空重来")+
+    '</div><div class="set-soon">用户信息（以后加）</div>'+
+    '<button class="btn" data-set="close">关闭</button></div>';
+  $("sheet").hidden = false;
+}
+document.addEventListener("click", e => {
+  const t = e.target.closest && e.target.closest(".setb, [data-set]"); if (!t) return; e.stopPropagation();
+  if (t.classList.contains("setb")) { SND.unlock(); SND.fx.on(); openSettings(); return; }
+  const k = t.dataset.set;
+  if (k === "snd") { SND.unlock(); SND.setOn(!SND.isOn()); syncSoundBtns(); if (SND.isOn()) SND.fx.on(); openSettings(); return; }
+  if (k === "mus") { SND.unlock(); SND.setMusic(!SND.musicOn()); syncSoundBtns(); openSettings(); return; }
+  if (k === "cds") { closeSheet(); SND.unlock(); openCDs(); return; }
+  closeSheet();
+  if (k === "book") $("tblBtn").click();
+  else if (k === "lib") $("libOpen").click();
+  else if (k === "restart") $("startOver").click();
+}, true);
 const PAGE_DEF = {
   1: {cuisines: () => new Set(), pinAt: () => ({})},
-  2: {proteins: () => new Set(), times: () => new Set(), wantRaw: () => "", temp: () => "either", wantDrink: () => true},
-  3: {"picks.veg": () => [], "page.veg": () => undefined},
-  9: {"picks.dessert": () => [], "page.dessert": () => undefined},
+  2: {proteins: () => new Set(), times: () => new Set(), maxMin: () => 0, wantRaw: () => "", wantDrink: () => true},
+  3: {"picks.veg": () => [], "page.veg": () => undefined, vegM: () => new Set()},
+  9: {"picks.dessert": () => [], "page.dessert": () => undefined, temp: () => "either"},
   7: {"picks.soup": () => [], "page.soup": () => undefined, soupT: () => new Set(), "ph.7": () => "q"},
   8: {"picks.main": () => [], "page.main": () => undefined, mainM: () => new Set(), mainLast: () => "any", "ph.8": () => "q"},
   6: {"picks.drink": () => [], "page.drink": () => undefined, dk: () => ({temp:"", alc:false, caf:false}), dsel: () => ({hot:false, cold:false, alc:false, caf:false, done:false}), "ph.6": () => "q", DBAR: null},
@@ -4888,7 +5620,8 @@ function renderMtab(){
   const n = pickedList().length, b = $("mtabN"); if (!b) return;
   const hide = state.step === 4 || state.step === 5; $("mtab").classList.toggle("off", hide); if (hide) $("mtab").classList.remove("open");
   b.textContent = n || ""; b.style.display = n ? "" : "none";
-  const mh = $("mtHeart"), mb = $("mtBan"); if (mh) { mh.innerHTML = HEART_ON + '<b>' + HEARTS.size + '</b>'; mb.innerHTML = BAN_ICON + '<b>' + BLACK.size + '</b>'; }
+  const mh = $("mtHeart"), mb = $("mtBan"); if (mh) { mh.innerHTML = HEART_ON + (HEARTS.size ? '<b>' + HEARTS.size + '</b>' : ''); mb.innerHTML = BAN_ICON + (BLACK.size ? '<b>' + BLACK.size + '</b>' : ''); }
+  $("mtab").classList.toggle("nopick", !n);
   const P = $("mtabP"); if (!$("mtab").classList.contains("open")) return;
   P.innerHTML = n ? '<ul>'+pickedList().map(([c, d]) => '<li><span class="mt-c">'+esc(c.label)+'</span><span class="mt-n">'+esc(d.zh || d.name)+'</span><button class="mt-x" data-mtx="'+esc(c.id)+'|'+esc(keyOf(d))+'" aria-label="去掉'+esc(d.zh || d.name)+'">×</button></li>').join("")+'</ul>' : '<p class="mt-e">还没选菜</p>';
 }
@@ -4905,8 +5638,8 @@ document.addEventListener("click", e => {
 }, true);
 function startOver(){
   state.enter = 'back';
-  Object.assign(state, {step:1, q:"", cuisines:new Set(), proteins:new Set(), times:new Set(), wantRaw:"", temp:"either", allMode:"", have:new Set(), fresh:new Set(), page:{}, picks:{}, open:new Set(), panel:{}, anim:false});
-  DBAR.reset(); state.dsel = {hot:false, cold:false, alc:false, caf:false, done:false}; state.wantDrink = true; state.soupT = new Set(); state.mainM = new Set(); state.mainLast = "any"; state.dk = {temp:"", alc:false, caf:false}; state.ph = {}; state.returnTo = 0; state.pos = {}; state.wiggle = false; state.visited = new Set();
+  Object.assign(state, {step:1, q:"", cuisines:new Set(), proteins:new Set(), times:new Set(), maxMin:0, wantRaw:"", temp:"either", allMode:"", have:new Set(), fresh:new Set(), page:{}, picks:{}, open:new Set(), panel:{}, anim:false});
+  DBAR.reset(); state.dsel = {hot:false, cold:false, alc:false, caf:false, done:false}; state.wantDrink = true; state.soupT = new Set(); state.vegM = new Set(); state.mainM = new Set(); state.mainLast = "any"; state.dk = {temp:"", alc:false, caf:false}; state.ph = {}; state.returnTo = 0; state.pos = {}; state.wiggle = false; state.visited = new Set();
   render(); window.scrollTo(0,0); showCover();
 }
 function keepScroll(fn){ const y = window.scrollY; fn(); render(); window.scrollTo(0,y); }
@@ -4979,7 +5712,7 @@ document.addEventListener("click", e => {
   else if (ds.dpgo) { state.dsel.done = true; state.page.drink = 0; render(); const sec = document.querySelector('.course[data-cid="drink"]'); if (sec) { sec.classList.add("swap"); window.scrollTo(0, sec.getBoundingClientRect().top + window.scrollY - 12); } const n = candidates("drink").length; toast(n ? "按你的口味找到" + n + "款" : "没有完全符合的，试试自己调一杯"); }
   else if (ds.dpreset) { state.dsel.done = false; keepScroll(()=>{}); }
   else if (ds.dpdiy) { const t2 = state.dsel; DBAR.open({hot: t2.hot && !t2.cold, alc: t2.alc, caf: t2.caf, page: 2}); }
-  else if (ds.wantdrink) { state.wantDrink = !state.wantDrink; keepScroll(()=>{}); }
+  else if (ds.wantdrink) { state.wantDrink = !state.wantDrink; state.cupAnim = true; keepScroll(()=>{}); }
   else if (ds.caf !== undefined) { state.caf = ds.caf; keepScroll(()=>{}); }
   else if (ds.alc !== undefined) { state.alc = ds.alc; keepScroll(()=>{}); }
   else if (ds.genfit) { genDishes(ds.genfit, {n:3, fit:true}); }
