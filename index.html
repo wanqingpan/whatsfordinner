@@ -2,7 +2,7 @@
 <html lang="zh-Hans">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>今天吃什么？</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Pixelify+Sans:wght@500;700&display=swap">
 <style>
@@ -1384,6 +1384,45 @@ body:has(#cover:not(.gone):not(.leaving)) #mtab{display:none}
 .cs-dpi svg{width:40px !important;height:40px !important}
 .cstrip:not(.many) .cs-b{flex:1 1 0;min-width:0}
 .cstrip:not(.many) .cs-any .cs-i{width:min(76px,100%)}
+.ckb{position:absolute;top:2px;left:2px;width:14px;height:14px;background:#fffaf0;box-shadow:0 0 0 2px var(--ink);z-index:2;pointer-events:none}
+.on > .ckb::after{content:"";position:absolute;left:-1px;top:-4px;width:17px;height:15px;background:#d8202a;clip-path:polygon(0 52%,16% 38%,38% 62%,86% 0,100% 14%,38% 92%)}
+.cs-b,.fi,.cbar{position:relative}
+.cs-b .ckb{top:4px;left:calc(50% - 40px)}
+.fi .ckb{top:2px;left:4px}
+.fi.on::after{display:none !important}
+.cbar .ckb{top:6px;left:auto;right:8px}
+.cbar.on .cz-pin{display:none}
+.dish-top .dbtns{grid-column:1 / -1 !important;width:100% !important;justify-content:flex-end;align-items:center}
+.db-l{display:flex;align-items:center;gap:4px;margin-right:auto}
+.db-l .heart,.edt-b{background:none !important;border:0;box-shadow:none !important;padding:6px !important;cursor:pointer;line-height:0}
+.db-l .heart svg,.edt-b svg{width:22px;height:22px}
+.edt-b{opacity:.75}
+.gp-dots{gap:14px}
+.gp-d{min-width:18px;padding:2px 0}
+.gp-d i{width:9px !important;height:9px !important;border-width:2px !important}
+.gp-d.on i{transform:scale(1.35)}
+.gp-d span{font-size:11px}
+@media (max-width:420px){.gp-dots{gap:9px}}
+.nav{padding:20px 14px calc(12px + env(safe-area-inset-bottom)) !important}
+.nav::after{content:"";position:absolute;left:0;right:0;top:100%;height:400px;background:#9a5e24;pointer-events:none}
+.nav .btn{font-size:18px !important;padding:11px 20px !important}
+#mtab{bottom:calc(92px + env(safe-area-inset-bottom)) !important}
+.wrap{padding-bottom:180px}
+@media (max-width:699px){
+  .mt-side{flex-direction:row !important;gap:0 !important;width:84px;box-shadow:var(--pxb)}
+  .mt-side .mt-s{flex:1;box-shadow:none !important;height:34px}
+  .mt-side .mt-s + .mt-s{border-left:3px solid var(--ink)}
+  #mtabBtn{min-width:84px}
+  #mtab.nopick .mt-row{min-height:40px;min-width:84px}
+}
+.th-hg,.th-ball{transition:none !important}
+.cs-wrap{position:relative;margin:0 0 14px}
+.cs-wrap .cstrip{margin-bottom:0}
+.cs-bar{position:relative;height:5px;margin:0 10px;background:rgba(59,35,20,.12);opacity:0;transition:opacity .4s}
+.cs-bar.show{opacity:1;transition:opacity .1s}
+.cs-bar i{position:absolute;top:0;bottom:0;left:0;background:var(--ink);min-width:20px}
+.th-l{padding-left:16%;justify-content:space-around !important}
+.cvf-in{transform:translateX(-50%)}
 .fr-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .fr-h span{font-size:13px;font-weight:700;color:var(--soft);font-family:inherit}
 .fridge{position:relative;max-width:420px;margin:6px auto 22px;background:#f4f1ea;padding:8px 8px 10px;box-shadow:0 0 0 4px var(--ink),6px 6px 0 4px rgba(59,35,20,.25)}
@@ -3759,7 +3798,7 @@ function pageTastes(){
   (state.czView === "map" ? worldMap() : '') + (state.czView === "map" ? '' : '<div class="cbars">'+[...cs.filter(c => c !== "Homestyle"), "__any"].map(c => {
       if (c === "__any") return '<button class="cbar any" data-czrand="1"><span class="fbox">'+ico("dice", 2.6)+'</span><span class="cb-n">随便来一个</span></button>';
       const on = state.cuisines.has(c);
-      return '<button class="cbar'+(on ? ' on' : '')+'" data-c="'+esc(c)+'" aria-pressed="'+on+'"><span class="fbox">'+flagSvg(c, 2.2)+'</span><span class="cb-n">'+esc(cz(c))+'</span>'+(on ? PIN_SVG : '')+'</button>'; }).join("")+'</div>')+
+      return '<button class="cbar'+(on ? ' on' : '')+'" data-c="'+esc(c)+'" aria-pressed="'+on+'">'+'<span class="ckb" aria-hidden="true"></span>'+'<span class="fbox">'+flagSvg(c, 2.2)+'</span><span class="cb-n">'+esc(cz(c))+'</span>'+(on ? PIN_SVG : '')+'</button>'; }).join("")+'</div>')+
 
   '';
 }
@@ -3839,7 +3878,7 @@ function thermoHtml(){
 })();
 function drinkFi(){
   const on = state.wantDrink, an = state.cupAnim ? (on ? ' pour' : ' drain') : ''; state.cupAnim = false;
-  return '<button class="fi fi-dk cupb'+(on ? ' on' : '')+an+'" data-wantdrink="1" aria-pressed="'+on+'" aria-label="要饮品"><span class="fi-i"><svg viewBox="0 0 14 18" width="40" height="52" shape-rendering="crispEdges" aria-hidden="true">'+
+  return '<button class="fi fi-dk cupb'+(on ? ' on' : '')+an+'" data-wantdrink="1" aria-pressed="'+on+'" aria-label="要饮品">'+'<span class="ckb" aria-hidden="true"></span>'+'<span class="fi-i"><svg viewBox="0 0 14 18" width="40" height="52" shape-rendering="crispEdges" aria-hidden="true">'+
     '<rect x="2" y="3" width="10" height="1" fill="#3b2314"/><rect x="2" y="3" width="1" height="14" fill="#3b2314"/><rect x="11" y="3" width="1" height="14" fill="#3b2314"/><rect x="2" y="16" width="10" height="1" fill="#3b2314"/>'+
     '<rect x="3" y="4" width="8" height="12" fill="#eef8fc"/>'+
     '<g class="liq"><rect x="3" y="7" width="8" height="9" fill="#ff8fb1"/><rect x="3" y="7" width="8" height="1" fill="#ffc2d4"/><rect x="5" y="11" width="1" height="1" fill="#fff"/><rect x="8" y="9" width="1" height="1" fill="#fff"/></g><g class="straw"><rect x="8" y="0" width="1" height="10" fill="#e25a4a"/><rect x="8" y="0" width="3" height="1" fill="#e25a4a"/></g>'+
@@ -3847,7 +3886,7 @@ function drinkFi(){
 }
 function fridgeHtml(){
   const IC = ["p_chicken","p_beef","p_pork","p_lamb","p_sea","p_egg","p_veg"], NM = ["鸡肉","牛肉","猪肉","羊肉","海鲜","蛋和豆腐","素菜"];
-  const it = i => { const on = state.proteins.has(i); return '<button class="fi'+(on?' on':'')+'" data-p="'+i+'" aria-pressed="'+on+'" aria-label="'+NM[i]+'"><span class="fi-i">'+ico(IC[i], 4.4)+'</span><span class="fi-n">'+NM[i]+'</span></button>'; };
+  const it = i => { const on = state.proteins.has(i); return '<button class="fi'+(on?' on':'')+'" data-p="'+i+'" aria-pressed="'+on+'" aria-label="'+NM[i]+'">'+'<span class="ckb" aria-hidden="true"></span>'+'<span class="fi-i">'+ico(IC[i], 4.4)+'</span><span class="fi-n">'+NM[i]+'</span></button>'; };
   const deco = '<span class="fz-bottle" aria-hidden="true"></span><span class="fz-jar" aria-hidden="true"></span>';
   return '<div class="fz"><div class="fz-body">'+
     '<div class="fz-top"><span class="fz-h v"></span><span class="fz-mag"></span><span class="fz-note">买菜！</span></div>'+
@@ -3890,12 +3929,11 @@ function pagePick(only, title, lead){
       const isPicked = isPickedIn(c.id, d);
       const isOpen = state.open.has(key);
       const badge = '';
-      const body = isOpen ? '<div class="body">'+badge+ingredientsHtml(d)+recipeHtml(d)+eatGroup(d)+
-        '<div class="more-acts"><button class="ma" data-edit="'+esc(key)+'">'+EDIT_ICON+'<span>编辑这道菜</span></button><button class="ma" data-ban="'+esc(key)+'">'+BAN_ICON+'<span>不想再看到</span></button></div></div>' : '';
+      const body = isOpen ? '<div class="body">'+badge+ingredientsHtml(d)+recipeHtml(d)+eatGroup(d)+'</div>' : '';
       return '<article class="dish'+(isPicked?' picked':'')+(x.hh?' hit':'')+(x.tier === 1 ? ' part' : x.tier === 0 ? ' miss' : '')+'" data-key="'+esc(key)+'">'+(isPicked?'<span class="flag">已选</span>':'')+
         '<div class="dish-top">'+dishArt(d,2.1)+'<div class="dish-title"><div class="name-row"><div class="name-col">'+nameHtml(d)+'</div>'+
         '<div class="icn"><button class="heart'+(HEARTS.has(key)?' on':'')+'" data-heart="'+esc(key)+'" aria-pressed="'+HEARTS.has(key)+'" aria-label="'+(HEARTS.has(key)?'取消喜欢':'喜欢')+'">'+(HEARTS.has(key)?HEART_ON:HEART_OFF)+'</button></div></div><div class="tags">'+(x.tier < 2 && x.total ? '<span class="t fit'+x.tier+'">符合 '+x.matched+'/'+x.total+'</span>' : '')+tagsHtml(d)+'</div></div>'+
-        '<div class="dbtns"><button class="qpick'+(isPicked?' on':'')+'" data-course="'+c.id+'" data-i="'+(p*PG+i)+'" aria-pressed="'+isPicked+'">'+(isPicked?'已选':'选这道')+'</button>'+
+        '<div class="dbtns"><span class="db-l"><button class="edt-b ban-b" data-ban="'+esc(key)+'" aria-label="拉黑这道菜">'+BAN_ICON+'</button><button class="edt-b" data-edit="'+esc(key)+'" aria-label="编辑这道菜">'+EDIT_ICON+'</button></span><button class="qpick'+(isPicked?' on':'')+'" data-course="'+c.id+'" data-i="'+(p*PG+i)+'" aria-pressed="'+isPicked+'">'+(isPicked?'已选':'选这道')+'</button>'+
         '<button class="tg'+(isOpen?' open':'')+'" data-open="'+esc(key)+'" aria-expanded="'+isOpen+'">'+(isOpen?'收起':'展开')+'</button></div></div>'+body+'</article>';
     }).join("") : '';
     const fitBtn = SAMPLE ? (GEN_BUSY.has(c.id) ? '<button class="more gen busy" disabled>正在想…</button>' : '<button class="more gen fit" data-genfit="'+c.id+'">按你的选项生成新的'+({soup:"汤", main:"主菜", veg:"菜", dessert:"甜点", drink:"饮品"}[c.id])+'</button>') : '';
@@ -4029,12 +4067,21 @@ function nodeIco(kind, v){
   return ico((kind === "soup" ? "s_" : "m_") + v, 3);
 }
 function nodeR(s){ return true; }
+(function(){
+  function upd(st, show){ const w = st.parentNode, bar = w && w.querySelector(".cs-bar"), th = bar && bar.firstChild; if (!th) return;
+    const over = st.scrollWidth - st.clientWidth; if (over <= 2) { bar.classList.remove("show"); return; }
+    const f = st.clientWidth / st.scrollWidth; th.style.width = (f * 100) + "%"; th.style.left = (st.scrollLeft / st.scrollWidth * 100) + "%";
+    if (show) { bar.classList.add("show"); clearTimeout(st._bt); st._bt = setTimeout(() => bar.classList.remove("show"), 900); } }
+  document.addEventListener("scroll", e => { const st = e.target; if (st && st.classList && st.classList.contains("cstrip")) upd(st, true); }, true);
+  window.addEventListener("resize", () => document.querySelectorAll(".cstrip").forEach(st => upd(st, false)));
+  window.csBarHint = () => document.querySelectorAll(".cstrip.many").forEach(st => upd(st, true));
+})();
 function catStrip(s){
   const kind = s === 3 ? "veg" : NODE_COURSE[s], opts = s === 7 ? SOUP_OPTS : s === 3 ? VEG_OPTS : s === 6 ? DRINK_OPTS : MAIN_OPTS;
-  return '<div class="cstrip'+(s !== 7 && s !== 6 ? ' many' : '')+'">'+opts.map(([v, l]) => { const on = nodeOn(kind, v);
+  return '<div class="cs-wrap"><div class="cstrip'+(s !== 7 && s !== 6 ? ' many' : '')+'">'+opts.map(([v, l]) => { const on = nodeOn(kind, v);
     if (v === "any") { const C = ["#ff2a2a","#ff9a00","#ffe600","#33e000","#1a9cff","#7a3cff"];
       return '<button class="cs-b cs-any'+(on ? ' on' : '')+'" data-nsel="'+kind+':any" aria-pressed="'+on+'"><span class="cs-i"><span class="cs-rb">'+[0,1,2,3].map(i => '<span class="rb-seg'+(i % 2 ? ' o' : '')+'">'+C.map(c => '<i style="background:'+c+'"></i>').join("")+'</span>').join("")+'</span>'+(s === 7 ? sprite(SPR.soup, 2.6) : s === 3 ? sprite(SPR.veg, 2.6) : s === 6 ? ico("cup", 2.6) : ico("m_stir", 2.6))+'</span><b>都行</b></button>'; }
-    return '<button class="cs-b'+(on ? ' on' : '')+'" data-nsel="'+kind+':'+v+'" aria-pressed="'+on+'"><span class="cs-i">'+(kind === "drink" ? '<span class="ico dpi cs-dpi">'+DP_IC[v]+'</span>' : ico(kind === "veg" ? VEG_ICO[v] : (kind === "soup" ? "s_" : "m_") + v, 3.2))+'</span><b>'+l+'</b></button>'; }).join("")+'</div>';
+    return '<button class="cs-b'+(on ? ' on' : '')+'" data-nsel="'+kind+':'+v+'" aria-pressed="'+on+'">'+'<span class="ckb" aria-hidden="true"></span>'+'<span class="cs-i">'+(kind === "drink" ? '<span class="ico dpi cs-dpi">'+DP_IC[v]+'</span>' : ico(kind === "veg" ? VEG_ICO[v] : (kind === "soup" ? "s_" : "m_") + v, 3.2))+'</span><b>'+l+'</b></button>'; }).join("")+'</div><div class="cs-bar"><i></i></div></div>';
 }
 function pageNode(s){
   const kind = NODE_COURSE[s];
@@ -4338,7 +4385,7 @@ const TRASH_SVG = '<svg viewBox="0 0 12 13" width="48" height="52" shape-renderi
     if (state.step !== 4) return;
     if (e.target.closest("#wigDone")) return;
     const el = e.target.closest(".feast .spot-d");
-    if (!el) { if (state.wiggle && !e.target.closest(".dish-ghost")) exitWiggle(); return; }
+    if (!el) { if (state.wiggle && !e.target.closest(".dish-ghost") && !e.target.closest(".feast")) exitWiggle(); return; }
     const p = {x:e.clientX, y:e.clientY, el, ready:state.wiggle};
     lp = p;
     if (e.pointerType === "mouse") p.ready = true;
@@ -5512,6 +5559,7 @@ const DBAR = (() => {
 
 /* ---------- Main render ---------- */
 function render(){
+  saveProgress();
   renderSteps();
   const s = state.step;
   const cv = $("cover");
@@ -5520,7 +5568,7 @@ function render(){
   app.innerHTML = s===1 ? pageTastes() : s===2 ? pageDetails() : s===3 ? pagePick(["veg"], "配个青菜", catStrip(3)) : s===9 ? pagePick(["dessert"], "来点甜的", thermoHtml()) : NODE_COURSE[s] ? pageNode(s) : s===4 ? pageMenu() : pageList();
   if (PAGE_DEF[s] && s !== 4 && s !== 5) app.insertAdjacentHTML("afterbegin", '<button class="redo-pg" id="redoPg" aria-label="重做这一页" data-tip="重做这一页">'+REDO_ICON+'</button>');
   document.querySelectorAll(".dish .name-row .icn > .edt").forEach(ed => { const db = ed.closest(".dish").querySelector(".dbtns"); if (db) db.prepend(ed); });
-  pixifyHeadings(); renderSearch(); renderMtab(); if (window.applyCursor) applyCursor();
+  pixifyHeadings(); renderSearch(); renderMtab(); if (window.csBarHint) setTimeout(csBarHint, 400); if (window.applyCursor) applyCursor();
   if (state.enter) {
     app.className = "enter " + state.enter; state.enter = null;
     clearTimeout(render.t); render.t = setTimeout(() => { app.className = ""; }, 900);
@@ -5637,7 +5685,19 @@ document.addEventListener("click", e => {
   togglePick(cid, d); SND.fx.off(); keepScroll(()=>{}); renderMtab();
   toast("去掉了「" + (d.zh || d.name) + "」", () => { if (!picksOf(cid).some(x => keyOf(x) === k)) togglePick(cid, d); keepScroll(()=>{}); renderMtab(); });
 }, true);
+const PROG_KEY = "mealProgress";
+const PROG_FIELDS = ["step","cuisines","proteins","times","maxMin","wantRaw","temp","wantDrink","soupT","vegM","mainM","mainLast","dk","picks","page","pos","ph","visited","have","fresh"];
+function saveProgress(){
+  try { const o = {}; PROG_FIELDS.forEach(k => { const v = state[k]; o[k] = v instanceof Set ? {__set:[...v]} : v; }); localStorage.setItem(PROG_KEY, JSON.stringify(o)); } catch(e){}
+}
+function loadProgress(){
+  try { const o = JSON.parse(localStorage.getItem(PROG_KEY) || "null"); if (!o) return;
+    PROG_FIELDS.forEach(k => { if (!(k in o)) return; const v = o[k]; state[k] = v && v.__set ? new Set(v.__set) : v; });
+    if (!stepOrder().includes(state.step)) state.step = 1;
+  } catch(e){}
+}
 function startOver(){
+  try { localStorage.removeItem(PROG_KEY); } catch(e){}
   state.enter = 'back';
   Object.assign(state, {step:1, q:"", cuisines:new Set(), proteins:new Set(), times:new Set(), maxMin:0, wantRaw:"", temp:"either", allMode:"", have:new Set(), fresh:new Set(), page:{}, picks:{}, open:new Set(), panel:{}, anim:false});
   DBAR.reset(); state.dsel = {hot:false, cold:false, alc:false, caf:false, done:false}; state.wantDrink = true; state.soupT = new Set(); state.vegM = new Set(); state.mainM = new Set(); state.mainLast = "any"; state.dk = {temp:"", alc:false, caf:false}; state.ph = {}; state.returnTo = 0; state.pos = {}; state.wiggle = false; state.visited = new Set();
@@ -5737,7 +5797,7 @@ document.addEventListener("click", e => {
       Array.from({length: +n}, (_, i) => '<button class="pgj'+(i === +cur ? ' on' : '')+'" data-pgto="'+c+':'+i+'">'+(i + 1)+'</button>').join("")+
       '</div><div class="sheet-row"><button class="btn plain" id="sheetClose">取消</button></div></div>';
     $("sheet").hidden = false; }
-  else if (ds.pg) { const [c, n] = ds.pg.split(":"); state.page[c] = +n; render(); const sec = document.querySelector('.course[data-cid="' + c + '"]'); if (sec) window.scrollTo(0, sec.getBoundingClientRect().top + window.scrollY - 12); }
+  else if (ds.pg) { const [c, n] = ds.pg.split(":"); state.page[c] = +n; render(); const sec = document.querySelector('.course[data-cid="' + c + '"]'); if (sec) { const first = sec.querySelector(".dish:not(.picked)") || sec; window.scrollTo(0, first.getBoundingClientRect().top + window.scrollY - 16); } }
   else if (t.id === "libOpen" || t.id === "libOpen2") { state.libClearArm = false; openLib(); }
   else if (t.id === "libExport") { try { navigator.clipboard.writeText(libExport()).then(() => toast("备份已复制，可以存到备忘录"), () => toast("无法复制")); } catch(err){ toast("无法复制"); } }
   else if (t.id === "libImport") { openLib(state.libTab, "import"); }
@@ -5825,6 +5885,7 @@ $("addForm").addEventListener("submit", e => {
   toast("已存进菜品库，以后符合条件就会出现");
 });
 
+loadProgress();
 render();
 
 /* ---------- magic: stars, burst, cover ---------- */
@@ -5911,7 +5972,7 @@ function seasonFlower(t, sc){ const f = SEASON_FLOWERS[t] || SEASON_FLOWERS.spri
   return '<svg viewBox="0 0 '+w+' '+rows.length+'" width="'+(w * sc)+'" height="'+(rows.length * sc)+'" shape-rendering="crispEdges" style="display:block">'+g+'</svg>'; }
 function drawCoverFlowers(t){ if (!SEASON_FLOWERS[t]) { try { t = localStorage.getItem("mealTrack"); } catch(e){} } if (!SEASON_FLOWERS[t]) t = "spring";
   const g = $("cvGrass"); if (!g) return; const again = !!g.dataset.season; g.dataset.season = t;
-  g.innerHTML = [["3%","56%",4],["22%","66%",3.5],["70%","58%",4],["84%","70%",3.5],["93%","52%",3]].map(([l,b,sc],i) => (sc = Math.round(sc * (innerWidth >= 1000 ? 1.7 : innerWidth >= 700 ? 1.3 : 1) * 2) / 2, 0) || '<div class="cv-flower'+(again ? ' swap' : '')+'" style="left:'+l+';bottom:'+b+';--i:'+i+'">'+seasonFlower(t, sc)+'</div>').join(""); }
+  g.innerHTML = (innerWidth < 700 ? [["11%","58%",3],["31%","66%",2.5],["69%","66%",2.5],["89%","58%",3]] : [["6%","56%",4],["22%","66%",3.5],["50%","70%",3],["78%","66%",3.5],["94%","56%",4]]).map(([l,b,sc],i) => (sc = Math.round(sc * (innerWidth >= 1000 ? 1.7 : innerWidth >= 700 ? 1.3 : 1) * 2) / 2, 0) || '<div class="cv-flower'+(again ? ' swap' : '')+'" style="left:'+l+';bottom:'+b+';--i:'+i+'"><div class="cvf-in">'+seasonFlower(t, sc)+'</div></div>').join(""); }
 drawCoverFlowers();
 window.addEventListener("resize", () => { const g = $("cvGrass"); if (g && g.dataset.season) drawCoverFlowers(g.dataset.season); });
 function drawNavFlowers(t){ if (!SEASON_FLOWERS[t]) { try { t = localStorage.getItem("mealTrack"); } catch(e){} } if (!SEASON_FLOWERS[t]) t = "spring";
@@ -6152,6 +6213,7 @@ document.addEventListener("click", e => {
   ["pointerup", "pointercancel"].forEach(ev => document.addEventListener(ev, () => { clearInterval(radar); radar = null; }, true));
   window.addEventListener("blur", () => { clearInterval(radar); radar = null; });
   document.addEventListener("pointerdown", e => { if (e.button > 0) return; if (e.target.closest && e.target.closest("#cover")) return;
+    if (e.pointerType !== "mouse" && !(e.target.closest && e.target.closest("button,a,input,select,textarea,[role=slider],[data-c],.mp-r"))) return;
     dot(e.clientX, e.clientY); if (e.pointerType === "mouse") { rx = e.clientX; ry = e.clientY; clearInterval(radar); radar = setInterval(() => dot(rx, ry, false, true), 340); } }, true);
   let dl = 0, dx = 0, dy = 0;
   document.addEventListener("pointermove", e => { if (!document.body.classList.contains("dragging")) return; const now = performance.now();
